@@ -1,0 +1,8 @@
+name: Home
+latitude: !secret HOME_LATITUDE
+longitude: !secret HOME_LONGITUDE
+elevation: !secret HOME_ELEVATION
+unit_system: !secret HOME_UNIT_SYSTEM
+time_zone: !secret HOME_TIME_ZONE
+customize: !include customize.yaml
+

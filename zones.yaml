@@ -1,0 +1,26 @@
+- name: College
+  latitude: !secret COLLEGE_LATITUDE
+  longitude: !secret COLLEGE_LONGITUDE
+  radius: 1000
+  icon: mdi:school
+- name: School
+  latitude: !secret SCHOOL_LATITUDE
+  longitude: !secret SCHOOL_LONGITUDE
+  radius: 250
+  icon: mdi:school
+- name: Market
+  latitude: !secret MARKET_LATITUDE
+  longitude: !secret MARKET_LONGITUDE
+  radius: 50
+  icon: mdi:cart
+- name: Park
+  latitude: !secret PARK_LATITUDE
+  longitude: !secret PARK_LONGITUDE
+  radius: 480
+  icon: mdi:pine-tree
+- name: Busy
+  latitude: 0.0
+  longitude: 0.0
+
+  
+

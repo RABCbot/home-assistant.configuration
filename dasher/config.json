@@ -1,0 +1,19 @@
+{"buttons":[
+  {
+    "name": "Dash Finish",
+    "address": "44:65:0d:76:f5:70",
+    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
+    "method": "POST",
+    "json": true,
+    "body": {"entity_id": "switch.htpc"}
+  },
+{
+    "name": "Dash Vita",
+    "address": "f0:27:2d:cb:d0:fb",
+    "url": "http://192.168.101.113:8123/api/services/script/ac2",
+    "method": "POST",
+    "json": true,
+    "body": {"entity_id": "script.ac2"}
+  }
+
+]}

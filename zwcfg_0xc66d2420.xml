@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Driver xmlns="http://code.google.com/p/open-zwave/" version="3" home_id="0xc66d2420" node_id="1" api_capabilities="0" controller_capabilities="8" poll_interval="60000" poll_interval_between="true">
+	<Node id="1" name="" location="" basic="2" generic="2" specific="1" type="Static PC Controller" listening="true" frequentListening="false" beaming="true" routing="false" max_baud_rate="40000" version="4" query_stage="Complete">
+		<Manufacturer id="86" name="Aeotec">
+			<Product type="101" id="5a" name="ZW090 Z-Stick Gen5" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" after_mark="true">
+				<Instance index="1" />
+				<Value type="byte" genre="basic" instance="1" index="0" label="Basic" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="2" name="" location="" basic="4" generic="8" specific="6" type="General Thermostat V2" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="3" query_stage="Complete">
+		<Manufacturer id="8b" name="Trane">
+			<Product type="5452" id="5433" name="Model TZEMT400BB32MAA" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="64">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="72" />
+			</CommandClass>
+			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="2" size="1">
+					<Item label="Off" value="0" />
+					<Item label="Heat" value="1" />
+					<Item label="Cool" value="2" />
+					<Item label="Auto" value="3" />
+					<Item label="Aux Heat" value="4" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Off" />
+					<Mode index="1" label="Heat" />
+					<Mode index="2" label="Cool" />
+					<Mode index="3" label="Auto" />
+					<Mode index="4" label="Aux Heat" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="66" name="COMMAND_CLASS_THERMOSTAT_OPERATING_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Operating State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="65" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="78" />
+			</CommandClass>
+			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Fan Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Auto Low" value="0" />
+					<Item label="On Low" value="1" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Auto Low" />
+					<Mode index="1" label="On Low" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="69" name="COMMAND_CLASS_THERMOSTAT_FAN_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Fan State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="config" instance="1" index="1" label="System Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas/Elec, 1 = HeatPump</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="2" label="Fan Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas, 1 = Elec</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="3" label="Change Over Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = w/Cool, 1 = w/Heat</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="4" label="F/C Units" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = C, 1 = F</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="5" label="Unknown-5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="9" label="Display Lock" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Unlocked, 1 = Locked</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="10" label="Minimum Off Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="5" max="9" value="5">
+					<Help>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="11" label="Minimum Run Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="9" value="6">
+					<Help>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display &quot;Cool ON&quot; or &quot;Heat ON&quot; while the minimum run time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="12" label="Heating Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="13" label="Heating Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="14" label="Heating Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="15" label="Heating Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="16" label="Heating Delta Stage 3 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="3">
+					<Help>Sets the delta from setpoint that stage 3 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="17" label="Heating Delta Stage 3 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 3 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 3.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="18" label="Cooling Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="19" label="Cooling Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="20" label="Cooling Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="21" label="Cooling Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="22" label="Unknown-22" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="23" label="Unknown-23" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="24" label="H/C Delta" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="3" max="15" value="3">
+					<Help>Sets the minimum separation between the heating and cooling setpoints. Attempts to lower the cooling below the heating setpoint by this amount will PUSH the heating setpoint down to maintain this separation. Same for setting the heating setpoint above the cooling setpoint, it will PUSH the cooling setpoint up to maintain this separation. Settings in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="25" label="SetBack Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" value="0">
+					<Help>0 = No Setback, 1 = Setback, 2 if ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="26" label="Unknown-26" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="27" label="Unknown-27" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="28" label="Unknown-28" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="29" label="ESM Setpoint--Heating" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="65">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control). Setting in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="30" label="ESM Setpoint--Cooling" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="31" label="Unknown-31" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="32" label="Unknown-32" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="33" label="Unknown-33" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="34" label="Unknown-34" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="3" />
+				<Value type="byte" genre="config" instance="1" index="35" label="Unknown-35" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="36" label="Unknown-36" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="37" label="Unknown-37" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="69" label="Unknown-69" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="74" label="Unknown-74" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="75" label="Fan ON Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="76" label="Fan OFF Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="10" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="77" label="2nd Stage Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage heat, 1 = 2nd stage heat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="78" label="Aux Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = no aux heat, 1 = aux heat enabled.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="79" label="2nd Stage Cool Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage cool, 1 = 2nd stage cool</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="128" label="Unknown-128" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="129" label="Unknown-129" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="130" label="Unknown-130" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="90" />
+				<Value type="byte" genre="config" instance="1" index="131" label="Unknown-131" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="132" label="Run Schedule" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>Set to 1 if running schedule (RUN is displayed on the thermostat screen).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="133" label="Unknown-133" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="13" />
+				<Value type="byte" genre="config" instance="1" index="134" label="Cooling 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Default: HOLD 80F / 26C RUN 84F / xxC ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="135" label="Unknown-135" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="136" label="Heating 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="60">
+					<Help>Heating 1 Setpoint (does this vary with ESM, etc. or is this for the &quot;Hold&quot; setting? Default: HOLD 55F / 13C RUN 60F / xxC ESM 64F / xxC (unless parameter xx has been changed)</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="137" label="Backlight Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="30">
+					<Help>Backlight Timeout is the time (in seconds) from the last button press to the backlight going out. The time-out can be set between 0 and 120 seconds. When set to 0, the backlight will remain always on. Default: 30</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="138" label="Max Heat Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="55" max="90" value="90">
+					<Help>Sets the maximum heating setpoint value. Will not ramp or accept setpoints higher than this maximum. Minimum: 55F / xxC Maximum: 90F / xxC Default: 90F / 32C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="139" label="Min Cool Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="60" max="99" value="60">
+					<Help>Sets the minimum cooling setpoint value. Will not ramp or accept setpoints lower than this minimum. Minimum: 60F / xxC Maximum: 99F / xxC Default: 60F / 15C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="140" label="Unknown-140" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="10" />
+				<Value type="byte" genre="config" instance="1" index="141" label="Screen Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>This is the time before any screen reverts to the Minimized Screen (temperature display only), after you stop pushing buttons. Minimized Screen feature is disabled by setting this time to 0. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="142" label="Unknown-142" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="143" label="Sensor (Internal) Offset" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-7" max="7" value="0">
+					<Help>The internal temperature sensor can be calibrated to report values different from its actual reading. The offset can range from -7 degrees to +7 degrees. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="144" label="Unknown-144" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="145" label="Unknown-145" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="146" label="Unknown-146" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="147" label="Unknown-147" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="148" label="Screen Contrast" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="20" value="10">
+					<Help>The Screen Contrast sets the contrast level of the LCD display. The contrast can be set between 0 and 20. If the display is too light, use a higher number. If dark lines appear on the screen, use a lower number. Default: 10</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="161" label="Unknown-161" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="162" label="Unknown-162" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="30" />
+				<Value type="byte" genre="config" instance="1" index="163" label="Unknown-163" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="166" label="Unknown-166" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="167" label="Unknown-167" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="169" label="Unknown-169" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="170" label="Unknown-170" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="171" label="Unknown-171" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="34">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="172" label="Unknown-172" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="101">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="173" label="Unknown-173" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="174" label="Unknown-174" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="175" label="Unknown-175" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="176" label="Unknown-176" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="177" label="Unknown-177" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="178" label="Unknown-178" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="179" label="Unknown-179" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="180" label="Unknown-180" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="181" label="Unknown-181" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="182" label="Unknown-182" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="183" label="Unknown-183" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="101">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="184" label="Unknown-184" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="101">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="185" label="Schedule Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>When enabled (set to 1), the local thermostat&apos;s scheduler function is enabled. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="186" label="Unknown-186" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="187" label="Unknown-187" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="190" label="Unknown-190" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="191" label="Unknown-191" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="192" label="Unknown-192" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="193" label="Unknown-193" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="194" label="Unknown-194" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="195" label="Unknown-195" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="196" label="Unknown-196" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="197" label="Unknown-197" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="198" label="Unknown-198" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="199" label="Unknown-199" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="200" label="Unknown-200" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="201" label="Unknown-201" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="202" label="Unknown-202" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="203" label="Unknown-203" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="204" label="Unknown-204" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="205" label="Unknown-205" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="206" label="Unknown-206" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="207" label="Unknown-207" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="208" label="Unknown-208" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="209" label="Unknown-209" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="210" label="Unknown-210" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="211" label="Unknown-211" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="212" label="Unknown-212" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="213" label="Unknown-213" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1">
+					<Help>Recovery enable? Default: 1 0x00</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="214" label="Unknown-214" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="215" label="Unknown-215" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="216" label="Unknown-216" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="217" label="Unknown-217" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="218" label="Unknown-218" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="219" label="Unknown-219" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="220" label="Unknown-220" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="221" label="Unknown-221" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="int" genre="config" instance="1" index="228" label="Schedule Sun-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="100681283">
+					<Help>This value holds information about the first schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="229" label="Schedule Sun-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="134233685">
+					<Help>This value holds information about the second schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="230" label="Schedule Sun-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="302007886">
+					<Help>This value holds information about the third schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="231" label="Schedule Sun-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="369114706">
+					<Help>This value holds information about the fourth schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="232" label="Schedule Mon-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="233" label="Schedule Mon-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="234" label="Schedule Mon-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="235" label="Schedule Mon-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="236" label="Schedule Tue-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="237" label="Schedule Tue-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="238" label="Schedule Tue-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="239" label="Schedule Tue-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="240" label="Schedule Wed-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="241" label="Schedule Wed-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="242" label="Schedule Wed-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="243" label="Schedule Wed-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="244" label="Schedule Thu-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="245" label="Schedule Thu-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="246" label="Schedule Thu-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="247" label="Schedule Thu-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="248" label="Schedule Fri-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="249" label="Schedule Fri-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="250" label="Schedule Fri-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="251" label="Schedule Fri-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="252" label="Schedule Sat-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="253" label="Schedule Sat-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="254" label="Schedule Sat-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="255" label="Schedule Sat-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="118" name="COMMAND_CLASS_LOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Locked" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Monday" value="1" />
+					<Item label="Tuesday" value="2" />
+					<Item label="Wednesday" value="3" />
+					<Item label="Thursday" value="4" />
+					<Item label="Friday" value="5" />
+					<Item label="Saturday" value="6" />
+					<Item label="Sunday" value="7" />
+				</Value>
+				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="7" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="8" />
+			</CommandClass>
+			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Associations num_groups="1">
+					<Group index="1" max_associations="5" label="Group 1" auto="true">
+						<Node id="1" />
+					</Group>
+				</Associations>
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="2.64" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="20.09" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="3" name="" location="" basic="4" generic="16" specific="1" type="Binary Power Switch" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="Complete">
+		<Manufacturer id="63" name="GE">
+			<Product type="5250" id="3030" name="45603 Plugin Appliance Module" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="37">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="39" name="COMMAND_CLASS_SWITCH_ALL" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Switch All" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="3" size="1">
+					<Item label="Disabled" value="0" />
+					<Item label="Off Enabled" value="1" />
+					<Item label="On Enabled" value="2" />
+					<Item label="On and Off Enabled" value="255" />
+				</Value>
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="115" name="COMMAND_CLASS_POWERLEVEL" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="byte" genre="system" instance="1" index="1" label="Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="button" genre="system" instance="1" index="2" label="Set Powerlevel" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="byte" genre="system" instance="1" index="3" label="Test Node" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="list" genre="system" instance="1" index="4" label="Test Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="5" label="Frame Count" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+				<Value type="button" genre="system" instance="1" index="6" label="Test" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="button" genre="system" instance="1" index="7" label="Report" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="list" genre="system" instance="1" index="8" label="Test Status" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Failed" value="0" />
+					<Item label="Success" value="1" />
+					<Item label="In Progress" value="2" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="9" label="Acked Frames" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+			</CommandClass>
+			<CommandClass id="117" name="COMMAND_CLASS_PROTECTION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Protection" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Unprotected" value="0" />
+					<Item label="Protection by Sequence" value="1" />
+					<Item label="No Operation Possible" value="2" />
+				</Value>
+			</CommandClass>
+			<CommandClass id="119" name="COMMAND_CLASS_NODE_NAMING" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="3.40" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="3.30" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="4" name="" location="" basic="4" generic="8" specific="6" type="General Thermostat V2" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="3" query_stage="Complete">
+		<Manufacturer id="8b" name="Trane">
+			<Product type="5452" id="5433" name="Model TZEMT400BB32MAA" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="64">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="74" />
+			</CommandClass>
+			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="2" size="1">
+					<Item label="Off" value="0" />
+					<Item label="Heat" value="1" />
+					<Item label="Cool" value="2" />
+					<Item label="Auto" value="3" />
+					<Item label="Aux Heat" value="4" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Off" />
+					<Mode index="1" label="Heat" />
+					<Mode index="2" label="Cool" />
+					<Mode index="3" label="Auto" />
+					<Mode index="4" label="Aux Heat" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="66" name="COMMAND_CLASS_THERMOSTAT_OPERATING_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Operating State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="65" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="77" />
+			</CommandClass>
+			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Fan Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Auto Low" value="0" />
+					<Item label="On Low" value="1" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Auto Low" />
+					<Mode index="1" label="On Low" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="69" name="COMMAND_CLASS_THERMOSTAT_FAN_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Fan State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="config" instance="1" index="1" label="System Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas/Elec, 1 = HeatPump</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="2" label="Fan Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas, 1 = Elec</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="3" label="Change Over Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = w/Cool, 1 = w/Heat</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="4" label="F/C Units" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = C, 1 = F</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="5" label="Unknown-5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="9" label="Display Lock" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Unlocked, 1 = Locked</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="10" label="Minimum Off Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="5" max="9" value="5">
+					<Help>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="11" label="Minimum Run Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="9" value="6">
+					<Help>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display &quot;Cool ON&quot; or &quot;Heat ON&quot; while the minimum run time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="12" label="Heating Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="13" label="Heating Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="14" label="Heating Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="15" label="Heating Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="16" label="Heating Delta Stage 3 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="3">
+					<Help>Sets the delta from setpoint that stage 3 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="17" label="Heating Delta Stage 3 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 3 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 3.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="18" label="Cooling Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="19" label="Cooling Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="20" label="Cooling Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="21" label="Cooling Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="22" label="Unknown-22" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="23" label="Unknown-23" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="24" label="H/C Delta" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="3" max="15" value="3">
+					<Help>Sets the minimum separation between the heating and cooling setpoints. Attempts to lower the cooling below the heating setpoint by this amount will PUSH the heating setpoint down to maintain this separation. Same for setting the heating setpoint above the cooling setpoint, it will PUSH the cooling setpoint up to maintain this separation. Settings in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="25" label="SetBack Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" value="0">
+					<Help>0 = No Setback, 1 = Setback, 2 if ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="26" label="Unknown-26" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="27" label="Unknown-27" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="28" label="Unknown-28" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="29" label="ESM Setpoint--Heating" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="65">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control). Setting in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="30" label="ESM Setpoint--Cooling" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="31" label="Unknown-31" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="32" label="Unknown-32" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="33" label="Unknown-33" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="34" label="Unknown-34" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="3" />
+				<Value type="byte" genre="config" instance="1" index="35" label="Unknown-35" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="36" label="Unknown-36" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="37" label="Unknown-37" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="69" label="Unknown-69" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="74" label="Unknown-74" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="75" label="Fan ON Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="76" label="Fan OFF Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="10" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="77" label="2nd Stage Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage heat, 1 = 2nd stage heat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="78" label="Aux Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = no aux heat, 1 = aux heat enabled.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="79" label="2nd Stage Cool Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage cool, 1 = 2nd stage cool</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="128" label="Unknown-128" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="129" label="Unknown-129" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="130" label="Unknown-130" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="90" />
+				<Value type="byte" genre="config" instance="1" index="131" label="Unknown-131" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="132" label="Run Schedule" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>Set to 1 if running schedule (RUN is displayed on the thermostat screen).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="133" label="Unknown-133" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="13" />
+				<Value type="byte" genre="config" instance="1" index="134" label="Cooling 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Default: HOLD 80F / 26C RUN 84F / xxC ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="135" label="Unknown-135" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="136" label="Heating 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="60">
+					<Help>Heating 1 Setpoint (does this vary with ESM, etc. or is this for the &quot;Hold&quot; setting? Default: HOLD 55F / 13C RUN 60F / xxC ESM 64F / xxC (unless parameter xx has been changed)</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="137" label="Backlight Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="30">
+					<Help>Backlight Timeout is the time (in seconds) from the last button press to the backlight going out. The time-out can be set between 0 and 120 seconds. When set to 0, the backlight will remain always on. Default: 30</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="138" label="Max Heat Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="55" max="90" value="90">
+					<Help>Sets the maximum heating setpoint value. Will not ramp or accept setpoints higher than this maximum. Minimum: 55F / xxC Maximum: 90F / xxC Default: 90F / 32C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="139" label="Min Cool Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="60" max="99" value="60">
+					<Help>Sets the minimum cooling setpoint value. Will not ramp or accept setpoints lower than this minimum. Minimum: 60F / xxC Maximum: 99F / xxC Default: 60F / 15C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="140" label="Unknown-140" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="10" />
+				<Value type="byte" genre="config" instance="1" index="141" label="Screen Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>This is the time before any screen reverts to the Minimized Screen (temperature display only), after you stop pushing buttons. Minimized Screen feature is disabled by setting this time to 0. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="142" label="Unknown-142" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="143" label="Sensor (Internal) Offset" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-7" max="7" value="0">
+					<Help>The internal temperature sensor can be calibrated to report values different from its actual reading. The offset can range from -7 degrees to +7 degrees. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="144" label="Unknown-144" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="145" label="Unknown-145" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="146" label="Unknown-146" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="147" label="Unknown-147" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="148" label="Screen Contrast" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="20" value="10">
+					<Help>The Screen Contrast sets the contrast level of the LCD display. The contrast can be set between 0 and 20. If the display is too light, use a higher number. If dark lines appear on the screen, use a lower number. Default: 10</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="161" label="Unknown-161" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="162" label="Unknown-162" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="30" />
+				<Value type="byte" genre="config" instance="1" index="163" label="Unknown-163" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="166" label="Unknown-166" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="167" label="Unknown-167" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="169" label="Unknown-169" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="170" label="Unknown-170" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="171" label="Unknown-171" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="172" label="Unknown-172" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="101">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="173" label="Unknown-173" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="174" label="Unknown-174" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="175" label="Unknown-175" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="176" label="Unknown-176" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="177" label="Unknown-177" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="178" label="Unknown-178" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="179" label="Unknown-179" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="180" label="Unknown-180" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="181" label="Unknown-181" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="182" label="Unknown-182" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="183" label="Unknown-183" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="184" label="Unknown-184" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="101">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="185" label="Schedule Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>When enabled (set to 1), the local thermostat&apos;s scheduler function is enabled. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="186" label="Unknown-186" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="187" label="Unknown-187" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="190" label="Unknown-190" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="191" label="Unknown-191" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="192" label="Unknown-192" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="193" label="Unknown-193" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="194" label="Unknown-194" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="195" label="Unknown-195" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="196" label="Unknown-196" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="197" label="Unknown-197" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="198" label="Unknown-198" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="199" label="Unknown-199" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="200" label="Unknown-200" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="201" label="Unknown-201" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="202" label="Unknown-202" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="203" label="Unknown-203" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="204" label="Unknown-204" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="205" label="Unknown-205" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="206" label="Unknown-206" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="207" label="Unknown-207" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="208" label="Unknown-208" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="209" label="Unknown-209" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="210" label="Unknown-210" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="211" label="Unknown-211" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="212" label="Unknown-212" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="213" label="Unknown-213" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1">
+					<Help>Recovery enable? Default: 1 0x00</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="214" label="Unknown-214" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="215" label="Unknown-215" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="216" label="Unknown-216" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="217" label="Unknown-217" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="218" label="Unknown-218" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="219" label="Unknown-219" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="220" label="Unknown-220" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="221" label="Unknown-221" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="int" genre="config" instance="1" index="228" label="Schedule Sun-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="100681283">
+					<Help>This value holds information about the first schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="229" label="Schedule Sun-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="134233685">
+					<Help>This value holds information about the second schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="230" label="Schedule Sun-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="302007886">
+					<Help>This value holds information about the third schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="231" label="Schedule Sun-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="369114706">
+					<Help>This value holds information about the fourth schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="232" label="Schedule Mon-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="233" label="Schedule Mon-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="234" label="Schedule Mon-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="235" label="Schedule Mon-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="236" label="Schedule Tue-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="237" label="Schedule Tue-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="238" label="Schedule Tue-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="239" label="Schedule Tue-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="240" label="Schedule Wed-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="241" label="Schedule Wed-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="242" label="Schedule Wed-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="243" label="Schedule Wed-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="244" label="Schedule Thu-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="245" label="Schedule Thu-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="246" label="Schedule Thu-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="247" label="Schedule Thu-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="248" label="Schedule Fri-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="249" label="Schedule Fri-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="250" label="Schedule Fri-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="251" label="Schedule Fri-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="252" label="Schedule Sat-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="253" label="Schedule Sat-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="254" label="Schedule Sat-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="255" label="Schedule Sat-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="118" name="COMMAND_CLASS_LOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Locked" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="6" size="1">
+					<Item label="Monday" value="1" />
+					<Item label="Tuesday" value="2" />
+					<Item label="Wednesday" value="3" />
+					<Item label="Thursday" value="4" />
+					<Item label="Friday" value="5" />
+					<Item label="Saturday" value="6" />
+					<Item label="Sunday" value="7" />
+				</Value>
+				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="17" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="47" />
+			</CommandClass>
+			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Associations num_groups="1">
+					<Group index="1" max_associations="5" label="Group 1" auto="true">
+						<Node id="1" />
+					</Group>
+				</Associations>
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="2.64" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="20.09" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="5" name="" location="" basic="4" generic="8" specific="6" type="General Thermostat V2" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="3" query_stage="Complete">
+		<Manufacturer id="8b" name="Trane">
+			<Product type="5452" id="5433" name="Model TZEMT400BB32MAA" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="64">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="75" />
+			</CommandClass>
+			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="2" size="1">
+					<Item label="Off" value="0" />
+					<Item label="Heat" value="1" />
+					<Item label="Cool" value="2" />
+					<Item label="Auto" value="3" />
+					<Item label="Aux Heat" value="4" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Off" />
+					<Mode index="1" label="Heat" />
+					<Mode index="2" label="Cool" />
+					<Mode index="3" label="Auto" />
+					<Mode index="4" label="Aux Heat" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="66" name="COMMAND_CLASS_THERMOSTAT_OPERATING_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Operating State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
+				<Instance index="1" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="62" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="75" />
+			</CommandClass>
+			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Fan Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Auto Low" value="0" />
+					<Item label="On Low" value="1" />
+				</Value>
+				<SupportedModes>
+					<Mode index="0" label="Auto Low" />
+					<Mode index="1" label="On Low" />
+				</SupportedModes>
+			</CommandClass>
+			<CommandClass id="69" name="COMMAND_CLASS_THERMOSTAT_FAN_STATE" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="user" instance="1" index="0" label="Fan State" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="Idle" />
+			</CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="config" instance="1" index="1" label="System Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas/Elec, 1 = HeatPump</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="2" label="Fan Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Gas, 1 = Elec</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="3" label="Change Over Type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = w/Cool, 1 = w/Heat</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="4" label="F/C Units" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = C, 1 = F</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="5" label="Unknown-5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="9" label="Display Lock" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = Unlocked, 1 = Locked</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="10" label="Minimum Off Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="5" max="9" value="5">
+					<Help>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="11" label="Minimum Run Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="9" value="6">
+					<Help>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display &quot;Cool ON&quot; or &quot;Heat ON&quot; while the minimum run time is being enforced.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="12" label="Heating Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="13" label="Heating Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="14" label="Heating Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="15" label="Heating Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="16" label="Heating Delta Stage 3 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="3">
+					<Help>Sets the delta from setpoint that stage 3 heating starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="17" label="Heating Delta Stage 3 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 3 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 3.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="18" label="Cooling Delta Stage 1 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="1">
+					<Help>Sets the delta from setpoint that stage 1 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="19" label="Cooling Delta Stage 1 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 1 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="20" label="Cooling Delta Stage 2 ON" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="8" value="2">
+					<Help>Sets the delta from setpoint that stage 2 cooling starts.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="21" label="Cooling Delta Stage 2 OFF" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="8" value="0">
+					<Help>Sets the delta from setpoint that stage 2 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="22" label="Unknown-22" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="23" label="Unknown-23" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="24" label="H/C Delta" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="3" max="15" value="3">
+					<Help>Sets the minimum separation between the heating and cooling setpoints. Attempts to lower the cooling below the heating setpoint by this amount will PUSH the heating setpoint down to maintain this separation. Same for setting the heating setpoint above the cooling setpoint, it will PUSH the cooling setpoint up to maintain this separation. Settings in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="25" label="SetBack Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" value="0">
+					<Help>0 = No Setback, 1 = Setback, 2 if ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="26" label="Unknown-26" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="27" label="Unknown-27" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="28" label="Unknown-28" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="29" label="ESM Setpoint--Heating" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="65">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control). Setting in F.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="30" label="ESM Setpoint--Cooling" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="31" label="Unknown-31" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="32" label="Unknown-32" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="33" label="Unknown-33" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="34" label="Unknown-34" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="3" />
+				<Value type="byte" genre="config" instance="1" index="35" label="Unknown-35" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="36" label="Unknown-36" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="37" label="Unknown-37" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="5" />
+				<Value type="byte" genre="config" instance="1" index="69" label="Unknown-69" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="74" label="Unknown-74" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="75" label="Fan ON Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="76" label="Fan OFF Time" units="minutes" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="10" max="120" value="0">
+					<Help>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="77" label="2nd Stage Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage heat, 1 = 2nd stage heat.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="78" label="Aux Heat Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="1">
+					<Help>0 = no aux heat, 1 = aux heat enabled.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="79" label="2nd Stage Cool Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>0 = no 2nd stage cool, 1 = 2nd stage cool</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="128" label="Unknown-128" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="129" label="Unknown-129" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="130" label="Unknown-130" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="90" />
+				<Value type="byte" genre="config" instance="1" index="131" label="Unknown-131" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="132" label="Run Schedule" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>Set to 1 if running schedule (RUN is displayed on the thermostat screen).</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="133" label="Unknown-133" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="13" />
+				<Value type="byte" genre="config" instance="1" index="134" label="Cooling 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="80">
+					<Help>Default: HOLD 80F / 26C RUN 84F / xxC ESM</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="135" label="Unknown-135" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="136" label="Heating 1 Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="60">
+					<Help>Heating 1 Setpoint (does this vary with ESM, etc. or is this for the &quot;Hold&quot; setting? Default: HOLD 55F / 13C RUN 60F / xxC ESM 64F / xxC (unless parameter xx has been changed)</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="137" label="Backlight Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="30">
+					<Help>Backlight Timeout is the time (in seconds) from the last button press to the backlight going out. The time-out can be set between 0 and 120 seconds. When set to 0, the backlight will remain always on. Default: 30</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="138" label="Max Heat Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="55" max="90" value="90">
+					<Help>Sets the maximum heating setpoint value. Will not ramp or accept setpoints higher than this maximum. Minimum: 55F / xxC Maximum: 90F / xxC Default: 90F / 32C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="139" label="Min Cool Setpoint" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="60" max="99" value="60">
+					<Help>Sets the minimum cooling setpoint value. Will not ramp or accept setpoints lower than this minimum. Minimum: 60F / xxC Maximum: 99F / xxC Default: 60F / 15C</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="140" label="Unknown-140" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="10" />
+				<Value type="byte" genre="config" instance="1" index="141" label="Screen Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="120" value="0">
+					<Help>This is the time before any screen reverts to the Minimized Screen (temperature display only), after you stop pushing buttons. Minimized Screen feature is disabled by setting this time to 0. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="142" label="Unknown-142" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="143" label="Sensor (Internal) Offset" units="degrees" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-7" max="7" value="0">
+					<Help>The internal temperature sensor can be calibrated to report values different from its actual reading. The offset can range from -7 degrees to +7 degrees. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="144" label="Unknown-144" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="145" label="Unknown-145" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="146" label="Unknown-146" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="147" label="Unknown-147" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="148" label="Screen Contrast" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="20" value="10">
+					<Help>The Screen Contrast sets the contrast level of the LCD display. The contrast can be set between 0 and 20. If the display is too light, use a higher number. If dark lines appear on the screen, use a lower number. Default: 10</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="161" label="Unknown-161" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="162" label="Unknown-162" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="30" />
+				<Value type="byte" genre="config" instance="1" index="163" label="Unknown-163" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="166" label="Unknown-166" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="167" label="Unknown-167" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="169" label="Unknown-169" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="170" label="Unknown-170" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="171" label="Unknown-171" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="60">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="172" label="Unknown-172" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="45">
+					<Help>0x2c after reset 0xf4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="173" label="Unknown-173" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="174" label="Unknown-174" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="175" label="Unknown-175" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="176" label="Unknown-176" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="177" label="Unknown-177" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="178" label="Unknown-178" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="179" label="Unknown-179" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="config" instance="1" index="180" label="Unknown-180" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="44" />
+				<Value type="byte" genre="config" instance="1" index="181" label="Unknown-181" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="182" label="Unknown-182" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="183" label="Unknown-183" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="34">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="184" label="Unknown-184" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="45">
+					<Help>0xb8 after reset 0xe4 after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="185" label="Schedule Enable" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" value="0">
+					<Help>When enabled (set to 1), the local thermostat&apos;s scheduler function is enabled. Default: 0</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="186" label="Unknown-186" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="187" label="Unknown-187" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="190" label="Unknown-190" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="191" label="Unknown-191" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="192" label="Unknown-192" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="193" label="Unknown-193" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="194" label="Unknown-194" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="195" label="Unknown-195" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="196" label="Unknown-196" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="197" label="Unknown-197" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="198" label="Unknown-198" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="199" label="Unknown-199" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="200" label="Unknown-200" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="201" label="Unknown-201" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="202" label="Unknown-202" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="203" label="Unknown-203" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="204" label="Unknown-204" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="205" label="Unknown-205" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="206" label="Unknown-206" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="207" label="Unknown-207" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="208" label="Unknown-208" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="209" label="Unknown-209" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="210" label="Unknown-210" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>0xff after reset</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="211" label="Unknown-211" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="212" label="Unknown-212" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="213" label="Unknown-213" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1">
+					<Help>Recovery enable? Default: 1 0x00</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="214" label="Unknown-214" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="215" label="Unknown-215" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="216" label="Unknown-216" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="217" label="Unknown-217" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="218" label="Unknown-218" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="219" label="Unknown-219" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="220" label="Unknown-220" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="byte" genre="config" instance="1" index="221" label="Unknown-221" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="int" genre="config" instance="1" index="228" label="Schedule Sun-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="100681283">
+					<Help>This value holds information about the first schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="229" label="Schedule Sun-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="134233685">
+					<Help>This value holds information about the second schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="230" label="Schedule Sun-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="302007886">
+					<Help>This value holds information about the third schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="231" label="Schedule Sun-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="369114706">
+					<Help>This value holds information about the fourth schedule setpoints for Sundays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="232" label="Schedule Mon-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="233" label="Schedule Mon-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="234" label="Schedule Mon-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="235" label="Schedule Mon-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Mondays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="236" label="Schedule Tue-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="237" label="Schedule Tue-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="238" label="Schedule Tue-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="239" label="Schedule Tue-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Tuesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="240" label="Schedule Wed-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="241" label="Schedule Wed-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="242" label="Schedule Wed-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="243" label="Schedule Wed-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Wednesdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="244" label="Schedule Thu-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="245" label="Schedule Thu-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="246" label="Schedule Thu-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="247" label="Schedule Thu-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Thursdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="248" label="Schedule Fri-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="249" label="Schedule Fri-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="250" label="Schedule Fri-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="251" label="Schedule Fri-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Fridays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="252" label="Schedule Sat-1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the first schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x06004643 06:00AM 70F / 67F 0x06001519 06:00AM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="253" label="Schedule Sat-2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the second schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x08003e55 08:00AM 62F / 85F 0x0800101d 08:00AM 16C / 29C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="254" label="Schedule Sat-3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the third schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x1200464e 06:00PM 70F / 78F 0x12001519 06:00PM 21C / 25C</Help>
+				</Value>
+				<Value type="int" genre="config" instance="1" index="255" label="Schedule Sat-4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+					<Help>This value holds information about the fourth schedule setpoints for Saturdays. Byte 1: Hour (0-23) Byte 2: Minute (0-59) Byte 3: Heat Setpoint (degrees) Byte 4: Cool Setpoint (degrees) Default: 0x16003e52 10:00PM 62F / 82F 0x1600101b 10:00PM 16C / 27C</Help>
+				</Value>
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="118" name="COMMAND_CLASS_LOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Locked" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+					<Item label="Monday" value="1" />
+					<Item label="Tuesday" value="2" />
+					<Item label="Wednesday" value="3" />
+					<Item label="Thursday" value="4" />
+					<Item label="Friday" value="5" />
+					<Item label="Saturday" value="6" />
+					<Item label="Sunday" value="7" />
+				</Value>
+				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="2" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="15" />
+			</CommandClass>
+			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Associations num_groups="1">
+					<Group index="1" max_associations="5" label="Group 1" auto="true">
+						<Node id="1" />
+					</Group>
+				</Associations>
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="2.64" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="20.09" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="6" name="" location="" basic="4" generic="16" specific="1" roletype="5" devicetype="1792" nodetype="0" type="Binary Power Switch" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="Complete">
+		<Manufacturer id="15d" name="Unknown: id=015d">
+			<Product type="1111" id="1e1c" name="Unknown: type=1111, id=1e1c" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="37">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="39" name="COMMAND_CLASS_SWITCH_ALL" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Switch All" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="3" size="1">
+					<Item label="Disabled" value="0" />
+					<Item label="Off Enabled" value="1" />
+					<Item label="On Enabled" value="2" />
+					<Item label="On and Off Enabled" value="255" />
+				</Value>
+			</CommandClass>
+			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="94" name="COMMAND_CLASS_ZWAVE_PLUS_INFO" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="system" instance="1" index="0" label="ZWave+ Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="short" genre="system" instance="1" index="1" label="InstallerIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="1794" />
+				<Value type="short" genre="system" instance="1" index="2" label="UserIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="1792" />
+			</CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="115" name="COMMAND_CLASS_POWERLEVEL" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="byte" genre="system" instance="1" index="1" label="Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="button" genre="system" instance="1" index="2" label="Set Powerlevel" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="byte" genre="system" instance="1" index="3" label="Test Node" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="list" genre="system" instance="1" index="4" label="Test Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="5" label="Frame Count" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+				<Value type="button" genre="system" instance="1" index="6" label="Test" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="button" genre="system" instance="1" index="7" label="Report" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="list" genre="system" instance="1" index="8" label="Test Status" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Failed" value="0" />
+					<Item label="Success" value="1" />
+					<Item label="In Progress" value="2" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="9" label="Acked Frames" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+			</CommandClass>
+			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Associations num_groups="1">
+					<Group index="1" max_associations="5" label="Group 1" auto="true">
+						<Node id="1" />
+					</Group>
+				</Associations>
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="4.05" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="20.15" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+</Driver>

@@ -1,0 +1,11 @@
+!secret TRACKER_HIJO:
+  name: Hijo
+  picture: /local/hijo.jpg
+  track: yes
+  hide_if_away: no
+
+!secret TRACKER_PADRE:
+  name: Padre
+  picture: /local/padre.jpg
+  track: yes
+  hide_if_away: no

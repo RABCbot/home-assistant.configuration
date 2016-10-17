@@ -1,0 +1,25 @@
+homeassistant: !include home.yaml
+frontend:
+history:
+logbook:
+logger: !include logger.yaml
+sun:
+mqtt: !include mqtt.yaml
+device_tracker: !include devicetracker.yaml
+zone: !include zones.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+notify: !include notify.yaml
+group: !include groups.yaml
+automation: !include automation.yaml
+input_select: !include selections.yaml
+# weblink: !include weblinks.yaml
+zwave: !include zwave.yaml
+climate: !include climate.yaml
+script: !include scripts.yaml
+
+# Custom Components
+hola:
+# panel_custom: !include react.yaml
+countdown:

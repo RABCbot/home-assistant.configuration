@@ -1,0 +1,83 @@
+default_view:
+  view: yes
+  entities:
+    - sun.sun
+    - countdown.rogueone
+    - sensor.trane_model_tzemt400bb32maa_temperature_2
+    - sensor.trane_model_tzemt400bb32maa_temperature_4
+    - sensor.trane_model_tzemt400bb32maa_temperature_5
+    - group.weather
+
+climate_view:
+  view: yes
+  name: Climate
+  entities:
+    - group.ac1
+    - group.ac3
+    - group.ac2
+
+control_view:
+  view: yes
+  name: Control
+  entities:
+    - group.garage
+    - group.living
+
+demo_view:
+  view: yes
+  name: Demo
+  entities:
+    - group.custom
+    - group.alarm
+    - group.kitchen
+
+weather:
+  - sensor.weather_summary
+  - sensor.weather_temperature
+  - sensor.weather_humidity
+  - sensor.weather_precip_probability
+
+ac1:
+  - sensor.trane_model_tzemt400bb32maa_temperature_2
+  - input_select.cool1
+  - climate.trane_model_tzemt400bb32maa_cooling_1_2
+  - climate.trane_model_tzemt400bb32maa_heating_1_2
+
+ac2:
+  - sensor.trane_model_tzemt400bb32maa_temperature_4
+  - input_select.cool2
+  - climate.trane_model_tzemt400bb32maa_cooling_1_4
+  - climate.trane_model_tzemt400bb32maa_heating_1_4
+
+ac3:
+  - sensor.trane_model_tzemt400bb32maa_temperature_5
+  - input_select.cool3
+  - climate.trane_model_tzemt400bb32maa_cooling_1_5
+  - climate.trane_model_tzemt400bb32maa_heating_1_5
+
+garage:
+  - sensor.garage_door
+  - switch.ge_45603_plugin_appliance_module_switch_3
+  - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6
+
+kitchen:
+  - light.kitchen_lights
+  - sensor.kitchen_temperature
+  - sensor.kitchen_humidity
+
+living:
+  - switch.htpc
+#  - switch.modem
+  - switch.dlink
+
+alarm:
+  - sensor.front_door
+  - sensor.back_door
+  - sensor.deck_door
+  - sensor.motion_family
+  - sensor.motion_office
+
+custom:
+  - input_select.test
+  - hola.tipo
+

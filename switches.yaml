@@ -1,0 +1,11 @@
+- platform: rpi_gpio
+  ports:
+    11: HTPC
+#    12: MODEM
+
+- platform: dlink
+  host: !secret DLINK_HOST
+  name: dlink
+  username: Admin
+  password: !secret DLINK_KEY
+

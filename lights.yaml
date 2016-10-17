@@ -1,0 +1,3 @@
+- platform: mqtt
+  name: "Kitchen lights"
+  command_topic: "home/lights/kitchen"

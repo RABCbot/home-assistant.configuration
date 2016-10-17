@@ -1,0 +1,9 @@
+platform: forecast
+name: "Weather"
+api_key: !secret FORECAST_IO_KEY
+monitored_conditions:
+  - summary
+  - precip_probability
+  - temperature
+  - humidity
+

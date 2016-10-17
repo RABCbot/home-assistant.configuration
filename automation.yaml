@@ -1,0 +1,57 @@
+- alias: Midnight
+  trigger:
+    platform: time
+    after: '00:00:00'
+  action:
+    service: countdown.update  
+
+- alias: PC Switch Off
+  trigger:
+    platform: state
+    entity_id: switch.htpc
+    state: 'on'
+  action:
+    service: switch.turn_off
+    entity_id: switch.htpc
+
+- alias: Garage Clicker Off
+  trigger:
+    platform: state
+    entity_id: switch.ge_45603_plugin_appliance_module_switch_3
+    state: 'on'
+  action:
+    service: script.turn_on
+    data:
+      entity_id: script.garage_clicker_off
+
+- alias: Cool AC One
+  trigger:
+    platform: state
+    entity_id: input_select.cool1
+  action:
+    service: climate.set_temperature
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2
+    data_template:
+      temperature: "{{ states('input_select.cool1') }}"
+
+- alias: Cool AC Two
+  trigger:
+    platform: state
+    entity_id: input_select.cool2
+  action:
+    service: climate.set_temperature
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+    data_template:
+      temperature: "{{ states('input_select.cool2') }}"
+
+- alias: Cool AC Three
+  trigger:
+    platform: state
+    entity_id: input_select.cool3
+  action:
+    service: climate.set_temperature
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5
+    data_template:
+      temperature: "{{ states('input_select.cool3') }}"
+
+
