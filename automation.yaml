@@ -5,6 +5,20 @@
   action:
     service: countdown.update  
 
+- alias: Garage Left Open
+  trigger:
+    platform: state
+    entity_id: device_tracker.padre_s6
+    state: 'not_home'
+  condition:
+    condition: state
+    entity_id: sensor.garage_door
+    state: 'open'
+  action:
+    service: notify.twitter
+    data:
+      message: Dejastes el garage abierto
+
 - alias: PC Switch Off
   trigger:
     platform: state
@@ -17,41 +31,103 @@
 - alias: Garage Clicker Off
   trigger:
     platform: state
-    entity_id: switch.ge_45603_plugin_appliance_module_switch_3
+    entity_id: switch.ge_45603_plugin_appliance_module_switch_3_0
     state: 'on'
   action:
-    service: script.turn_on
-    data:
-      entity_id: script.garage_clicker_off
+    - delay:
+        seconds: 5
+    - service: switch.turn_off
+      data:
+        entity_id: switch.ge_45603_plugin_appliance_module_switch_3_0
 
-- alias: Cool AC One
+- alias: AC1 Operation
   trigger:
     platform: state
-    entity_id: input_select.cool1
+    entity_id: input_select.ac1operation
   action:
-    service: climate.set_temperature
-    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
     data_template:
-      temperature: "{{ states('input_select.cool1') }}"
+      operation_mode: "{{ states('input_select.ac1operation') }}"
 
-- alias: Cool AC Two
+- alias: AC1 Fan
   trigger:
     platform: state
-    entity_id: input_select.cool2
+    entity_id: input_select.ac1fan
   action:
-    service: climate.set_temperature
-    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
     data_template:
-      temperature: "{{ states('input_select.cool2') }}"
+      fan_mode: "{{ states('input_select.ac1fan') }}"
 
-- alias: Cool AC Three
+- alias: AC1 Target
   trigger:
     platform: state
-    entity_id: input_select.cool3
+    entity_id: input_select.ac1target
   action:
     service: climate.set_temperature
-    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
     data_template:
-      temperature: "{{ states('input_select.cool3') }}"
+      temperature: "{{ states('input_select.ac1target') }}"
+
+- alias: AC2 Operation
+  trigger:
+    platform: state
+    entity_id: input_select.ac2operation
+  action:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      operation_mode: "{{ states('input_select.ac2operation') }}"
+
+- alias: AC2 Fan
+  trigger:
+    platform: state
+    entity_id: input_select.ac2fan
+  action:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      fan_mode: "{{ states('input_select.ac2fan') }}"
+
+- alias: AC2 Target
+  trigger:
+    platform: state
+    entity_id: input_select.ac2target
+  action:
+    service: climate.set_temperature
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      temperature: "{{ states('input_select.ac2target') }}"
+
+- alias: AC3 Operation
+  trigger:
+    platform: state
+    entity_id: input_select.ac3operation
+  action:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      operation_mode: "{{ states('input_select.ac3operation') }}"
+
+- alias: AC3 Fan
+  trigger:
+    platform: state
+    entity_id: input_select.ac3fan
+  action:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      fan_mode: "{{ states('input_select.ac3fan') }}"
+
+- alias: AC3 Target
+  trigger:
+    platform: state
+    entity_id: input_select.ac3target
+  action:
+    service: climate.set_temperature
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      temperature: "{{ states('input_select.ac3target') }}"
 
 

@@ -1,27 +1,35 @@
-cool1:
-  name: Cool1
-  options:
-    - 78
-    - 77
-    - 76
-    - 75
-    - 74
+ac1operation:
+  name: Operation1
+  options: !include options_ac_operation.yaml
 
-cool2:
-  name: Cool2
-  options:
-    - 78
-    - 77
-    - 76
-    - 75
-    - 74
+ac1fan:
+  name: Fan1
+  options: !include options_ac_fan.yaml
 
-cool3:
-  name: Cool3
-  options:
-    - 78
-    - 77
-    - 76
-    - 75
-    - 74
+ac1target:
+  name: Target1
+  options: !include options_ac_target.yaml
 
+ac2operation:
+  name: Operation2
+  options: !include options_ac_operation.yaml
+
+ac2fan:
+  name: Fan2
+  options: !include options_ac_fan.yaml
+
+ac2target:
+  name: Target2
+  options: !include options_ac_target.yaml
+
+ac3operation:
+  name: Operation3
+  options: !include options_ac_operation.yaml
+
+ac3fan:
+  name: Fan3
+  options: !include options_ac_fan.yaml
+
+ac3target:
+  name: Target3
+  options: !include options_ac_target.yaml

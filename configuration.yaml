@@ -21,5 +21,6 @@ script: !include scripts.yaml
 
 # Custom Components
 hola:
+  - name: ricardo
 # panel_custom: !include react.yaml
 countdown:

@@ -2,10 +2,13 @@ default_view:
   view: yes
   entities:
     - sun.sun
+    - device_tracker.padre_s6
+    - device_tracker.chuchi_s7
     - countdown.rogueone
-    - sensor.trane_model_tzemt400bb32maa_temperature_2
-    - sensor.trane_model_tzemt400bb32maa_temperature_4
-    - sensor.trane_model_tzemt400bb32maa_temperature_5
+    - sensor.trane_model_tzemt400bb32maa_temperature_2_1
+    - sensor.trane_model_tzemt400bb32maa_temperature_4_1
+    - sensor.trane_model_tzemt400bb32maa_temperature_5_1
+    - group.shortcuts
     - group.weather
 
 climate_view:
@@ -20,8 +23,8 @@ control_view:
   view: yes
   name: Control
   entities:
+    - group.family
     - group.garage
-    - group.living
 
 demo_view:
   view: yes
@@ -31,6 +34,9 @@ demo_view:
     - group.alarm
     - group.kitchen
 
+shortcuts:
+  - script.ac2
+
 weather:
   - sensor.weather_summary
   - sensor.weather_temperature
@@ -38,36 +44,48 @@ weather:
   - sensor.weather_precip_probability
 
 ac1:
-  - sensor.trane_model_tzemt400bb32maa_temperature_2
-  - input_select.cool1
-  - climate.trane_model_tzemt400bb32maa_cooling_1_2
-  - climate.trane_model_tzemt400bb32maa_heating_1_2
+  - sensor.trane_model_tzemt400bb32maa_temperature_2_1
+  - sensor.cool1state
+  - sensor.cool1mode
+  - input_select.ac1operation
+  - sensor.cool1fan
+  - input_select.ac1fan
+  - sensor.cool1target
+  - input_select.ac1target
 
 ac2:
-  - sensor.trane_model_tzemt400bb32maa_temperature_4
-  - input_select.cool2
-  - climate.trane_model_tzemt400bb32maa_cooling_1_4
-  - climate.trane_model_tzemt400bb32maa_heating_1_4
+  - sensor.trane_model_tzemt400bb32maa_temperature_4_1
+  - sensor.cool2state
+  - sensor.cool2mode
+  - input_select.ac2operation
+  - sensor.cool2fan
+  - input_select.ac2fan
+  - sensor.cool2target
+  - input_select.ac2target
 
 ac3:
-  - sensor.trane_model_tzemt400bb32maa_temperature_5
-  - input_select.cool3
-  - climate.trane_model_tzemt400bb32maa_cooling_1_5
-  - climate.trane_model_tzemt400bb32maa_heating_1_5
+  - sensor.trane_model_tzemt400bb32maa_temperature_5_1
+  - sensor.cool3state
+  - sensor.cool3mode
+  - input_select.ac3operation
+  - sensor.cool3fan
+  - input_select.ac3fan
+  - sensor.cool3target
+  - input_select.ac3target
 
 garage:
-  - sensor.garage_door
-  - switch.ge_45603_plugin_appliance_module_switch_3
-  - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6
+  - switch.ge_45603_plugin_appliance_module_switch_3_0
+#  - sensor.garage_door
+  - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
 
 kitchen:
   - light.kitchen_lights
   - sensor.kitchen_temperature
   - sensor.kitchen_humidity
 
-living:
+family:
+  - light.unknown_id015d_unknown_type0111_id1f1c_level_10_0
   - switch.htpc
-#  - switch.modem
   - switch.dlink
 
 alarm:
@@ -78,6 +96,5 @@ alarm:
   - sensor.motion_office
 
 custom:
-  - input_select.test
   - hola.tipo
 

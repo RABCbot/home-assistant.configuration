@@ -1,29 +1,61 @@
-switch.unknown_id015d_unknown_type1111_id1e1c_switch_6:
+light.unknown_id015d_unknown_type0111_id1f1c_level_10_0:
+  friendly_name: Family Lights
+  icon: mdi:lightbulb-outline
+switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
-switch.ge_45603_plugin_appliance_module_switch_3:
-  friendly_name: Garage Clicker
-  icon: mdi:open-in-app
-climate.trane_model_tzemt400bb32maa_cooling_1_2:
-  friendly_name: Cool1
-climate.trane_model_tzemt400bb32maa_heating_1_2:
-  friendly_name: Heat1
-sensor.trane_model_tzemt400bb32maa_temperature_2:
-  friendly_name: Temp1
-climate.trane_model_tzemt400bb32maa_cooling_1_4:
-  friendly_name: Cool2
-climate.trane_model_tzemt400bb32maa_heating_1_4:
-  friendly_name: Heat2
-sensor.trane_model_tzemt400bb32maa_temperature_4:
-  friendly_name: Temp2
-climate.trane_model_tzemt400bb32maa_cooling_1_5:
-  friendly_name: Cool3
-climate.trane_model_tzemt400bb32maa_heating_1_5:
-  friendly_name: Heat3
-sensor.trane_model_tzemt400bb32maa_temperature_5:
-  friendly_name: Temp3
-sensor.garage_door:
+switch.ge_45603_plugin_appliance_module_switch_3_0:
   friendly_name: Garage Door
+  icon: mdi:open-in-app
+climate.trane_model_tzemt400bb32maa_cooling_1_2_2:
+  friendly_name: Cool1
+climate.trane_model_tzemt400bb32maa_heating_1_2_1:
+  friendly_name: Heat1
+sensor.trane_model_tzemt400bb32maa_temperature_2_1:
+  friendly_name: Temp1
+climate.trane_model_tzemt400bb32maa_cooling_1_4_2:
+  friendly_name: Cool2
+climate.trane_model_tzemt400bb32maa_heating_1_4_1:
+  friendly_name: Heat2
+sensor.trane_model_tzemt400bb32maa_temperature_4_1:
+  friendly_name: Temp2
+climate.trane_model_tzemt400bb32maa_cooling_1_5_2:
+  friendly_name: Cool3
+climate.trane_model_tzemt400bb32maa_heating_1_5_1:
+  friendly_name: Heat3
+sensor.trane_model_tzemt400bb32maa_temperature_5_1:
+  friendly_name: Temp3
+# AC State
+sensor.cool1state:
+  icon: mdi:run
+sensor.cool2state:
+  icon: mdi:run
+sensor.cool3state:
+  icon: mdi:run
+# AC Mode
+sensor.cool1mode:
+  icon: mdi:air-conditioner
+sensor.cool2mode:
+  icon: mdi:air-conditioner
+sensor.cool3mode:
+  icon: mdi:air-conditioner
+# AC Fan
+sensor.cool1fan:
+  icon: mdi:fan
+sensor.cool2fan:
+  icon: mdi:fan
+sensor.cool3fan:
+  icon: mdi:fan
+# AC target
+sensor.cool1target:
+  icon: mdi:target
+sensor.cool2target:
+  icon: mdi:target
+sensor.cool3target:
+  icon: mdi:target
+# Garage
+sensor.garage_door:
+  friendly_name: Garage State
   icon: mdi:glassdoor
 sensor.kitchen_temperature:
   friendly_name: Kitchen Temperature
@@ -57,10 +89,10 @@ sensor.weather_precip_probability:
   friendly_name: Rain Probability
   icon: mdi:weather-rainy
 switch.htpc:
-  friendly_name: PC Power
+  friendly_name: Family Computer
   icon: mdi:windows
 switch.dlink:
-  friendly_name: DLINK
+  friendly_name: Family Socket
   icon: mdi:power-socket
 
 
