@@ -6,8 +6,12 @@ ac1fan:
   name: Fan1
   options: !include options_ac_fan.yaml
 
-ac1target:
-  name: Target1
+cool1target:
+  name: CoolTarget1
+  options: !include options_ac_target.yaml
+
+heat1target:
+  name: HeatTarget1
   options: !include options_ac_target.yaml
 
 ac2operation:
@@ -18,8 +22,12 @@ ac2fan:
   name: Fan2
   options: !include options_ac_fan.yaml
 
-ac2target:
-  name: Target2
+cool2target:
+  name: CoolTarget2
+  options: !include options_ac_target.yaml
+
+heat2target:
+  name: HeatTarget2
   options: !include options_ac_target.yaml
 
 ac3operation:
@@ -30,6 +38,11 @@ ac3fan:
   name: Fan3
   options: !include options_ac_fan.yaml
 
-ac3target:
-  name: Target3
+cool3target:
+  name: CoolTarget3
   options: !include options_ac_target.yaml
+
+heat3target:
+  name: Haat3Target
+  options: !include options_ac_target.yaml
+

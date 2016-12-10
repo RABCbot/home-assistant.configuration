@@ -1,0 +1,119 @@
+ac1cool:
+  friendly_name: Cool1
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_2_2', 'operation_mode', 'Cool') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      operation_mode: Cool
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      operation_mode: Auto
+ac1heat:
+  friendly_name: Heat1
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_2_2', 'operation_mode', 'Heat') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      operation_mode: Heat
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      operation_mode: Auto
+ac1fan:
+  friendly_name: Fan1
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_2_2', 'fan_mode', 'On Low') }}"
+  turn_on:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      fan_mode: On Low
+  turn_off:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+    data_template:
+      fan_mode: Auto Low
+ac2cool:
+  friendly_name: Cool2
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_4_2', 'operation_mode', 'Cool') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      operation_mode: Cool
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      operation_mode: Auto
+ac2heat:
+  friendly_name: Heat2
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_4_2', 'operation_mode', 'Heat') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      operation_mode: Heat
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      operation_mode: Auto
+ac2fan:
+  friendly_name: Fan2
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_4_2', 'fan_mode', 'On Low') }}"
+  turn_on:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      fan_mode: On Low
+  turn_off:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      fan_mode: Auto Low
+ac3cool:
+  friendly_name: Cool3
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_5_2', 'operation_mode', 'Cool') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      operation_mode: Cool
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      operation_mode: Auto
+ac3heat:
+  friendly_name: Heat3
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_5_2', 'operation_mode', 'Heat') }}"
+  turn_on:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      operation_mode: Heat
+  turn_off:
+    service: climate.set_operation_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      operation_mode: Auto
+ac3fan:
+  friendly_name: Fan3
+  value_template: "{{ is_state_attr('climate.trane_model_tzemt400bb32maa_cooling_1_5_2', 'fan_mode', 'On Low') }}"
+  turn_on:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      fan_mode: On Low
+  turn_off:
+    service: climate.set_fan_mode
+    entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+    data_template:
+      fan_mode: Auto Low
+
+

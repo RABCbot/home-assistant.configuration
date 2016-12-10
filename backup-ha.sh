@@ -23,7 +23,7 @@ do
   curl -T $f ftp://192.168.101.1/Stick/Padre/$f
 done
 
-curl -T ../dasher/config/config.json ftp://192.168.101.1/Stick/Padre/dasher/config.json
+curl -T /srv/homeassistant/dasher/config/config.json ftp://192.168.101.1/Stick/Padre/dasher/config.json
 
 curl -T backup-ha.sh ftp://192.168.101.1/Stick/Padre/backup-ha.sh
 

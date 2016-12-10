@@ -1,26 +1,33 @@
+garage:
+  alias: Garage Door
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.ge_45603_plugin_appliance_module_switch_3_0
+
 ac1:
   alias: AC One
   sequence:
 #    - service: climate.set_operation_mode
 #      data:
-#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2
+#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
 #        operation_mode: Cool
     - service: climate.set_temperature
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
       data_template:
         temperature: >
-          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_2.attributes.temperature >= 78 %}
+          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.temperature >= 78 %}
             76
           {% else %}
             78
           {% endif %}
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
       data_template:
         fan_mode: >
-          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_2.attributes.temperature >= 78 %}
+          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.temperature >= 78 %}
             On Low
           {% else %}
             Auto Low
@@ -32,25 +39,25 @@ ac2:
   sequence:
 #    - service: climate.set_operation_mode
 #      data:
-#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
 #        operation_mode: Cool
     - service: climate.set_temperature
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
         temperature: 75
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
         fan_mode: On Low
     - delay:
         minutes: 45
     - service: climate.set_temperature
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
         temperature: 77
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
         fan_mode: Auto Low
 
 ac3:
@@ -58,24 +65,24 @@ ac3:
   sequence:
 #    - service: climate.set_operation_mode
 #      data:
-#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5
+#        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
 #        operation_mode: Cool
     - service: climate.set_temperature
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
       data_template:
         temperature: >
-          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_5.attributes.temperature >= 76 %}
+          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.temperature >= 76 %}
             75
           {% else %}
             76
           {% endif %}
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5
+        entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
       data_template:
         fan_mode: >
-          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_5.attributes.temperature >= 76 %}
+          {% if states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.temperature >= 76 %}
             On Low
           {% else %}
             Auto Low

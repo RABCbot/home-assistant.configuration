@@ -27,26 +27,33 @@ sensor.trane_model_tzemt400bb32maa_temperature_5_1:
   friendly_name: Temp3
 # AC State
 sensor.cool1state:
-  icon: mdi:run
+  icon: mdi:air-conditioner
 sensor.cool2state:
-  icon: mdi:run
+  icon: mdi:air-conditioner
 sensor.cool3state:
-  icon: mdi:run
-# AC Mode
-sensor.cool1mode:
   icon: mdi:air-conditioner
-sensor.cool2mode:
-  icon: mdi:air-conditioner
-sensor.cool3mode:
-  icon: mdi:air-conditioner
+# AC Cool
+switch.ac1cool:
+  icon: mdi:creation
+switch.ac2cool:
+  icon: mdi:creation
+switch.ac3cool:
+  icon: mdi:creation
+# AC Heat
+switch.ac1heat:
+  icon: mdi:radiator
+switch.ac2heat:
+  icon: mdi:radiator
+switch.ac3heat:
+  icon: mdi:radiator
 # AC Fan
-sensor.cool1fan:
+switch.ac1fan:
   icon: mdi:fan
-sensor.cool2fan:
+switch.ac2fan:
   icon: mdi:fan
-sensor.cool3fan:
+switch.ac3fan:
   icon: mdi:fan
-# AC target
+# AC Target
 sensor.cool1target:
   icon: mdi:target
 sensor.cool2target:
@@ -92,7 +99,7 @@ switch.htpc:
   friendly_name: Family Computer
   icon: mdi:windows
 switch.dlink:
-  friendly_name: Family Socket
+  friendly_name: Christmas Tree
   icon: mdi:power-socket
 
 

@@ -46,32 +46,35 @@ weather:
 ac1:
   - sensor.trane_model_tzemt400bb32maa_temperature_2_1
   - sensor.cool1state
-  - sensor.cool1mode
-  - input_select.ac1operation
-  - sensor.cool1fan
-  - input_select.ac1fan
+  - switch.ac1cool
+  - switch.ac1heat
+  - switch.ac1fan
   - sensor.cool1target
-  - input_select.ac1target
+  - input_select.cool1target
+  - sensor.heat1target
+  - input_select.heat1target
 
 ac2:
   - sensor.trane_model_tzemt400bb32maa_temperature_4_1
   - sensor.cool2state
-  - sensor.cool2mode
-  - input_select.ac2operation
-  - sensor.cool2fan
-  - input_select.ac2fan
+  - switch.ac2cool
+  - switch.ac2heat
+  - switch.ac2fan
   - sensor.cool2target
-  - input_select.ac2target
+  - input_select.cool2target
+  - sensor.heat2target
+  - input_select.heat2target
 
 ac3:
   - sensor.trane_model_tzemt400bb32maa_temperature_5_1
   - sensor.cool3state
-  - sensor.cool3mode
-  - input_select.ac3operation
-  - sensor.cool3fan
-  - input_select.ac3fan
+  - switch.ac3cool
+  - switch.ac3heat
+  - switch.ac3fan
   - sensor.cool3target
-  - input_select.ac3target
+  - input_select.cool3target
+  - sensor.heat3target
+  - input_select.heat3target
 
 garage:
   - switch.ge_45603_plugin_appliance_module_switch_3_0

@@ -9,3 +9,7 @@
   username: Admin
   password: !secret DLINK_KEY
 
+- platform: template
+  switches: !include template_switches.yaml
+
+

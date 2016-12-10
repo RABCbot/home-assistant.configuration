@@ -1,2 +1,2 @@
 usb_path: /dev/ttyACM0
-config_path: /home/pi/python-openzwave/openzwave/config
+config_path: /home/homeassistant/python-openzwave/openzwave/config
