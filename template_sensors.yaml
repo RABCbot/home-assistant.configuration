@@ -73,4 +73,12 @@ heat3target:
   value_template: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_5_1.attributes.temperature }}'
   entity_id:
     climate.trane_model_tzemt400bb32maa_heating_1_5_1
-
+garage_position:
+  value_template: > 
+    {% if states('sensor.esp_1668c4_dist') | float > 20.0 %}
+      Closed
+    {% else %}
+      Open
+    {% endif %}
+  entity_id:
+    sensor.esp_1668c4_dist

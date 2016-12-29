@@ -12,4 +12,10 @@
 - platform: template
   switches: !include template_switches.yaml
 
+- platform: mqtt
+  name: "ESP_1668C4_Relay"
+  command_topic: "home/ESP_1668C4/relay/set"
+  payload_on: "1"
+  payload_off: "0"
+
 

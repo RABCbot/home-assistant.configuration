@@ -4,11 +4,10 @@ default_view:
     - sun.sun
     - device_tracker.padre_s6
     - device_tracker.chuchi_s7
-    - countdown.rogueone
+#    - countdown.rogueone
     - sensor.trane_model_tzemt400bb32maa_temperature_2_1
     - sensor.trane_model_tzemt400bb32maa_temperature_4_1
     - sensor.trane_model_tzemt400bb32maa_temperature_5_1
-    - group.shortcuts
     - group.weather
 
 climate_view:
@@ -30,12 +29,10 @@ demo_view:
   view: yes
   name: Demo
   entities:
+    - group.esp8266
     - group.custom
     - group.alarm
     - group.kitchen
-
-shortcuts:
-  - script.ac2
 
 weather:
   - sensor.weather_summary
@@ -77,8 +74,12 @@ ac3:
   - input_select.heat3target
 
 garage:
+  - sensor.ESP_1668C4_Temp
+  - sensor.ESP_1668C4_Humid
+  - sensor.garage_position
+#  - sensor.ESP_1668C4_Dist
+  - switch.ESP_1668C4_Relay
   - switch.ge_45603_plugin_appliance_module_switch_3_0
-#  - sensor.garage_door
   - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
 
 kitchen:
@@ -96,8 +97,4 @@ alarm:
   - sensor.back_door
   - sensor.deck_door
   - sensor.motion_family
-  - sensor.motion_office
-
-custom:
-  - hola.tipo
-
+  - sensor.ESP_165A0C_Motion

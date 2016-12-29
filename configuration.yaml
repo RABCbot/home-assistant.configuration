@@ -4,6 +4,7 @@ history:
 logbook:
 logger: !include logger.yaml
 sun:
+emulated_hue: !include hue.yaml
 mqtt: !include mqtt.yaml
 device_tracker: !include devicetracker.yaml
 zone: !include zones.yaml

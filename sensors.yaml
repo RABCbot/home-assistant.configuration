@@ -4,6 +4,22 @@
   sensors: !include template_sensors.yaml
 
 - platform: mqtt
+  name: "ESP_1668C4_Temp"
+  state_topic: "home/ESP_1668C4/temperature"
+
+- platform: mqtt
+  name: "ESP_1668C4_Humid"
+  state_topic: "home/ESP_1668C4/humidity"
+
+- platform: mqtt
+  name: "ESP_1668C4_Dist"
+  state_topic: "home/ESP_1668C4/distance"
+
+- platform: mqtt
+  name: "ESP_165A0C_Motion"
+  state_topic: "home/ESP_165A0C/motion"
+
+- platform: mqtt
   name: "Garage Door"
   state_topic: "home/garage/door"
 

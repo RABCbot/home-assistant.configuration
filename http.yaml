@@ -1,0 +1,5 @@
+api_password: !secret API_PASSWORD
+ssl_certificate: /srv/homeassistant/certificate/certificate.pem
+ssl_key: /srv/homeassistant/certificate/hass.pem
+
+
