@@ -1,6 +1,6 @@
 {"buttons":[
   {
-    "name": "Dash Finish",
+    "name": "Dash Finish - HTPC",
     "address": "44:65:0d:76:f5:70",
     "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
     "method": "POST",
@@ -8,28 +8,28 @@
     "body": {"entity_id": "switch.htpc"}
   },
   {
-    "name": "Dash Vita",
+    "name": "Dash Vita - AC2",
     "address": "f0:27:2d:cb:d0:fb",
-    "url": "http://192.168.101.113:8123/api/services/script/ac2",
+    "url": "http://192.168.101.113:8123/api/services/script/ac2good",
     "method": "POST",
     "json": true,
-    "body": {"entity_id": "script.ac2"}
+    "body": {"entity_id": "script.ac2good"}
   },
   {
     "name": "Dash All",
     "address": "44:65:0d:3d:d5:fe",
-    "url": "http://192.168.101.113:8123/api/services/hola/action",
+    "url": "http://192.168.101.113:8123/api/services/script/allgood",
     "method": "POST",
     "json": true,
-    "body": {"quien":"All"}
+    "body": {"entity_id":"script.allgood"}
   },
   {
-    "name": "Dash Rayovac",
+    "name": "Dash Rayovac - Garage Door",
     "address": "a0:02:dc:f4:91:9e",
-    "url": "http://192.168.101.113:8123/api/services/script/garage",
+    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
     "method": "POST",
     "json": true,
-    "body": {"entity_id":"script.garage"}
+    "body": {"entity_id":"switch.ge_45603_plugin_appliance_module_switch_3_0"}
   },
   {
     "name": "Dash Clorox",
