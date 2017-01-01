@@ -4,16 +4,20 @@
     event: sunset
     offset: '-00:05:00'
   action:
-    service: switch.turn_on
-    entity_id: switch.dlink
+    - service: switch.turn_on
+      entity_id: switch.dlink
+    - service: script.turn_on
+      entity_id: script.ac1default
 
 - alias: BedTime
   trigger:
     platform: time
     after: '22:30:00'
   action:
-    service: switch.turn_off
-    entity_id: switch.dlink
+    - service: switch.turn_off
+      entity_id: switch.dlink
+    - service: script.turn_on
+      entity_id: script.ac2default
 
 - alias: Midnight
   trigger:
@@ -29,8 +33,8 @@
     state: 'not_home'
   condition:
     condition: state
-    entity_id: sensor.garage_door
-    state: 'open'
+    entity_id: sensor.garage_position
+    state: 'Open'
   action:
     service: notify.twitter
     data:

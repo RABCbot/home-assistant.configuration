@@ -25,14 +25,11 @@ control_view:
     - group.family
     - group.garage
 
-demo_view:
+alarmdemo_view:
   view: yes
-  name: Demo
+  name: Alarm
   entities:
-    - group.esp8266
-    - group.custom
-    - group.alarm
-    - group.kitchen
+    - sensor.ESP_165A0C_Motion
 
 weather:
   - sensor.weather_summary
@@ -82,19 +79,7 @@ garage:
   - switch.ge_45603_plugin_appliance_module_switch_3_0
   - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
 
-kitchen:
-  - light.kitchen_lights
-  - sensor.kitchen_temperature
-  - sensor.kitchen_humidity
-
 family:
   - light.unknown_id015d_unknown_type0111_id1f1c_level_10_0
   - switch.htpc
   - switch.dlink
-
-alarm:
-  - sensor.front_door
-  - sensor.back_door
-  - sensor.deck_door
-  - sensor.motion_family
-  - sensor.ESP_165A0C_Motion
