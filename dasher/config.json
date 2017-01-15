@@ -1,11 +1,11 @@
 {"buttons":[
   {
-    "name": "Dash Finish - HTPC",
+    "name": "Dash Finish - Family Computer",
     "address": "44:65:0d:76:f5:70",
-    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
+    "url": "http://192.168.101.113:8123/api/services/script/family_computer",
     "method": "POST",
     "json": true,
-    "body": {"entity_id": "switch.htpc"}
+    "body": {"entity_id": "script.family_computer"}
   },
   {
     "name": "Dash Vita - AC2",
@@ -26,10 +26,10 @@
   {
     "name": "Dash Rayovac - Garage Door",
     "address": "a0:02:dc:f4:91:9e",
-    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
+    "url": "http://192.168.101.113:8123/api/services/script/garage_door",
     "method": "POST",
     "json": true,
-    "body": {"entity_id":"switch.ge_45603_plugin_appliance_module_switch_3_0"}
+    "body": {"entity_id":"script.garage_door"}
   },
   {
     "name": "Dash Clorox",
@@ -41,11 +41,11 @@
   },
   {
     "name": "Dash Dietcoke",
-    "address": "xx:xx:xx:xx:xx:xx",
-    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
+    "address": "50:f5:da:7b:aa:ad",
+    "url": "http://192.168.101.113:8123/api/services/hola/action",
     "method": "POST",
     "json": true,
-    "body": {"entity_id":"switch.dlink"}
+    "body": {"quien":"Dietcoke"}
   }
 
 ]}
