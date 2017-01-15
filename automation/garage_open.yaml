@@ -1,0 +1,14 @@
+alias: Garage Left Open
+trigger:
+  platform: state
+  entity_id: device_tracker.padre_s6
+  state: 'not_home'
+condition:
+  condition: state
+  entity_id: sensor.garage_position
+  state: 'Open'
+action:
+  service: notify.twitter
+  data:
+    message: Dejastes el garage abierto
+

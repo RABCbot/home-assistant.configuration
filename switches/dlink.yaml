@@ -1,0 +1,5 @@
+- platform: dlink
+  host: !secret DLINK_HOST
+  name: dlink
+  username: Admin
+  password: !secret DLINK_KEY

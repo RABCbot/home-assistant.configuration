@@ -1,0 +1,9 @@
+alias: Cool1Target
+trigger:
+  platform: state
+  entity_id: input_select.cool1target
+action:
+  service: climate.set_temperature
+  entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+  data_template:
+    temperature: "{{ states('input_select.cool1target') }}"

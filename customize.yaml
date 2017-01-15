@@ -1,3 +1,20 @@
+sensor.dark_sky_summary:
+  friendly_name: Current Summary
+  icon: mdi:sunglasses
+sensor.dark_sky_temperature:
+  friendly_name: Current Temperature
+sensor.dark_sky_humidity:
+  friendly_name: Current Humidity
+sensor.dark_sky_precip_probability:
+  friendly_name: Rain Probability
+  icon: mdi:umbrella
+sensor.dark_sky_pressure:
+  friendly_name: Current Pressure
+sensor.cpu_use:
+  icon: mdi:chip
+sensor.dasher:
+  friendly_name: Dash Button
+  icon: mdi:adjust
 #
 # SCRIPT
 #
@@ -23,6 +40,15 @@ script.ac2good:
   friendly_name: Two Good
 script.allgood:
   friendly_name: All Good
+script.family_computer:
+  friendly_name: Family Computer
+  icon: mdi:windows
+script.reset_computer:
+  friendly_name: Reset Computer
+  icon: mdi:restart
+script.garage_door:
+  friendly_name: Garage Door
+  icon: mdi:open-in-app
 #
 # LIGHT
 #
@@ -36,8 +62,7 @@ switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
 switch.ge_45603_plugin_appliance_module_switch_3_0:
-  friendly_name: Garage Door
-  icon: mdi:open-in-app
+  friendly_name: OJO Zwave Switch
 #
 # CLIMATE
 #
@@ -98,40 +123,6 @@ sensor.heat2target:
   icon: mdi:target
 sensor.heat3target:
   icon: mdi:target
-sensor.kitchen_temperature:
-  friendly_name: Kitchen Temperature
-  icon: mdi:temperature-fahrenheit
-sensor.kitchen_humidity:
-  friendly_name: Kitchen Humidity
-  icon: mdi:water-percent
-switch.kitchen_lights:
-  friendly_name: Kitchen Lights
-  icon: mdi:lightbulb-outline
-sensor.front_door:
-  icon: mdi:alert
-sensor.deck_door:
-  icon: mdi:alert
-sensor.motion_family:
-  icon: mdi:alert
-sensor.motion_office:
-  icon: mdi:alert
-sensor.back_door:
-  icon: mdi:alert
-sensor.weather_summary:
-  friendly_name: Weather Summary
-  icon: mdi:weather-sunny
-sensor.weather_temperature:
-  friendly_name: Weather Temperature
-  icon: mdi:temperature-fahrenheit
-sensor.weather_humidity:
-  friendly_name: Weather Humidity
-  icon: mdi:water-percent
-sensor.weather_precip_probability:
-  friendly_name: Rain Probability
-  icon: mdi:weather-rainy
-switch.htpc:
-  friendly_name: Family Computer
-  icon: mdi:windows
 switch.dlink:
   friendly_name: Christmas Lights
   icon: mdi:power-socket

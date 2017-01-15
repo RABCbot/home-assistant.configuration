@@ -1,0 +1,11 @@
+sequence:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.family_computer
+  - delay:
+      seconds: 30
+  - service: switch.turn_off
+    data:
+      entity_id: switch.family_computer
+
+

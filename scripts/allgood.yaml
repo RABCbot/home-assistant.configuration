@@ -1,0 +1,19 @@
+sequence:
+  - service: script.turn_on
+    data:
+      entity_id: script.ac1default
+  - service: script.turn_on
+    data:
+      entity_id: script.ac2default
+  - service: script.turn_on
+    data:
+      entity_id: script.ac3default
+  - service: switch.turn_off
+    data:
+      entity_id: switch.dlink
+  - service: switch.turn_off
+    data:
+      entity_id: switch.ge_45603_plugin_appliance_module_switch_3_0
+  - service: switch.turn_off
+    data:
+      entity_id: switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0

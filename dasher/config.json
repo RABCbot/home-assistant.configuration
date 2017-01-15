@@ -38,5 +38,14 @@
     "method": "POST",
     "json": true,
     "body": {"quien":"Clorox"}
+  },
+  {
+    "name": "Dash Dietcoke",
+    "address": "xx:xx:xx:xx:xx:xx",
+    "url": "http://192.168.101.113:8123/api/services/switch/turn_on",
+    "method": "POST",
+    "json": true,
+    "body": {"entity_id":"switch.dlink"}
   }
+
 ]}

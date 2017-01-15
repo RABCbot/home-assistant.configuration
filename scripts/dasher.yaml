@@ -1,0 +1,2 @@
+sequence:
+  - service: script.start_dasher

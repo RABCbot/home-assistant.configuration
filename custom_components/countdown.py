@@ -6,11 +6,11 @@ _LOGGER = logging.getLogger(__name__)
 DOMAIN = 'Countdown'
 
 def setup(hass, config):
-    entity_id = 'Countdown.RogueOne'
+    entity_id = 'Countdown.Christmas'
 
     def DaysLeft():
       d1 = date.today()
-      d2 = date(2016,12,16)
+      d2 = date(2016,12,25)
       d = d2.toordinal() - d1.toordinal()
       s = '%s days' % d
       return s

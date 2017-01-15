@@ -1,0 +1,10 @@
+alias: Sunset
+trigger:
+  platform: sun
+  event: sunset
+  offset: '-00:05:00'
+action:
+#  - service: switch.turn_on
+#    entity_id: switch.dlink
+  - service: script.turn_on
+    entity_id: script.ac1default

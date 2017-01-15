@@ -1,0 +1,7 @@
+sequence:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+    data_template:
+      temperature: >
+       {{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.current_temperature - 1 }}

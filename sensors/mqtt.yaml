@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: "ESP_1668C4_Temp"
+  state_topic: "home/ESP_1668C4/temperature"
+  unit_of_measurement: "F"
+
+- platform: mqtt
+  name: "ESP_1668C4_Humid"
+  state_topic: "home/ESP_1668C4/humidity"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "ESP_1668C4_Dist"
+  state_topic: "home/ESP_1668C4/distance"
+
+- platform: mqtt
+  name: "ESP_165A0C_Motion"
+  state_topic: "home/ESP_165A0C/motion"
+
+- platform: mqtt
+  name: "ESP_165A0C_Analog"
+  state_topic: "home/ESP_165A0C/analog"

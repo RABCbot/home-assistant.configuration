@@ -3,22 +3,25 @@ frontend:
 history:
 logbook:
 logger: !include logger.yaml
+recorder:
+  purge_days: 8
 sun:
 emulated_hue: !include hue.yaml
 mqtt: !include mqtt.yaml
-device_tracker: !include devicetracker.yaml
+device_tracker: !include owntracks.yaml
 zone: !include zones.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-light: !include lights.yaml
+sensor: !include_dir_merge_list sensors
+switch: !include_dir_merge_list switches
+light: !include_dir_merge_list lights
 notify: !include notify.yaml
 group: !include groups.yaml
-automation: !include automation.yaml
+automation: !include_dir_list automation
 input_select: !include selections.yaml
 # weblink: !include weblinks.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
-script: !include scripts.yaml
+script: !include_dir_named scripts
+shell_command: !include shellcmds.yaml
 
 # Custom Components
 hola:

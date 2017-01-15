@@ -1,0 +1,17 @@
+sequence:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+      temperature: 78
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane_model_tzemt400bb32maa_heating_1_2_1
+      temperature: 63
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+      fan_mode: Auto Low
+  - service: climate.set_operation_mode
+    data:
+      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+      operation_mode: Auto

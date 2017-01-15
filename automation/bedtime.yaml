@@ -1,0 +1,9 @@
+alias: BedTime
+trigger:
+  platform: time
+  after: '22:30:00'
+action:
+#  - service: switch.turn_off
+#    entity_id: switch.dlink
+  - service: script.turn_on
+    entity_id: script.ac2default
