@@ -1,0 +1,4 @@
+- platform: speedtest
+  monitored_conditions:
+    - download
+

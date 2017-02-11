@@ -9,7 +9,6 @@ default_view:
     - sensor.trane_model_tzemt400bb32maa_temperature_4_1
     - sensor.trane_model_tzemt400bb32maa_temperature_5_1
     - group.weather
-    - group.rpi
 
 climate_view:
   view: yes
@@ -27,11 +26,13 @@ control_view:
     - group.garage
     - group.laundry
 
-alarm_view:
+system_view:
   view: yes
-  name: Alarm
+  name: System
   entities:
-    - group.esp
+    - group.rpi
+    - group.hass
+    - group.test
 
 weather:
   - sensor.dark_sky_summary
@@ -39,12 +40,7 @@ weather:
   - sensor.dark_sky_humidity
   - sensor.dark_sky_precip_probability
   - sensor.dark_sky_pressure
-
-rpi:
-  - sensor.cpu_use
-  - sensor.disk_use_
-  - sensor.ram_use
-  - sensor.dasher
+  - sensor.dark_sky_wind_speed
 
 ac1:
   - sensor.trane_model_tzemt400bb32maa_temperature_2_1
@@ -83,8 +79,7 @@ garage:
   - sensor.ESP_1668C4_Temp
   - sensor.ESP_1668C4_Humid
   - sensor.garage_position
-#  - sensor.ESP_1668C4_Dist
-  - switch.ESP_1668C4_Relay
+  - switch.garage_clicker
   - script.garage_door
   - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
 
@@ -98,6 +93,20 @@ laundry:
   - sensor.ESP_165A0C_Analog
   - sensor.dryer_state
 
-esp:
+rpi:
+  - sensor.cpu_use
+  - sensor.disk_use_
+  - sensor.ram_use
+
+hass:
+  - sensor.dasher
+  - sensor.mosquitto
+  - homeassistant.reload_core_config
+  - homeassistant.restart
+
+test:
   - sensor.ESP_165A0C_Motion
   - sensor.ESP_165A0C_Analog
+  - sensor.ESP_1668C4_Dist
+  - sensor.ESP_1668C4_Relay
+  - switch.toasty

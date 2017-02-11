@@ -1,0 +1,3 @@
+sequence:
+  - service: mqtt.publish
+    data: {"payload": "La comida esta lista", "topic": "toasty/info"}

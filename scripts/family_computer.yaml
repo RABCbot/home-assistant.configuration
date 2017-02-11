@@ -1,9 +1,10 @@
 sequence:
+  - service: tts.google_say
+    data:
+      message: OK Dave, I'm afraid I will do that
   - service: switch.turn_on
     data:
       entity_id: switch.family_computer
-  - delay:
-      seconds: 4
   - service: switch.turn_off
     data:
       entity_id: switch.family_computer

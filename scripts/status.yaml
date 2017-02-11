@@ -1,0 +1,4 @@
+sequence:
+  - service: tts.google_say
+    data_template:
+      message: Outside temperature is {{states('sensor.dark_sky_temperature')}}

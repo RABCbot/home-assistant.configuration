@@ -1,0 +1,7 @@
+sequence:
+  - service: mqtt.publish
+    data: {"payload": "1", "topic": "home/adc"}
+
+
+
+

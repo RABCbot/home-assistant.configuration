@@ -1,3 +1,6 @@
+sensor.dark_sky_wind_speed:
+  friendly_name: Wind Speed
+  icon: mdi:weather-windy-variant
 sensor.dark_sky_summary:
   friendly_name: Current Summary
   icon: mdi:sunglasses
@@ -18,6 +21,10 @@ sensor.dasher:
 #
 # SCRIPT
 #
+script.toasty_call:
+  friendly_name: Call Signal
+script.toasty_food:
+  friendly_name: Food Signal
 script.ac1default:
   friendly_name: One Out
 script.ac1up:
@@ -45,7 +52,7 @@ script.family_computer:
   icon: mdi:windows
 script.reset_computer:
   friendly_name: Reset Computer
-  icon: mdi:restart
+  icon: mdi:windows
 script.garage_door:
   friendly_name: Garage Door
   icon: mdi:open-in-app
@@ -139,9 +146,9 @@ sensor.garage_position:
   friendly_name: Garage Position
   icon: mdi:glassdoor
 sensor.ESP_1668C4_Dist:
-  friendly_name: Garage State
+  friendly_name: Garage Distance
   icon: mdi:glassdoor
-switch.ESP_1668C4_Relay:
+switch.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:open-in-app
 
