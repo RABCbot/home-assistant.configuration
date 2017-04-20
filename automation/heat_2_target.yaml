@@ -1,9 +1,0 @@
-alias: Heat2Target
-trigger:
-  platform: state
-  entity_id: input_select.heat2target
-action:
-  service: climate.set_temperature
-  entity_id: climate.trane_model_tzemt400bb32maa_heating_1_4_1
-  data_template:
-    temperature: "{{ states('input_select.heat2target') }}"
