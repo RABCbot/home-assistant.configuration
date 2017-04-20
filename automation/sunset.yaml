@@ -2,7 +2,7 @@ alias: Sunset
 trigger:
   platform: sun
   event: sunset
-  offset: '-00:05:00'
+  offset: '-00:15:00'
 action:
 #  - service: switch.turn_on
 #    entity_id: switch.dlink

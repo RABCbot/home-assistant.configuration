@@ -5,7 +5,7 @@
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.operating_state }}'
       entity_id:
         climate.trane_model_tzemt400bb32maa_cooling_1_2_2
-    cool1mode:
+    ac1mode:
       friendly_name: Mode1
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.operation_mode }}'
       entity_id:
@@ -30,7 +30,7 @@
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.operating_state }}'
       entity_id:
         climate.trane_model_tzemt400bb32maa_cooling_1_4_2
-    cool2mode:
+    ac2mode:
       friendly_name: Mode2
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.operation_mode }}'
       entity_id:
@@ -55,7 +55,7 @@
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.operating_state }}'
       entity_id:
         climate.trane_model_tzemt400bb32maa_cooling_1_5_2
-    cool3mode:
+    ac3mode:
       friendly_name: Mode3
       value_template: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.operation_mode }}'
       entity_id:

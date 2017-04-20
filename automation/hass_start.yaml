@@ -1,0 +1,8 @@
+alias: Hass started
+trigger:
+  platform: event
+  event_type: homeassistant_start
+action:
+  - service: mqtt.publish
+    data:
+      topic: 'home/status'

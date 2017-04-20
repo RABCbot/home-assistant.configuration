@@ -2,11 +2,3 @@ broker: localhost
 port: 1883
 keepalive: 60
 username: hass
-birth_message:
-  topic: 'hass/status'
-  payload: 'online'
-will_message:
-  topic: 'hass/status'
-  payload: 'offline'
-
-

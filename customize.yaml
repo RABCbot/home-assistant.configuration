@@ -16,7 +16,7 @@ sensor.dark_sky_pressure:
 sensor.cpu_use:
   icon: mdi:chip
 sensor.dasher:
-  friendly_name: Dash Button
+  friendly_name: Dasher
   icon: mdi:adjust
 #
 # SCRIPT
@@ -94,6 +94,12 @@ climate.trane_model_tzemt400bb32maa_heating_1_5_1:
 #
 sensor.trane_model_tzemt400bb32maa_temperature_5_1:
   friendly_name: Temp3
+sensor.ac1mode:
+  icon: mdi:air-conditioner
+sensor.ac2mode:
+  icon: mdi:air-conditioner
+sensor.ac3mode:
+  icon: mdi:air-conditioner
 sensor.cool1state:
   icon: mdi:air-conditioner
 sensor.cool2state:
@@ -118,6 +124,18 @@ switch.ac2fan:
   icon: mdi:fan
 switch.ac3fan:
   icon: mdi:fan
+input_select.cool1target:
+  icon: mdi:target
+input_select.cool2target:
+  icon: mdi:target
+input_select.cool3target:
+  icon: mdi:target
+input_select.heat1target:
+  icon: mdi:target
+input_select.heat2target:
+  icon: mdi:target
+input_select.heat3target:
+  icon: mdi:target
 sensor.cool1target:
   icon: mdi:target
 sensor.cool2target:
@@ -133,6 +151,11 @@ sensor.heat3target:
 switch.dlink:
   friendly_name: Christmas Lights
   icon: mdi:power-socket
+#
+# INPUT
+#
+input_boolean.armed:
+  icon: mdi:security-home
 #
 # ESP8266
 #

@@ -34,18 +34,18 @@
   {
     "name": "Dash Clorox",
     "address": "74:c2:46:c1:7f:62",
-    "url": "http://192.168.101.113:8123/api/services/hola/action",
+    "url": "http://192.168.101.113:8123/api/services/textbox/set_text",
     "method": "POST",
     "json": true,
-    "body": {"quien":"Clorox"}
+    "body": {"text":"Clorox"}
   },
   {
     "name": "Dash Dietcoke",
     "address": "50:f5:da:7b:aa:ad",
-    "url": "http://192.168.101.113:8123/api/services/hola/action",
+    "url": "http://192.168.101.113:8123/api/services/textbox/set_text",
     "method": "POST",
     "json": true,
-    "body": {"quien":"Dietcoke"}
+    "body": {"text":"Dietcoke"}
   }
-
 ]}
+

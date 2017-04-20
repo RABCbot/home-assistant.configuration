@@ -9,3 +9,10 @@
   picture: /local/padre.jpg
   track: yes
   hide_if_away: no
+
+!secret TRACKER_HIJO2:
+  name: Hijo
+  picture: /local/hijo2.jpg
+  track: yes
+  hide_if_away: no
+

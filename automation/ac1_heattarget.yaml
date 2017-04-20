@@ -1,0 +1,12 @@
+alias: ac1 heat target selected
+trigger:
+  platform: state
+  entity_id: input_select.heat1target
+condition:
+  condition: template
+  value_template: '{{ states.input_select.heat1target.state != states.climate.trane_model_tzemt400bb32maa_heating_1_2_1.attributes.temperature }}'
+action:
+  service: climate.set_temperature
+  entity_id: climate.trane_model_tzemt400bb32maa_heating_1_2_1
+  data_template:
+    temperature: "{{ states('input_select.heat1target') }}"

@@ -48,10 +48,13 @@ do
   curl -T $f ftp://192.168.101.1/Stick/Padre/$f
 done
 
-curl -T /srv/homeassistant/dasher/config/config.json ftp://192.168.101.1/Stick/Padre/dasher/config.json
+curl -T /home/homeassistant/dasher/config/config.json ftp://192.168.101.1/Stick/Padre/dasher/config.json
 
 curl -T /etc/mosquitto/mosquitto.conf ftp://192.168.101.1/Stick/Padre/mosquitto/mosquitto.conf
 
 curl -T backup.sh ftp://192.168.101.1/Stick/Padre/backup.sh
+
+curl -T restore.sh ftp://192.168.101.1/Stick/Padre/restore.sh
+
 
 

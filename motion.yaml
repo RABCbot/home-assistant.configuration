@@ -1,0 +1,9 @@
+alias: Motion
+trigger:
+  platform: state
+  entity_id: sensor.esp_165a0c_motion
+  to: 1
+action:
+  service: tts.google_say
+  data:
+    message: 'Quien esta en la cocina?"

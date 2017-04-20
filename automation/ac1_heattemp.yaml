@@ -1,0 +1,10 @@
+alias: ac1 change on heat temp
+trigger:
+  platform: state
+  entity_id: climate.trane_model_tzemt400bb32maa_heating_1_2_1
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.heat1target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_2_1.attributes.temperature }}'

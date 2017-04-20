@@ -1,4 +1,8 @@
 sequence:
+  - service: tts.google_say
+    data:
+      language: en
+      message: Setting defauls
   - service: script.turn_on
     data:
       entity_id: script.ac1default

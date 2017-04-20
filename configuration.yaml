@@ -17,6 +17,7 @@ notify: !include notify.yaml
 group: !include groups.yaml
 automation: !include_dir_list automation
 input_select: !include selections.yaml
+input_boolean: !include input.yaml
 # weblink: !include weblinks.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
@@ -24,9 +25,4 @@ media_player: !include vlc.yaml
 tts: !include tts.yaml
 script: !include_dir_named scripts
 shell_command: !include shellcmds.yaml
-
-# Custom Components
-hola:
-  - name: ricardo
-# panel_custom: !include react.yaml
-countdown:
+textbox:

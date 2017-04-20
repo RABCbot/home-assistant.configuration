@@ -1,25 +1,32 @@
 default_view:
   view: yes
+  icon: mdi:home
   entities:
     - sun.sun
     - device_tracker.padre_s6
     - device_tracker.chuchi_s7
-#    - countdown.rogueone
+    - device_tracker.christian_s5
     - sensor.trane_model_tzemt400bb32maa_temperature_2_1
     - sensor.trane_model_tzemt400bb32maa_temperature_4_1
     - sensor.trane_model_tzemt400bb32maa_temperature_5_1
+    - group.alarm
     - group.weather
 
 climate_view:
   view: yes
+  icon: mdi:air-conditioner
   name: Climate
   entities:
     - group.ac1
-    - group.ac3
     - group.ac2
+    - group.ac3
+    - group.ac1adv
+    - group.ac2adv
+    - group.ac3adv
 
 control_view:
   view: yes
+  icon: mdi:apple-keyboard-command
   name: Control
   entities:
     - group.family
@@ -28,11 +35,15 @@ control_view:
 
 system_view:
   view: yes
+  icon: mdi:settings
   name: System
   entities:
     - group.rpi
     - group.hass
     - group.test
+
+alarm:
+  - input_boolean.armed
 
 weather:
   - sensor.dark_sky_summary
@@ -45,53 +56,62 @@ weather:
 ac1:
   - sensor.trane_model_tzemt400bb32maa_temperature_2_1
   - sensor.cool1state
-  - switch.ac1cool
-  - switch.ac1heat
-  - switch.ac1fan
-  - sensor.cool1target
   - input_select.cool1target
-  - sensor.heat1target
   - input_select.heat1target
 
 ac2:
   - sensor.trane_model_tzemt400bb32maa_temperature_4_1
   - sensor.cool2state
-  - switch.ac2cool
-  - switch.ac2heat
-  - switch.ac2fan
-  - sensor.cool2target
   - input_select.cool2target
-  - sensor.heat2target
   - input_select.heat2target
 
 ac3:
   - sensor.trane_model_tzemt400bb32maa_temperature_5_1
   - sensor.cool3state
-  - switch.ac3cool
-  - switch.ac3heat
-  - switch.ac3fan
-  - sensor.cool3target
   - input_select.cool3target
-  - sensor.heat3target
   - input_select.heat3target
 
+ac1adv:
+  control: hidden
+  entities:
+    - sensor.ac1mode
+    - switch.ac1cool
+    - switch.ac1heat
+    - switch.ac1fan
+
+ac2adv:
+  control: hidden
+  entities:
+    - sensor.ac2mode
+    - switch.ac2cool
+    - switch.ac2heat
+    - switch.ac2fan
+
+ac3adv:
+  control: hidden
+  entities:
+    - sensor.ac3mode
+    - switch.ac3cool
+    - switch.ac3heat
+    - switch.ac3fan
+
 garage:
-  - sensor.ESP_1668C4_Temp
-  - sensor.ESP_1668C4_Humid
-  - sensor.garage_position
-  - switch.garage_clicker
-  - script.garage_door
-  - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
+  control: hidden
+  entities:
+    - sensor.ESP_1668C4_Temp
+    - sensor.ESP_1668C4_Humid
+    - sensor.garage_position
+    - switch.garage_clicker
+    - script.garage_door
+    - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
 
 family:
-  - light.unknown_id015d_unknown_type0111_id1f1c_level_10_0
-  - script.family_computer
-  - script.reset_computer
-  - switch.dlink
-
-laundry:
-  - sensor.ESP_165A0C_Analog
-  - sensor.dryer_state
+  control: hidden
+  entities:
+    - light.unknown_id015d_unknown_type0111_id1f1c_level_10_0
+    - script.family_computer
+    - script.reset_computer
+    - switch.dlink
 
 rpi:
   - sensor.cpu_use
@@ -101,12 +121,12 @@ rpi:
 hass:
   - sensor.dasher
   - sensor.mosquitto
-  - homeassistant.reload_core_config
-  - homeassistant.restart
 
 test:
   - sensor.ESP_165A0C_Motion
   - sensor.ESP_165A0C_Analog
   - sensor.ESP_1668C4_Dist
-  - sensor.ESP_1668C4_Relay
-  - switch.toasty
+  - textbox.hola
+
+
+  

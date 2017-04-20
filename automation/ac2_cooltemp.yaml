@@ -1,0 +1,10 @@
+alias: ac2_cooltemp
+trigger:
+  platform: state
+  entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool2target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.temperature }}'

@@ -1,24 +1,23 @@
 cool1target:
   name: CoolTarget1
-  options: !include target_temp.yaml
+  options: !include target_cool.yaml
 
 heat1target:
   name: HeatTarget1
-  options: !include target_temp.yaml
+  options: !include target_heat.yaml
 
 cool2target:
   name: CoolTarget2
-  options: !include target_temp.yaml
+  options: !include target_cool.yaml
 
 heat2target:
   name: HeatTarget2
-  options: !include target_temp.yaml
+  options: !include target_heat.yaml
 
 cool3target:
   name: CoolTarget3
-  options: !include target_temp.yaml
+  options: !include target_cool.yaml
 
 heat3target:
   name: Haat3Target
-  options: !include target_temp.yaml
-
+  options: !include target_heat.yaml

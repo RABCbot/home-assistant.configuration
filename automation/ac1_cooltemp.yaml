@@ -1,0 +1,10 @@
+alias: ac1 change on cool temp
+trigger:
+  platform: state
+  entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_2_2
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool1target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.temperature }}'
