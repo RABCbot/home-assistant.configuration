@@ -1,6 +1,0 @@
-DOMAIN = 'hola'
-
-def setup(hass, config):
-    hass.states.set('hola.tipo', 'Ricardo')
-
-    return True
