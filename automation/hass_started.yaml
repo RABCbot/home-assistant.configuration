@@ -1,0 +1,49 @@
+alias: Hass started
+trigger:
+  platform: event
+  event_type: homeassistant_start
+action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.hass_booting
+  - service: mqtt.publish
+    data:
+      topic: 'home/status'
+  - delay:
+      seconds: 150
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool1target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.temperature }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool2target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.temperature }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool3target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.temperature }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.heat1target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_2_1.attributes.temperature }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.heat2target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_4_1.attributes.temperature }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.heat3target
+    data_template:
+      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_5_1.attributes.temperature }}'
+  - delay:
+      seconds: 15
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.hass_booting
+

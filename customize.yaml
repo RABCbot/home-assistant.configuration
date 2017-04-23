@@ -73,68 +73,74 @@ switch.ge_45603_plugin_appliance_module_switch_3_0:
 #
 # CLIMATE
 #
-climate.trane_model_tzemt400bb32maa_cooling_1_2_2:
-  friendly_name: Cool1
-climate.trane_model_tzemt400bb32maa_heating_1_2_1:
-  friendly_name: Heat1
 sensor.trane_model_tzemt400bb32maa_temperature_2_1:
-  friendly_name: Temp1
-climate.trane_model_tzemt400bb32maa_cooling_1_4_2:
-  friendly_name: Cool2
-climate.trane_model_tzemt400bb32maa_heating_1_4_1:
-  friendly_name: Heat2
+  friendly_name: Current Temp
 sensor.trane_model_tzemt400bb32maa_temperature_4_1:
-  friendly_name: Temp2
-climate.trane_model_tzemt400bb32maa_cooling_1_5_2:
-  friendly_name: Cool3
-climate.trane_model_tzemt400bb32maa_heating_1_5_1:
-  friendly_name: Heat3
-#
-# SENSOR
-#
+  friendly_name: Current Temp
 sensor.trane_model_tzemt400bb32maa_temperature_5_1:
-  friendly_name: Temp3
+  friendly_name: Current Temp
 sensor.ac1mode:
   icon: mdi:air-conditioner
+  friendly_name: Current Mode
 sensor.ac2mode:
   icon: mdi:air-conditioner
+  friendly_name: Current Mode
 sensor.ac3mode:
   icon: mdi:air-conditioner
+  friendly_name: Current Mode
 sensor.cool1state:
   icon: mdi:air-conditioner
+  friendly_name: Current State
 sensor.cool2state:
   icon: mdi:air-conditioner
+  friendly_name: Current State
 sensor.cool3state:
   icon: mdi:air-conditioner
+  friendly_name: Current State
 switch.ac1cool:
   icon: mdi:weather-snowy
+  friendly_name: Cool Mode
 switch.ac2cool:
   icon: mdi:weather-snowy
+  friendly_name: Cool Mode
 switch.ac3cool:
   icon: mdi:weather-snowy
+  friendly_name: Cool Mode
 switch.ac1heat:
   icon: mdi:radiator
+  friendly_name: Heat Mode
 switch.ac2heat:
   icon: mdi:radiator
+  friendly_name: Heat Mode
 switch.ac3heat:
   icon: mdi:radiator
+  friendly_name: Heat Mode
 switch.ac1fan:
   icon: mdi:fan
+  friendly_name: Fan Mode
 switch.ac2fan:
   icon: mdi:fan
+  friendly_name: Fan Mode
 switch.ac3fan:
   icon: mdi:fan
+  friendly_name: Fan Mode
 input_select.cool1target:
   icon: mdi:target
+  friendly_name: Cool Target
 input_select.cool2target:
   icon: mdi:target
+  friendly_name: Cool Target
 input_select.cool3target:
   icon: mdi:target
+  friendly_name: Cool Target
 input_select.heat1target:
   icon: mdi:target
+  friendly_name: Heat Target
 input_select.heat2target:
   icon: mdi:target
+  friendly_name: Heat Target
 input_select.heat3target:
+  friendly_name: Heat Target
   icon: mdi:target
 sensor.cool1target:
   icon: mdi:target
@@ -148,6 +154,9 @@ sensor.heat2target:
   icon: mdi:target
 sensor.heat3target:
   icon: mdi:target
+#
+# Switch
+#
 switch.dlink:
   friendly_name: Christmas Lights
   icon: mdi:power-socket
@@ -155,6 +164,7 @@ switch.dlink:
 # INPUT
 #
 input_boolean.armed:
+  friendly_name: Home Armed
   icon: mdi:security-home
 #
 # ESP8266
@@ -174,8 +184,35 @@ sensor.ESP_1668C4_Dist:
 switch.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:open-in-app
+#
+# GROUPS
+##
+group.ac1:
+  friendly_name: A/C 1
+group.ac2:
+  friendly_name: A/C 2
+group.ac3:
+  friendly_name: A/C 3
+group.ac1adv:
+  friendly_name: A/C 1 Options
+group.ac2adv:
+  friendly_name: A/C 2 Options
+group.ac3adv:
+  friendly_name: A/C 3 Options
+group.alarm:
+  friendly_name: Alarm State
+group.weather:
+  friendly_name: Weather
+group.garage:
+  friendly_name: Garage
+group.family:
+  friendly_name: Family Room
+group.rpi:
+  friendly_name: RPI3 State
+group.hass:
+  friendly_name: HASS State
 
 
 
 
-  
+

@@ -1,0 +1,15 @@
+alias: Cuckoo Clock
+trigger:
+  platform: time
+  minutes: 00
+  seconds: 00
+condition:
+  condition: time
+  after: '12:30:00'
+  before: '22:30:00'
+action:
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.vlc
+      media_content_id: /home/homeassistant/.homeassistant/www/big-ben-hour.mp3
+      media_content_type: music

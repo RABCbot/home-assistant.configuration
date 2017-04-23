@@ -6,9 +6,9 @@ default_view:
     - device_tracker.padre_s6
     - device_tracker.chuchi_s7
     - device_tracker.christian_s5
-    - sensor.trane_model_tzemt400bb32maa_temperature_2_1
-    - sensor.trane_model_tzemt400bb32maa_temperature_4_1
-    - sensor.trane_model_tzemt400bb32maa_temperature_5_1
+#    - sensor.trane_model_tzemt400bb32maa_temperature_2_1
+#    - sensor.trane_model_tzemt400bb32maa_temperature_4_1
+#    - sensor.trane_model_tzemt400bb32maa_temperature_5_1
     - group.alarm
     - group.weather
 

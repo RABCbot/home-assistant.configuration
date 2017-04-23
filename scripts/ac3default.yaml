@@ -1,4 +1,8 @@
 sequence:
+  - service: tts.google_say
+    data:
+      language: en
+      message: Adjusting third floor temperature to default
   - service: climate.set_temperature
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
@@ -6,7 +10,7 @@ sequence:
   - service: climate.set_temperature
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_heating_1_5_1
-      temperature: 66
+      temperature: 65
   - service: climate.set_fan_mode
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2

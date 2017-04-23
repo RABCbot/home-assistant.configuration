@@ -6,7 +6,7 @@ sequence:
   - service: climate.set_temperature
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
-      temperature: 74
+      temperature: 73
   - service: climate.set_fan_mode
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2

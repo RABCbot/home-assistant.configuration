@@ -2,6 +2,10 @@ alias: ac2_cooltemp
 trigger:
   platform: state
   entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+condition:
+  condition: state
+  entity_id: input_boolean.hass_booting
+  state: 'off'
 action:
   - service: input_select.select_option
     data:

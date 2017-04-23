@@ -1,16 +1,16 @@
 sequence:
   - service: tts.google_say
     data:
-      language: es
-      message: Ajustando la temperatura en el segundo piso al default
+      language: en
+      message: Adjusting second floor temperature to default
   - service: climate.set_temperature
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
-      temperature: 76
+      temperature: 77
   - service: climate.set_temperature
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_heating_1_4_1
-      temperature: 64
+      temperature: 63
   - service: climate.set_fan_mode
     data:
       entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
