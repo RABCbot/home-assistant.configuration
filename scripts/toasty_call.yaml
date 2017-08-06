@@ -1,6 +1,0 @@
-sequence:
-  - service: mqtt.publish
-    data: {"payload": "Por favor bajar", "topic": "toasty/attention"}
-
-
-
