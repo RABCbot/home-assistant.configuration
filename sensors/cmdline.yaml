@@ -1,4 +1,0 @@
-- platform: command_line
-  name: Dasher
-  command: "/etc/init.d/dasher status"
-
