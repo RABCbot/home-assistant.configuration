@@ -1,7 +1,6 @@
 homeassistant: !include home.yaml
 frontend:
 config:
-hassio:
 history:
 logbook:
 logger: !include logger.yaml
@@ -27,6 +26,6 @@ media_player: !include vlc.yaml
 tts: !include tts.yaml
 script: !include_dir_named scripts
 shell_command: !include shellcmds.yaml
-ffmpeg: 
-camera: !include camera.yaml
+#ffmpeg: 
+#camera: !include camera.yaml
 textbox:
