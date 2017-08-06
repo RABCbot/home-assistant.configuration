@@ -1,2 +1,0 @@
-sequence:
-  - service: script.restart_ha
