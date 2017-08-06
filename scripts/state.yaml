@@ -1,6 +1,0 @@
-sequence:
-  - service: tts.google_say
-    data:
-      language: es
-    data_template:
-      message: La temperatura afuera de la casa es {{states('sensor.dark_sky_temperature')}}. La temperatura del primer piso es {{states('sensor.trane_model_tzemt400bb32maa_temperature_2_1')}}, y del segundo piso es {{states('sensor.trane_model_tzemt400bb32maa_temperature_4_1')}}.
