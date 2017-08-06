@@ -1,0 +1,13 @@
+alias: ac3 cool target selected
+trigger:
+  platform: state
+  entity_id: input_select.cool3target
+condition:
+  condition: state
+  entity_id: input_boolean.hass_booting
+  state: 'off'
+action:
+  service: climate.set_temperature
+  entity_id: climate.trane3_cooling_1
+  data_template:
+    temperature: "{{ states('input_select.cool3target') }}"

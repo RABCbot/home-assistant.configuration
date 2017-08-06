@@ -1,7 +1,7 @@
 alias: Hass started
 trigger:
-  platform: event
-  event_type: homeassistant_start
+  platform: homeassistant
+  event: start
 action:
   - service: input_boolean.turn_on
     data:
@@ -15,32 +15,32 @@ action:
     data:
       entity_id: input_select.cool1target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_2_2.attributes.temperature }}'
+      option: '{{ states.climate.trane1_cooling_1.attributes.temperature }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.cool2target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_4_2.attributes.temperature }}'
+      option: '{{ states.climate.trane2_cooling_1.attributes.temperature }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.cool3target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_cooling_1_5_2.attributes.temperature }}'
+      option: '{{ states.climate.trane3_cooling_1.attributes.temperature }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.heat1target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_2_1.attributes.temperature }}'
+      option: '{{ states.climate.trane1_heating_1.attributes.temperature }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.heat2target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_4_1.attributes.temperature }}'
+      option: '{{ states.climate.trane2_heating_1.attributes.temperature }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.heat3target
     data_template:
-      option: '{{ states.climate.trane_model_tzemt400bb32maa_heating_1_5_1.attributes.temperature }}'
+      option: '{{ states.climate.trane3_heating_1.attributes.temperature }}'
   - delay:
       seconds: 15
   - service: input_boolean.turn_off

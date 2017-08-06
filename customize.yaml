@@ -1,3 +1,6 @@
+#
+# SENSORS
+#
 sensor.dark_sky_wind_speed:
   friendly_name: Wind Speed
   icon: mdi:weather-windy-variant
@@ -15,16 +18,9 @@ sensor.dark_sky_pressure:
   friendly_name: Current Pressure
 sensor.cpu_use:
   icon: mdi:chip
-sensor.dasher:
-  friendly_name: Dasher
-  icon: mdi:adjust
 #
 # SCRIPT
 #
-script.toasty_call:
-  friendly_name: Call Signal
-script.toasty_food:
-  friendly_name: Food Signal
 script.ac1default:
   friendly_name: One Out
 script.ac1up:
@@ -45,39 +41,50 @@ script.ac3down:
   friendly_name: Three Down
 script.ac2good:
   friendly_name: Two Good
+  icon: mdi:emoticon-happy
+  can_cancel: false
+script.ac3good:
+  friendly_name: Three Good
+  icon: mdi:emoticon-happy
+  can_cancel: false
 script.allgood:
   friendly_name: All Good
+  icon: mdi:emoticon-happy
+  can_cancel: false
 script.family_computer:
   friendly_name: Family Computer
   icon: mdi:windows
+  can_cancel: false
 script.reset_computer:
   friendly_name: Reset Computer
   icon: mdi:windows
-script.garage_door:
-  friendly_name: Garage Door
+  can_cancel: false
+script.garage_clicker:
+  friendly_name: Garage Clicker
   icon: mdi:open-in-app
+  can_cancel: false
 #
 # LIGHT
 #
-light.unknown_id015d_unknown_type0111_id1f1c_level_10_0:
+light.zoos2_level:
   friendly_name: Family Lights
   icon: mdi:lightbulb-outline
 #
 # SWITCH
 #
-switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0:
+switch.zoos1_switch:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
-switch.ge_45603_plugin_appliance_module_switch_3_0:
+switch.geplug1_switch:
   friendly_name: OJO Zwave Switch
 #
 # CLIMATE
 #
-sensor.trane_model_tzemt400bb32maa_temperature_2_1:
+sensor.trane1_temperature:
   friendly_name: Current Temp
-sensor.trane_model_tzemt400bb32maa_temperature_4_1:
+sensor.trane2_temperature:
   friendly_name: Current Temp
-sensor.trane_model_tzemt400bb32maa_temperature_5_1:
+sensor.trane3_temperature:
   friendly_name: Current Temp
 sensor.ac1mode:
   icon: mdi:air-conditioner
@@ -209,8 +216,6 @@ group.family:
   friendly_name: Family Room
 group.rpi:
   friendly_name: RPI3 State
-group.hass:
-  friendly_name: HASS State
 
 
 

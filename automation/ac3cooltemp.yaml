@@ -1,0 +1,14 @@
+alias: ac3 change on cool temp
+trigger:
+  platform: state
+  entity_id: climate.trane3_cooling_1
+condition:
+  condition: state
+  entity_id: input_boolean.hass_booting
+  state: 'off'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.cool3target
+    data_template:
+      option: '{{ states.climate.trane3_cooling_1.attributes.temperature }}'

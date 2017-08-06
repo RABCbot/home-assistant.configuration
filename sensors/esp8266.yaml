@@ -1,0 +1,21 @@
+- platform: template
+  sensors:
+    garage_position:
+      value_template: > 
+        {% if states('sensor.esp_1668c4_dist') | float > 20.0 %}
+          Closed
+        {% else %}
+          Open
+        {% endif %}
+      entity_id:
+        sensor.esp_1668c4_dist
+    dryer_state:
+      value_template: >
+        {% if states('sensor.esp_165A0C_analog') | float > 700.0 %}
+          Running
+        {% else %}
+          Completed
+        {% endif %}
+      entity_id:
+        sensor.esp_165A0C_analog
+

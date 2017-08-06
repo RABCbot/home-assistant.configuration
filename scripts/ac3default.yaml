@@ -5,17 +5,17 @@ sequence:
       message: Adjusting third floor temperature to default
   - service: climate.set_temperature
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+      entity_id: climate.trane3_cooling_1
       temperature: 76
   - service: climate.set_temperature
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_heating_1_5_1
+      entity_id: climate.trane3_heating_1
       temperature: 65
   - service: climate.set_fan_mode
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+      entity_id: climate.trane3_cooling_1
       fan_mode: Auto Low
   - service: climate.set_operation_mode
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_5_2
+      entity_id: climate.trane3_cooling_1
       operation_mode: Auto

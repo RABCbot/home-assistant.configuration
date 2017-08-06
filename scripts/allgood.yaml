@@ -13,7 +13,10 @@ sequence:
       entity_id: switch.dlink
   - service: switch.turn_off
     data:
-      entity_id: switch.ge_45603_plugin_appliance_module_switch_3_0
+      entity_id: switch.geplug1_switch
   - service: switch.turn_off
     data:
-      entity_id: switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
+      entity_id: switch.zoos1_switch
+  - service: switch.turn_off
+    data:
+      entity_id: switch.zoos2_switch

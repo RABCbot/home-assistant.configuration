@@ -1,0 +1,41 @@
+- platform: template
+  switches:
+    ac1cool:
+      friendly_name: Cool1
+      value_template: "{{ is_state_attr('climate.trane1_cooling', 'operation_mode', 'Cool') }}"
+      turn_on:
+        service: climate.set_operation_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          operation_mode: Cool
+      turn_off:
+        service: climate.set_operation_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          operation_mode: Auto
+    ac1heat:
+      friendly_name: Heat1
+      value_template: "{{ is_state_attr('climate.trane1_cooling_1', 'operation_mode', 'Heat') }}"
+      turn_on:
+        service: climate.set_operation_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          operation_mode: Heat
+      turn_off:
+        service: climate.set_operation_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          operation_mode: Auto
+    ac1fan:
+      friendly_name: Fan1
+      value_template: "{{ is_state_attr('climate.trane1_cooling_1', 'fan_mode', 'On Low') }}"
+      turn_on:
+        service: climate.set_fan_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          fan_mode: On Low
+      turn_off:
+        service: climate.set_fan_mode
+        entity_id: climate.trane1_cooling_1
+        data_template:
+          fan_mode: Auto Low

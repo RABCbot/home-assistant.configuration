@@ -1,0 +1,13 @@
+alias: ac1 cool target selected
+trigger:
+  platform: state
+  entity_id: input_select.cool1target
+condition:
+  condition: state
+  entity_id: input_boolean.hass_booting
+  state: 'off'
+action:
+  service: climate.set_temperature
+  entity_id: climate.trane1_cooling_1
+  data_template:
+    temperature: "{{ states('input_select.cool1target') }}"

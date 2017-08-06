@@ -6,10 +6,7 @@ default_view:
     - device_tracker.padre_s6
     - device_tracker.chuchi_s7
     - device_tracker.christian_s5
-#    - sensor.trane_model_tzemt400bb32maa_temperature_2_1
-#    - sensor.trane_model_tzemt400bb32maa_temperature_4_1
-#    - sensor.trane_model_tzemt400bb32maa_temperature_5_1
-    - group.alarm
+    - group.camera
     - group.weather
 
 climate_view:
@@ -39,11 +36,14 @@ system_view:
   name: System
   entities:
     - group.rpi
-    - group.hass
     - group.test
 
 alarm:
   - input_boolean.armed
+
+camera:
+  - camera.kitchen
+  - camera.door
 
 weather:
   - sensor.dark_sky_summary
@@ -54,19 +54,19 @@ weather:
   - sensor.dark_sky_wind_speed
 
 ac1:
-  - sensor.trane_model_tzemt400bb32maa_temperature_2_1
+  - sensor.trane1_temperature
   - sensor.cool1state
   - input_select.cool1target
   - input_select.heat1target
 
 ac2:
-  - sensor.trane_model_tzemt400bb32maa_temperature_4_1
+  - sensor.trane2_temperature
   - sensor.cool2state
   - input_select.cool2target
   - input_select.heat2target
 
 ac3:
-  - sensor.trane_model_tzemt400bb32maa_temperature_5_1
+  - sensor.trane3_temperature
   - sensor.cool3state
   - input_select.cool3target
   - input_select.heat3target
@@ -74,6 +74,7 @@ ac3:
 ac1adv:
   control: hidden
   entities:
+    - script.allgood
     - sensor.ac1mode
     - switch.ac1cool
     - switch.ac1heat
@@ -82,6 +83,7 @@ ac1adv:
 ac2adv:
   control: hidden
   entities:
+    - script.ac2good
     - sensor.ac2mode
     - switch.ac2cool
     - switch.ac2heat
@@ -90,6 +92,7 @@ ac2adv:
 ac3adv:
   control: hidden
   entities:
+    - script.ac3good
     - sensor.ac3mode
     - switch.ac3cool
     - switch.ac3heat
@@ -101,14 +104,13 @@ garage:
     - sensor.ESP_1668C4_Temp
     - sensor.ESP_1668C4_Humid
     - sensor.garage_position
-    - switch.garage_clicker
-    - script.garage_door
-    - switch.unknown_id015d_unknown_type1111_id1e1c_switch_6_0
-
+    - script.garage_clicker
+    - switch.zoos1_switch
+    
 family:
   control: hidden
   entities:
-    - light.unknown_id015d_unknown_type0111_id1f1c_level_10_0
+    - light.zoos2_level
     - script.family_computer
     - script.reset_computer
     - switch.dlink
@@ -118,15 +120,11 @@ rpi:
   - sensor.disk_use_
   - sensor.ram_use
 
-hass:
-  - sensor.dasher
-  - sensor.mosquitto
-
 test:
   - sensor.ESP_165A0C_Motion
   - sensor.ESP_165A0C_Analog
   - sensor.ESP_1668C4_Dist
   - textbox.hola
-
+  - switch.zoos1
 
   

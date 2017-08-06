@@ -1,5 +1,5 @@
 - platform: mqtt
-  name: "ESP_1668C4_RelaySet"
+  name: esp_1668c4_relayset
   command_topic: "home/ESP_1668C4/relay/set"
   payload_on: "1"
   payload_off: "0"

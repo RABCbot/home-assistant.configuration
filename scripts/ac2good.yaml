@@ -5,19 +5,19 @@ sequence:
       message: Ajustando la temperatura en el segundo piso, para sentirse bien      
   - service: climate.set_temperature
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+      entity_id: climate.trane2_cooling_1
       temperature: 73
   - service: climate.set_fan_mode
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+      entity_id: climate.trane2_cooling_1
       fan_mode: On Low
   - delay:
       minutes: 45
   - service: climate.set_temperature
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+      entity_id: climate.trane2_cooling_1
       temperature: 77
   - service: climate.set_fan_mode
     data:
-      entity_id: climate.trane_model_tzemt400bb32maa_cooling_1_4_2
+      entity_id: climate.trane2_cooling_1
       fan_mode: Auto Low
