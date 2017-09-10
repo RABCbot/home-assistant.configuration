@@ -17,6 +17,14 @@
   state_topic: "home/ESP_1668C4/distance"
 
 - platform: mqtt
+  name: "ESP_165A0C_Dist"
+  state_topic: "home/ESP_165A0C/distance"
+
+- platform: mqtt
+  name: "ESP_165A0C_DistMedian"
+  state_topic: "home/ESP_165A0C/distanceMedian"
+
+- platform: mqtt
   name: "ESP_165A0C_Motion"
   state_topic: "home/ESP_165A0C/motion"
 

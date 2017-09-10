@@ -76,7 +76,8 @@ switch.zoos1_switch:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
 switch.geplug1_switch:
-  friendly_name: OJO Zwave Switch
+  friendly_name: Zwave Switch
+  icon: mdi:power-socket
 #
 # CLIMATE
 #

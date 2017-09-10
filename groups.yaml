@@ -1,130 +1,120 @@
 default_view:
-  view: yes
+  view: true
   icon: mdi:home
   entities:
-    - sun.sun
-    - device_tracker.padre_s6
-    - device_tracker.chuchi_s7
-    - device_tracker.christian_s5
-    - group.camera
-    - group.weather
-
+  - sun.sun
+  - device_tracker.padre_s6
+  - device_tracker.chuchi_s7
+  - device_tracker.christian_s5
+  - group.camera
+  - group.weather
 climate_view:
-  view: yes
+  view: true
   icon: mdi:air-conditioner
   name: Climate
   entities:
-    - group.ac1
-    - group.ac2
-    - group.ac3
-    - group.ac1adv
-    - group.ac2adv
-    - group.ac3adv
-
+  - group.ac1
+  - group.ac2
+  - group.ac3
+  - group.ac1adv
+  - group.ac2adv
+  - group.ac3adv
 control_view:
-  view: yes
-  icon: mdi:apple-keyboard-command
+  view: true
+  icon: mdi:dip-switch
   name: Control
   entities:
-    - group.family
-    - group.garage
-    - group.laundry
-
+  - group.family
+  - group.garage
+  - group.laundry
 system_view:
-  view: yes
+  view: true
   icon: mdi:settings
   name: System
   entities:
-    - group.rpi
-    - group.test
-
+  - group.spare
+  - group.rpi
+  - group.test
 alarm:
-  - input_boolean.armed
-
+- input_boolean.armed
 camera:
-  - camera.kitchen
-  - camera.door
-
+- camera.kitchen
+- camera.door
 weather:
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_humidity
-  - sensor.dark_sky_precip_probability
-  - sensor.dark_sky_pressure
-  - sensor.dark_sky_wind_speed
-
+- sensor.dark_sky_summary
+- sensor.dark_sky_temperature
+- sensor.dark_sky_humidity
+- sensor.dark_sky_precip_probability
+- sensor.dark_sky_pressure
+- sensor.dark_sky_wind_speed
 ac1:
-  - sensor.trane1_temperature
-  - sensor.cool1state
-  - input_select.cool1target
-  - input_select.heat1target
-
+- sensor.trane1_temperature
+- sensor.cool1state
+- input_select.cool1target
+- input_select.heat1target
 ac2:
-  - sensor.trane2_temperature
-  - sensor.cool2state
-  - input_select.cool2target
-  - input_select.heat2target
-
+- sensor.trane2_temperature
+- sensor.cool2state
+- input_select.cool2target
+- input_select.heat2target
 ac3:
-  - sensor.trane3_temperature
-  - sensor.cool3state
-  - input_select.cool3target
-  - input_select.heat3target
-
+- sensor.trane3_temperature
+- sensor.cool3state
+- input_select.cool3target
+- input_select.heat3target
 ac1adv:
   control: hidden
   entities:
-    - script.allgood
-    - sensor.ac1mode
-    - switch.ac1cool
-    - switch.ac1heat
-    - switch.ac1fan
-
+  - script.allgood
+  - sensor.ac1mode
+  - switch.ac1cool
+  - switch.ac1heat
+  - switch.ac1fan
 ac2adv:
   control: hidden
   entities:
-    - script.ac2good
-    - sensor.ac2mode
-    - switch.ac2cool
-    - switch.ac2heat
-    - switch.ac2fan
-
+  - script.ac2good
+  - sensor.ac2mode
+  - switch.ac2cool
+  - switch.ac2heat
+  - switch.ac2fan
 ac3adv:
   control: hidden
   entities:
-    - script.ac3good
-    - sensor.ac3mode
-    - switch.ac3cool
-    - switch.ac3heat
-    - switch.ac3fan
-
-garage:
-  control: hidden
-  entities:
-    - sensor.ESP_1668C4_Temp
-    - sensor.ESP_1668C4_Humid
-    - sensor.garage_position
-    - script.garage_clicker
-    - switch.zoos1_switch
-    
+  - script.ac3good
+  - sensor.ac3mode
+  - switch.ac3cool
+  - switch.ac3heat
+  - switch.ac3fan
 family:
   control: hidden
   entities:
-    - light.zoos2_level
-    - script.family_computer
-    - script.reset_computer
-    - switch.dlink
-
+  - script.family_computer
+  - script.reset_computer
+  - light.zoos2_level
+  - switch.dlink
+  name: Family Room
+  view: false
+garage:
+  control: hidden
+  entities:
+  - sensor.ESP_1668C4_Temp
+  - sensor.ESP_1668C4_Humid
+  - sensor.garage_position
+  - script.garage_clicker
+  - switch.zoos1_switch
+spare:
+- switch.geplug1_switch  
 rpi:
-  - sensor.cpu_use
-  - sensor.disk_use_
-  - sensor.ram_use
-
+- sensor.cpu_use
+- sensor.disk_use_
+- sensor.ram_use
 test:
-  - sensor.ESP_165A0C_Motion
-  - sensor.ESP_165A0C_Analog
-  - sensor.ESP_1668C4_Dist
-  - textbox.hola
-  - switch.zoos1
+- sensor.ESP_165A0C_Motion
+- sensor.ESP_165A0C_Analog
+- switch.esp_165a0c_relayset
+- sensor.ESP_1668C4_Dist
+- sensor.ESP_165A0C_Dist
+- sensor.ESP_165A0C_DistMedian
+- textbox.hola
 
-  

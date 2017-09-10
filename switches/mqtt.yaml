@@ -3,3 +3,8 @@
   command_topic: "home/ESP_1668C4/relay/set"
   payload_on: "1"
   payload_off: "0"
+- platform: mqtt
+  name: esp_165a0c_relayset
+  command_topic: "home/ESP_165A0C/relay/set"
+  payload_on: "1"
+  payload_off: "0"
