@@ -1,6 +1,0 @@
-armed:
-  initial: off
-hass_booting:
-  initial: on
-
-
