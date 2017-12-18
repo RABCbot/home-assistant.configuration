@@ -1,3 +1,3 @@
 - platform: rpi_gpio
   ports:
-    11: family_computer
+    11: rpi_gpio_11

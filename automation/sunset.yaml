@@ -4,7 +4,9 @@ trigger:
   event: sunset
   offset: '-00:15:00'
 action:
-#  - service: switch.turn_on
-#    entity_id: switch.dlink
+  - service: switch.turn_on
+    entity_id: switch.dlink
+  - service: switch.turn_on
+    entity_id: switch.geplug1_switch
   - service: script.turn_on
     entity_id: script.ac1default

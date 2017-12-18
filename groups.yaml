@@ -6,6 +6,7 @@ default_view:
   - device_tracker.padre_s6
   - device_tracker.chuchi_s7
   - device_tracker.christian_s5
+  - group.general
   - group.camera
   - group.weather
 climate_view:
@@ -16,105 +17,96 @@ climate_view:
   - group.ac1
   - group.ac2
   - group.ac3
-  - group.ac1adv
-  - group.ac2adv
-  - group.ac3adv
 control_view:
   view: true
   icon: mdi:dip-switch
   name: Control
   entities:
-  - group.family
-  - group.garage
-  - group.laundry
+  - group.garage_office
+  - group.family_kitchen
+  - group.bedrooms
 system_view:
   view: true
   icon: mdi:settings
   name: System
   entities:
-  - group.spare
   - group.rpi
   - group.test
-alarm:
-- input_boolean.armed
+general:
+  control: hidden
+  entities:
+  - input_boolean.armed
+  - input_boolean.hass_booting
 camera:
-- camera.kitchen
-- camera.door
+  entities:
+  - camera.kitchen
+  - camera.door
 weather:
-- sensor.dark_sky_summary
-- sensor.dark_sky_temperature
-- sensor.dark_sky_humidity
-- sensor.dark_sky_precip_probability
-- sensor.dark_sky_pressure
-- sensor.dark_sky_wind_speed
+  entities:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_precip_probability
+  - sensor.dark_sky_pressure
+  - sensor.dark_sky_wind_speed
 ac1:
-- sensor.trane1_temperature
-- sensor.cool1state
-- input_select.cool1target
-- input_select.heat1target
+  control: hidden
+  entities:
+  - sensor.trane1_temperature
+  - sensor.ac1state
+  - climate.trane1_cooling_1
+  - climate.trane1_heating_1
+  - script.normal_ac1
+  - script.comfort_ac1
 ac2:
-- sensor.trane2_temperature
-- sensor.cool2state
-- input_select.cool2target
-- input_select.heat2target
+  control: hidden
+  entities:
+  - sensor.trane2_temperature
+  - sensor.ac2state
+  - climate.trane2_cooling_1
+  - climate.trane2_heating_1
+  - script.normal_ac2
+  - script.comfort_ac2
+  - script.comfort_mamma
 ac3:
-- sensor.trane3_temperature
-- sensor.cool3state
-- input_select.cool3target
-- input_select.heat3target
-ac1adv:
   control: hidden
   entities:
-  - script.allgood
-  - sensor.ac1mode
-  - switch.ac1cool
-  - switch.ac1heat
-  - switch.ac1fan
-ac2adv:
-  control: hidden
-  entities:
-  - script.ac2good
-  - sensor.ac2mode
-  - switch.ac2cool
-  - switch.ac2heat
-  - switch.ac2fan
-ac3adv:
-  control: hidden
-  entities:
-  - script.ac3good
-  - sensor.ac3mode
-  - switch.ac3cool
-  - switch.ac3heat
-  - switch.ac3fan
-family:
+  - sensor.trane3_temperature
+  - sensor.ac3state
+  - climate.trane3_cooling_1
+  - climate.trane3_heating_1
+  - script.normal_ac3
+  - script.comfort_ac3
+family_kitchen:
   control: hidden
   entities:
   - script.family_computer
   - script.reset_computer
   - light.zoos2_level
   - switch.dlink
-  name: Family Room
-  view: false
-garage:
+  - switch.geplug1_switch
+garage_office:
   control: hidden
   entities:
-  - sensor.ESP_1668C4_Temp
-  - sensor.ESP_1668C4_Humid
+  - light.hue_white_lamp_1
+  - switch.zoos1_switch
   - sensor.garage_position
   - script.garage_clicker
-  - switch.zoos1_switch
-spare:
-- switch.geplug1_switch  
+bedrooms:
+  control: hidden
+  entities:
+  - switch.inwall_switch_2
+  - switch.inwall_switch_3
+  - script.comfort_master
+  - light.hue_white_lamp_2
+  - light.hue_white_lamp_3
+  - light.hue_white_lamp_4
 rpi:
-- sensor.cpu_use
-- sensor.disk_use_
-- sensor.ram_use
+  entities:
+  - sensor.cpu_used
+  - sensor.disk_used_
+  - sensor.ram_used
 test:
-- sensor.ESP_165A0C_Motion
-- sensor.ESP_165A0C_Analog
-- switch.esp_165a0c_relayset
-- sensor.ESP_1668C4_Dist
-- sensor.ESP_165A0C_Dist
-- sensor.ESP_165A0C_DistMedian
-- textbox.hola
+  entities:
+  - textbox.hola
 

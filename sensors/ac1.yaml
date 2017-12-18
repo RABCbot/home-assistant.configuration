@@ -1,6 +1,6 @@
 - platform: template
   sensors:
-    cool1state:
+    ac1state:
       friendly_name: State1
       value_template: '{{ states.climate.trane1_cooling_1.attributes.operating_state }}'
       entity_id:
@@ -10,17 +10,17 @@
       value_template: '{{ states.climate.trane1_cooling_1.attributes.operation_mode }}'
       entity_id:
         climate.trane1_cooling_1
-    cool1fan:
+    ac1fan:
       friendly_name: Fan1
       value_template: '{{ states.climate.trane1_cooling_1.attributes.fan_mode }}'
       entity_id:
         climate.trane1_cooling_1
-    cool1target:
+    ac1cool:
       friendly_name: CoolTarget1
       value_template: '{{ states.climate.trane1_cooling_1.attributes.temperature }}'
       entity_id:
         climate.trane1_cooling_1
-    heat1target:
+    ac1heat:
       friendly_name: HeatTarget1
       value_template: '{{ states.climate.trane1_heating_1.attributes.temperature }}'
       entity_id:

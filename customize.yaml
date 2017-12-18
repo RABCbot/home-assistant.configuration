@@ -1,5 +1,5 @@
 #
-# SENSORS
+# SENSORS WEATHER
 #
 sensor.dark_sky_wind_speed:
   friendly_name: Wind Speed
@@ -19,33 +19,111 @@ sensor.dark_sky_pressure:
 sensor.cpu_use:
   icon: mdi:chip
 #
-# SCRIPT
+# SENSORS CLIMATE
 #
-script.ac1default:
-  friendly_name: One Out
-script.ac1up:
-  friendly_name: One Up
-script.ac1down:
-  friendly_name: One Down
-script.ac2default:
-  friendly_name: Two Out
-script.ac2up:
-  friendly_name: Two Up
-script.ac2down:
-  friendly_name: Two Down
-script.ac3default:
-  friendly_name: Three Out
-script.ac3up:
-  friendly_name: Three Up
-script.ac3down:
-  friendly_name: Three Down
-script.ac2good:
-  friendly_name: Two Good
-  icon: mdi:emoticon-happy
+sensor.trane1_temperature:
+  friendly_name: Current Temp
+sensor.trane2_temperature:
+  friendly_name: Current Temp
+sensor.trane3_temperature:
+  friendly_name: Current Temp
+sensor.ac1mode:
+  icon: mdi:air-conditioner
+  friendly_name: Current Mode
+sensor.ac2mode:
+  icon: mdi:air-conditioner
+  friendly_name: Current Mode
+sensor.ac3mode:
+  icon: mdi:air-conditioner
+  friendly_name: Current Mode
+sensor.ac1state:
+  icon: mdi:air-conditioner
+  friendly_name: Current State
+sensor.ac2state:
+  icon: mdi:air-conditioner
+  friendly_name: Current State
+sensor.ac3state:
+  icon: mdi:air-conditioner
+  friendly_name: Current State
+sensor.ac1cool:
+  icon: mdi:target
+sensor.ac1heat:
+  icon: mdi:target
+sensor.ac2cool:
+  icon: mdi:target
+sensor.ac2heat:
+  icon: mdi:target
+sensor.ac3cool:
+  icon: mdi:target
+sensor.ac3heat:
+  icon: mdi:target
+#
+# SENSORS ESP8266
+#
+sensor.ESP_1668C4_Temp:
+  friendly_name: Garage Temperature
+  icon: mdi:temperature-fahrenheit
+sensor.ESP_1668C4_Humid:
+  friendly_name: Garage Humidity
+  icon: mdi:water-percent
+sensor.garage_position:
+  friendly_name: Garage Position
+  icon: mdi:garage
+sensor.ESP_1668C4_DistMedian:
+  friendly_name: Garage Distance
+  icon: mdi:garage
+switch.garage_clicker:
+  friendly_name: Garage Clicker
+  icon: mdi:garage-open
+#
+# SCRIPTS
+#
+script.normal_ac1:
+  icon: mdi:air-conditioner
+  friendly_name: Normal One
+script.normal_ac2:
+  icon: mdi:air-conditioner
+  friendly_name: Normal Two
+script.normal_ac3:
+  icon: mdi:air-conditioner
+  friendly_name: Normal Three
+script.heat_ac1:
+  icon: mdi:air-conditioner
+  friendly_name: Heat One
+script.heat_ac2:
+  icon: mdi:air-conditioner
+  friendly_name: Heat Two
+script.heat_ac3:
+  icon: mdi:air-conditioner
+  friendly_name: Heat Three
+script.cool_ac1:
+  icon: mdi:air-conditioner
+  friendly_name: Cool One
+script.cool_ac2:
+  icon: mdi:air-conditioner
+  friendly_name: Cool Two
+script.cool_ac3:
+  icon: mdi:air-conditioner
+  friendly_name: Cool Three
+script.comfort_ac1:
+  icon: mdi:air-conditioner
+  friendly_name: Comfort One
   can_cancel: false
-script.ac3good:
-  friendly_name: Three Good
-  icon: mdi:emoticon-happy
+script.comfort_ac2:
+  icon: mdi:air-conditioner
+  friendly_name: Comfort Two
+  can_cancel: false
+script.comfort_ac3:
+  icon: mdi:air-conditioner
+  friendly_name: Comfort Three
+  can_cancel: false
+script.comfort_mamma:
+  icon: mdi:air-conditioner
+  friendly_name: Comfort Mamma
+  can_cancel: false
+script.comfort_master:
+  icon: mdi:air-conditioner
+  friendly_name: Comfort Master
   can_cancel: false
 script.allgood:
   friendly_name: All Good
@@ -69,132 +147,56 @@ script.garage_clicker:
 light.zoos2_level:
   friendly_name: Family Lights
   icon: mdi:lightbulb-outline
-#
+light.hue_white_lamp_1:
+  friendly_name: Office Lights
+light.hue_white_lamp_2:
+  friendly_name: Hallway Lights
+light.hue_white_lamp_3:
+  friendly_name: Donde se pone 1?
+light.hue_white_lamp_4:
+  friendly_name: Donde se pone 2?
+##
 # SWITCH
 #
 switch.zoos1_switch:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
 switch.geplug1_switch:
-  friendly_name: Zwave Switch
+  friendly_name: Christmas Lights
   icon: mdi:power-socket
+switch.dlink:
+  friendly_name: Christmas Tree
+  icon: mdi:power-socket
+switch.inwall_switch_2:
+  friendly_name: Bathroom Lights
+  icon: mdi:lightbulb-outline
+switch.inwall_switch_3:
+  friendly_name: Vanity Lights
+  icon: mdi:lightbulb-outline
+switch.rpi_gpio_11:
+  emulated_hue_hidden: true
+switch.esp_165a0c_relayset:
+  emulated_hue_hidden: true
+switch.esp_1668c4_relayset:
+  emulated_hue_hidden: true
 #
 # CLIMATE
 #
-sensor.trane1_temperature:
-  friendly_name: Current Temp
-sensor.trane2_temperature:
-  friendly_name: Current Temp
-sensor.trane3_temperature:
-  friendly_name: Current Temp
-sensor.ac1mode:
-  icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.ac2mode:
-  icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.ac3mode:
-  icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.cool1state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-sensor.cool2state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-sensor.cool3state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-switch.ac1cool:
-  icon: mdi:weather-snowy
-  friendly_name: Cool Mode
-switch.ac2cool:
-  icon: mdi:weather-snowy
-  friendly_name: Cool Mode
-switch.ac3cool:
-  icon: mdi:weather-snowy
-  friendly_name: Cool Mode
-switch.ac1heat:
-  icon: mdi:radiator
-  friendly_name: Heat Mode
-switch.ac2heat:
-  icon: mdi:radiator
-  friendly_name: Heat Mode
-switch.ac3heat:
-  icon: mdi:radiator
-  friendly_name: Heat Mode
-switch.ac1fan:
-  icon: mdi:fan
-  friendly_name: Fan Mode
-switch.ac2fan:
-  icon: mdi:fan
-  friendly_name: Fan Mode
-switch.ac3fan:
-  icon: mdi:fan
-  friendly_name: Fan Mode
-input_select.cool1target:
-  icon: mdi:target
-  friendly_name: Cool Target
-input_select.cool2target:
-  icon: mdi:target
-  friendly_name: Cool Target
-input_select.cool3target:
-  icon: mdi:target
-  friendly_name: Cool Target
-input_select.heat1target:
-  icon: mdi:target
-  friendly_name: Heat Target
-input_select.heat2target:
-  icon: mdi:target
-  friendly_name: Heat Target
-input_select.heat3target:
-  friendly_name: Heat Target
-  icon: mdi:target
-sensor.cool1target:
-  icon: mdi:target
-sensor.cool2target:
-  icon: mdi:target
-sensor.cool3target:
-  icon: mdi:target
-sensor.heat1target:
-  icon: mdi:target
-sensor.heat2target:
-  icon: mdi:target
-sensor.heat3target:
-  icon: mdi:target
-#
-# Switch
-#
-switch.dlink:
-  friendly_name: Christmas Lights
-  icon: mdi:power-socket
-#
-# INPUT
-#
-input_boolean.armed:
-  friendly_name: Home Armed
-  icon: mdi:security-home
-#
-# ESP8266
-#
-sensor.ESP_1668C4_Temp:
-  friendly_name: Garage Temperature
-  icon: mdi:temperature-fahrenheit
-sensor.ESP_1668C4_Humid:
-  friendly_name: Garage Humidity
-  icon: mdi:water-percent
-sensor.garage_position:
-  friendly_name: Garage Position
-  icon: mdi:glassdoor
-sensor.ESP_1668C4_Dist:
-  friendly_name: Garage Distance
-  icon: mdi:glassdoor
-switch.garage_clicker:
-  friendly_name: Garage Clicker
-  icon: mdi:open-in-app
+climate.trane1_cooling_1:
+  friendly_name: Cool
+climate.trane1_heating_1:
+  friendly_name: Heat
+climate.trane2_cooling_1:
+  friendly_name: Cool
+climate.trane2_heating_1:
+  friendly_name: Heat
+climate.trane3_cooling_1:
+  friendly_name: Cool
+climate.trane3_heating_1:
+  friendly_name: Heat
 #
 # GROUPS
-##
+#
 group.ac1:
   friendly_name: A/C 1
 group.ac2:
@@ -211,14 +213,13 @@ group.alarm:
   friendly_name: Alarm State
 group.weather:
   friendly_name: Weather
-group.garage:
-  friendly_name: Garage
-group.family:
-  friendly_name: Family Room
+group.garage_office:
+  friendly_name: Office/Garage
+group.family_kitchen:
+  friendly_name: Family/Kitchen
 group.rpi:
   friendly_name: RPI3 State
-
-
-
-
-
+group.general:
+  friendly_name: General
+group.bedrooms:
+  friendly_name: Bedrooms

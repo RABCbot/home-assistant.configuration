@@ -1,11 +1,11 @@
 homeassistant: !include home.yaml
 frontend:
 config:
+map:
 history:
 logbook:
 logger: !include logger.yaml
 recorder:
-  purge_days: 8
 sun:
 emulated_hue: !include hue.yaml
 mqtt: !include mqtt.yaml
@@ -16,10 +16,8 @@ switch: !include_dir_merge_list switches
 light: !include_dir_merge_list lights
 notify: !include notify.yaml
 group: !include groups.yaml
-automation: !include_dir_list automation
-input_select: !include selections.yaml
-input_boolean: !include input.yaml
-# weblink: !include weblinks.yaml
+automation: !include automations.yaml
+alert: !include alert.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
 media_player: !include vlc.yaml

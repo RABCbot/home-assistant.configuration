@@ -19,4 +19,5 @@ sequence:
       entity_id: switch.zoos1_switch
   - service: switch.turn_off
     data:
-      entity_id: switch.zoos2_switch
+      entity_id: light.zoos2_level
+

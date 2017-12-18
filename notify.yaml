@@ -5,3 +5,7 @@
   access_token: !secret TWITTER_ACCESS_TOKEN
   access_token_secret: !secret TWITTER_ACCESS_SECRET
 
+- name: pushbullet
+  platform: pushbullet
+  api_key: !secret PUSHBULLET_TOKEN
+

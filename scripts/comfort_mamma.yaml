@@ -1,0 +1,23 @@
+sequence:
+  - service: tts.google_say
+    data:
+      language: es
+      message: Thermostat two thermal comfort for Mamma
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 73
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: On Low
+  - delay:
+      minutes: 45
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 77
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: Auto Low

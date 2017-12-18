@@ -1,10 +1,10 @@
 sequence:
   - service: switch.turn_on
     data:
-      entity_id: switch.garage_clicker
+      entity_id: switch.esp_1668c4_relayset
   - delay:
       seconds: 4
   - service: switch.turn_off
     data:
-      entity_id: switch.garage_clicker
+      entity_id: switch.esp_1668c4_relayset
 

@@ -1,0 +1,17 @@
+sequence:
+  - service: tts.google_say
+    data:
+      language: es
+      message: Thermostat one thermal comfort      
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane1_cooling_1
+      temperature: 77
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane1_heating_1
+      temperature: 68
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.trane1_cooling_1
+      fan_mode: Auto Low

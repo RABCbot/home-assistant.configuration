@@ -1,0 +1,7 @@
+sequence:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane3_cooling_1
+    data_template:
+      temperature: >
+       {{ states.climate.trane3_cooling_1.attributes.current_temperature - 1 }}
