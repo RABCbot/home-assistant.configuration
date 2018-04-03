@@ -1,4 +1,7 @@
 broker: localhost
 port: 1883
 keepalive: 60
-username: hass
+username: guest
+password: guest
+
+

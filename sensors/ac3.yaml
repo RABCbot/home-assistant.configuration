@@ -2,26 +2,31 @@
   sensors:
     ac3state:
       friendly_name: State3
-      value_template: '{{ states.climate.trane3_cooling_1.attributes.operating_state }}'
+      value_template: '{{ 
+states.climate.trane3_cooling_1.attributes.operating_state }}'
       entity_id:
         climate.trane3_cooling_1
     ac3mode:
       friendly_name: Mode3
-      value_template: '{{ states.climate.trane3_cooling_1.attributes.operation_mode }}'
+      value_template: '{{ 
+states.climate.trane3_cooling_1.attributes.operation_mode }}'
       entity_id:
         climate.trane3_cooling_1
     ac3fan:
       friendly_name: Fan3
-      value_template: '{{ states.climate.trane3_cooling_1.attributes.fan_mode }}'
+      value_template: '{{ 
+states.climate.trane3_cooling_1.attributes.fan_mode }}'
       entity_id:
         climate.trane3_cooling_1
     ac3cool:
       friendly_name: CoolTarget3
-      value_template: '{{ states.climate.trane3_cooling_1.attributes.temperature }}'
+      value_template: '{{ 
+states.climate.trane3_cooling_1.attributes.temperature }}'
       entity_id:
         climate.trane3_cooling_1
     ac3heat:
       friendly_name: HeatTarget3
-      value_template: '{{ states.climate.trane3_heating_1.attributes.temperature }}'
+      value_template: '{{ 
+states.climate.trane3_heating_1.attributes.temperature }}'
       entity_id:
         climate.trane3_heating_1

@@ -6,8 +6,9 @@ default_view:
   - device_tracker.padre_s6
   - device_tracker.chuchi_s7
   - device_tracker.christian_s5
-  - group.general
+#  - group.general
   - group.camera
+  - group.camerareset
   - group.weather
 climate_view:
   view: true
@@ -32,11 +33,11 @@ system_view:
   entities:
   - group.rpi
   - group.test
-general:
-  control: hidden
-  entities:
-  - input_boolean.armed
-  - input_boolean.hass_booting
+#general:
+#  control: hidden
+#  entities:
+#  - sensor.ripple_balance
+#  - sensor.market_price
 camera:
   entities:
   - camera.kitchen
@@ -49,6 +50,11 @@ weather:
   - sensor.dark_sky_precip_probability
   - sensor.dark_sky_pressure
   - sensor.dark_sky_wind_speed
+camerareset:
+  control: hidden
+  entities:
+  - script.reset_kitchencam
+  - script.reset_backyardcam
 ac1:
   control: hidden
   entities:
@@ -56,6 +62,7 @@ ac1:
   - sensor.ac1state
   - climate.trane1_cooling_1
   - climate.trane1_heating_1
+  - switch.ac1fan
   - script.normal_ac1
   - script.comfort_ac1
 ac2:
@@ -65,6 +72,7 @@ ac2:
   - sensor.ac2state
   - climate.trane2_cooling_1
   - climate.trane2_heating_1
+  - switch.ac2fan
   - script.normal_ac2
   - script.comfort_ac2
   - script.comfort_mamma
@@ -75,6 +83,7 @@ ac3:
   - sensor.ac3state
   - climate.trane3_cooling_1
   - climate.trane3_heating_1
+  - switch.ac3fan
   - script.normal_ac3
   - script.comfort_ac3
 family_kitchen:
@@ -108,5 +117,7 @@ rpi:
   - sensor.ram_used
 test:
   entities:
+  - input_boolean.garage_auto_close
   - textbox.hola
-
+  - sensor.ac1cooldif
+  - sensor.ac1heatdif

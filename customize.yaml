@@ -75,50 +75,52 @@ sensor.ESP_1668C4_DistMedian:
 switch.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:garage-open
+sensor.market_price:
+  friendly_name: Bitcoin
 #
 # SCRIPTS
 #
 script.normal_ac1:
-  icon: mdi:air-conditioner
-  friendly_name: Normal One
+  icon: mdi:emoticon-neutral
+  friendly_name: One Normal
 script.normal_ac2:
-  icon: mdi:air-conditioner
-  friendly_name: Normal Two
+  icon: mdi:emoticon-neutral
+  friendly_name: Two Normal
 script.normal_ac3:
-  icon: mdi:air-conditioner
-  friendly_name: Normal Three
+  icon: mdi:emoticon-neutral
+  friendly_name: Three Normal
 script.heat_ac1:
   icon: mdi:air-conditioner
-  friendly_name: Heat One
+  friendly_name: One Heat
 script.heat_ac2:
   icon: mdi:air-conditioner
-  friendly_name: Heat Two
+  friendly_name: Two Heat
 script.heat_ac3:
   icon: mdi:air-conditioner
-  friendly_name: Heat Three
+  friendly_name: Three Heat
 script.cool_ac1:
   icon: mdi:air-conditioner
-  friendly_name: Cool One
+  friendly_name: One Cool
 script.cool_ac2:
   icon: mdi:air-conditioner
-  friendly_name: Cool Two
+  friendly_name: Two Cool
 script.cool_ac3:
   icon: mdi:air-conditioner
-  friendly_name: Cool Three
+  friendly_name: Three Cool
 script.comfort_ac1:
-  icon: mdi:air-conditioner
-  friendly_name: Comfort One
+  icon: mdi:emoticon-happy
+  friendly_name: One Comfort
   can_cancel: false
 script.comfort_ac2:
-  icon: mdi:air-conditioner
-  friendly_name: Comfort Two
+  icon: mdi:emoticon-happy
+  friendly_name: Two Comfort
   can_cancel: false
 script.comfort_ac3:
-  icon: mdi:air-conditioner
-  friendly_name: Comfort Three
+  icon: mdi:emoticon-happy
+  friendly_name: Three Comfort
   can_cancel: false
 script.comfort_mamma:
-  icon: mdi:air-conditioner
+  icon: mdi:emoticon-excited
   friendly_name: Comfort Mamma
   can_cancel: false
 script.comfort_master:
@@ -140,6 +142,14 @@ script.reset_computer:
 script.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:open-in-app
+  can_cancel: false
+script.reset_kitchencam:
+  friendly_name: Reset Kitchen Cam
+  icon: mdi:restart
+  can_cancel: false
+script.reset_backyardcam:
+  friendly_name: Reset Backyard Cam
+  icon: mdi:restart
   can_cancel: false
 #
 # LIGHT
@@ -179,6 +189,21 @@ switch.esp_165a0c_relayset:
   emulated_hue_hidden: true
 switch.esp_1668c4_relayset:
   emulated_hue_hidden: true
+switch.ac1fan:
+  friendly_name: Fan
+  icon: mdi:fan
+switch.ac2fan:
+  friendly_name: Fan
+  icon: mdi:fan
+switch.ac3fan:
+  friendly_name: Fan
+  icon: mdi:fan
+#
+# INPUT
+#
+input_boolean.garage_auto_close:
+  friendly_name: Close garage automatically
+  icon: mdi:auto-fix
 #
 # CLIMATE
 #
@@ -223,3 +248,5 @@ group.general:
   friendly_name: General
 group.bedrooms:
   friendly_name: Bedrooms
+group.camerareset:
+  friendly_name: Cameras

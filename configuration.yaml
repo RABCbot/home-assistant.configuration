@@ -1,6 +1,7 @@
 homeassistant: !include home.yaml
 frontend:
 config:
+api:
 map:
 history:
 logbook:
@@ -11,6 +12,7 @@ emulated_hue: !include hue.yaml
 mqtt: !include mqtt.yaml
 device_tracker: !include owntracks.yaml
 zone: !include zones.yaml
+input_boolean: !include input.yaml
 sensor: !include_dir_merge_list sensors
 switch: !include_dir_merge_list switches
 light: !include_dir_merge_list lights
@@ -26,4 +28,8 @@ script: !include_dir_named scripts
 shell_command: !include shellcmds.yaml
 ffmpeg: 
 camera: !include camera.yaml
+rest_command: !include restcmd.yaml
 textbox:
+panel_custom: !include panel.yaml
+
+

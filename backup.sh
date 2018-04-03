@@ -23,10 +23,10 @@ do
   curl -T $f ftp://admin:2putipus@192.168.101.113/stick/Padre/$f
 done
 
-for f in automation/*.*
-do
-  curl -T $f ftp://admin:2putipus@192.168.101.113/stick/Padre/$f
-done
+# for f in automation/*.*
+# do
+#   curl -T $f ftp://admin:2putipus@192.168.101.113/stick/Padre/$f
+# done
 
 for f in lights/*.*
 do
@@ -48,7 +48,7 @@ do
   curl -T $f ftp://admin:2putipus@192.168.101.113/stick/Padre/$f
 done
 
-curl -T /home/homeassistant/dasher/config/config.json ftp://admin:2putipus@192.168.101.113/stick/Padre/dasher/config.json
+curl -T /home/dasher/config.json ftp://admin:2putipus@192.168.101.113/stick/Padre/dasher/config.json
 
 curl -T /etc/mosquitto/mosquitto.conf ftp://admin:2putipus@192.168.101.113/stick/Padre/mosquitto/mosquitto.conf
 

@@ -1,0 +1,3 @@
+- platform: bitcoin
+  display_options:
+    - market_price_usd
