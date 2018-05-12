@@ -92,7 +92,7 @@ family_kitchen:
   - script.family_computer
   - script.reset_computer
   - light.zoos2_level
-  - switch.dlink
+  - switch.wifi_plug
   - switch.geplug1_switch
 garage_office:
   control: hidden
@@ -101,6 +101,7 @@ garage_office:
   - switch.zoos1_switch
   - sensor.garage_position
   - script.garage_clicker
+  - alert.garage_door
 bedrooms:
   control: hidden
   entities:

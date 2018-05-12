@@ -1,5 +1,5 @@
 - platform: dlink
   host: !secret DLINK_HOST
-  name: dlink
+  name: wifi_plug
   username: Admin
   password: !secret DLINK_KEY

@@ -9,3 +9,9 @@
   platform: pushbullet
   api_key: !secret PUSHBULLET_TOKEN
 
+- name: notifyme
+  platform: rest
+  resource: https://api.notifymyecho.com/v1/NotifyMe
+  message_param_name: notification
+  data:
+    accessCode: !secret NOTIFYME_ACCESSCODE

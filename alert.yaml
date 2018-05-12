@@ -1,6 +1,7 @@
 garage_door:
   name: Garage left open
   entity_id: sensor.garage_position
+  can_acknowledge: True
   state: 'Open'
   repeat:
     - 15
@@ -9,3 +10,4 @@ garage_door:
   skip_first: True
   notifiers:
     - pushbullet
+    - notifyme

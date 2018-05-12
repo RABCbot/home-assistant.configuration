@@ -19,7 +19,7 @@ light: !include_dir_merge_list lights
 notify: !include notify.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
-alert: !include alert.yaml
+alert: !include alerts.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
 media_player: !include vlc.yaml
