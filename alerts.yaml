@@ -1,0 +1,33 @@
+garage_door:
+  name: Garage left open
+  entity_id: sensor.garage_position
+  can_acknowledge: True
+  state: 'Open'
+  repeat:
+    - 20
+    - 40
+  skip_first: True
+  notifiers:
+    - pushbullet
+    - notifyme
+garage_lights:
+  name: Garage lights left on
+  entity_id: switch.zoos1_switch
+  can_acknowledge: True
+  state: 'on'
+  repeat:
+    - 30
+  skip_first: True
+  notifiers:
+    - notifyme
+ac2fan:
+  name: AC Two left on
+  entity_id: switch.ac2fan
+  can_acknowledge: True
+  state: 'on'
+  repeat:
+    - 40
+  skip_first: True
+  notifiers:
+    - notifyme
+
