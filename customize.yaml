@@ -1,3 +1,7 @@
+camera.cam120:
+  friendly_name: Kitchen
+camera.cam121:
+  friendly_name: Front Door
 sensor.dark_sky_wind_speed:
   friendly_name: Wind Speed
   icon: mdi:weather-windy-variant
@@ -145,13 +149,21 @@ script.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:open-in-app
   can_cancel: false
-script.reset_kitchencam:
+script.reset_cam120:
   friendly_name: Reset Kitchen Cam
   icon: mdi:restart
   can_cancel: false
-script.reset_backyardcam:
-  friendly_name: Reset Backyard Cam
+script.reset_cam121:
+  friendly_name: Reset Front Door Cam
   icon: mdi:restart
+  can_cancel: false
+script.audio_cam120:
+  friendly_name: Play Kitchen Cam
+  icon: mdi:play-circle
+  can_cancel: false
+script.audio_cam121:
+  friendly_name: Play Front Door Cam
+  icon: mdi:play-circle
   can_cancel: false
 light.zoos2_level:
   friendly_name: Family Lights

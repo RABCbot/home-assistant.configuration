@@ -1,0 +1,10 @@
+sequence:
+  - service: rest_command.audio_cam120
+    data_template:
+      wav: stop
+  - service: rest_command.audio_cam121
+    data_template:
+      wav: stop
+
+
+

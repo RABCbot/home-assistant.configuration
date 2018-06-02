@@ -1,26 +1,28 @@
 #- id: sunrise
 #  alias: sunrise
 #  trigger:
-#    platform: sun
-#    event: sunrise
+#    - platform: sun
+#      event: sunrise
 #  action:
 #    service: switch.turn_on
 #    entity_id: switch.geplug1_switch
+
 - id: sunset
   alias: sunset
   trigger:
-    platform: sun
-    event: sunset
+    - platform: sun
+      event: sunset
   action:
 #    service: switch.turn_off
 #    entity_id: switch.geplug1_switch
     - service: script.normal_ac1  
     - service: script.normal_ac3
+
 - id: bedtime
   alias: bedtime
   trigger:
-    platform: time
-    at: '10:30:00'
+    - platform: time
+      at: '10:30:00'
   action:
     service: script.normal_ac2
 

@@ -40,8 +40,8 @@ system_view:
 #  - sensor.market_price
 camera:
   entities:
-  - camera.kitchen
-  - camera.door
+  - camera.cam120
+  - camera.cam121
 weather:
   entities:
   - sensor.dark_sky_summary
@@ -53,8 +53,11 @@ weather:
 camerareset:
   control: hidden
   entities:
-  - script.reset_kitchencam
-  - script.reset_backyardcam
+  - script.reset_cam120
+  - script.reset_cam121
+  - input_select.audio_files
+  - script.audio_cam120
+  - script.audio_cam121
 ac1:
   control: hidden
   entities:

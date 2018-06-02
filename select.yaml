@@ -1,0 +1,23 @@
+audio_files:
+  name: Audio File
+  options:
+    - stop
+    - start
+    - cantdo
+    - doh1
+    - hastalavista
+    - hello-there
+    - just1moment
+    - luke-dont
+    - r2d2-beep
+    - r2d2-yeah
+    - roadrunner
+    - vader-yes
+    - yoda-laugh
+    - voice-icantcome 
+    - voice-leaveit
+    - voice-onemoment
+    - voice-whoisit
+    - none
+  initial: none
+  icon: mdi:voice

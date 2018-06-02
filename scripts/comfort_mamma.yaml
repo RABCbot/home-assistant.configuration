@@ -1,8 +1,7 @@
 sequence:
-  - service: tts.google_say
+  - service: rest_command.audio_backyardcam
     data:
-      language: es
-      message: Thermostat two thermal comfort for Mamma
+      wav: r2d2
   - service: climate.set_temperature
     data:
       entity_id: climate.trane2_cooling_1
