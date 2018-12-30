@@ -1,2 +1,0 @@
-http://192.168.101.113:8123/api/services/persistent_notification/create
-{"message":"Llamada de %CNAME"}
