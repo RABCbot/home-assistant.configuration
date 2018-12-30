@@ -1,3 +1,0 @@
-POST /api/services/homeassistant/turn_on
-Accept: application/json
-{"entity_id":"switch.htp"}
