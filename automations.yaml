@@ -1,28 +1,108 @@
-#- id: sunrise
-#  alias: sunrise
-#  trigger:
-#    - platform: sun
-#      event: sunrise
-#  action:
-#    service: switch.turn_on
-#    entity_id: switch.geplug1_switch
-
-- id: sunset
+- id: '1'
   alias: sunset
   trigger:
-    - platform: sun
-      event: sunset
+  - event: sunset
+    offset: -00:40:00
+    platform: sun
   action:
-#    service: switch.turn_off
-#    entity_id: switch.geplug1_switch
-    - service: script.normal_ac1  
-    - service: script.normal_ac3
-
-- id: bedtime
+  - service: script.ac1_normal
+  - service: script.ac3_normal
+  - data:
+      entity_id: switch.geplug1_switch
+    service: switch.turn_on
+  - data:
+      entity_id: switch.tplink_f7
+    service: switch.turn_on
+  - data:
+      entity_id: switch.tplink_4c
+    service: switch.turn_on
+  - data:
+      entity_id: switch.tplink_a1
+    service: switch.turn_on
+- id: '2'
   alias: bedtime
   trigger:
-    - platform: time
-      at: '10:30:00'
+  - at: '22:30:00'
+    platform: time
   action:
-    service: script.normal_ac2
-
+  - data:
+      entity_id: script.ac2_normal
+    service: script.turn_on
+  - data:
+      entity_id: switch.geplug1_switch
+    service: switch.turn_off
+  - data:
+      entity_id: switch.tplink_f7
+    service: switch.turn_off
+  - data:
+      entity_id: switch.tplink_4c
+    service: switch.turn_off
+  - data:
+      entity_id: switch.tplink_a1
+    service: switch.turn_off
+- id: '1535662484928'
+  alias: leave school
+  trigger:
+  - entity_id: device_tracker.google_maps_106902433004181486563
+    event: leave
+    platform: zone
+    zone: zone.school
+  condition:
+  - before: sunset
+    condition: sun
+  action:
+  - alias: ''
+    data:
+      message: Christian left school
+    service: notify.pushbullet
+  - alias: ''
+    data:
+      message: Christian left school
+    service: notify.notifyme
+- id: '1535975204294'
+  alias: weather
+  trigger:
+  - event_data: {}
+    event_type: feedreader
+    platform: event
+  condition: []
+  action:
+  - alias: ''
+    data_template:
+      message: ' {{ trigger.event.data.summary }} {{ trigger.event.data.id }}'
+      title: '{{ trigger.event.data.title }}'
+    service: persistent_notification.create
+- id: '1542323971038'
+  alias: sunrise
+  trigger:
+  - event: sunrise
+    offset: -00:45:00
+    platform: sun
+  condition: []
+  action:
+  - service: script.ac1_comfort
+- id: '1544902602441'
+  alias: burglar
+  trigger:
+  - entity_id: sensor.esp_90b322_motion
+    platform: state
+    to: 'ON'
+  condition:
+  - condition: state
+    entity_id: group.home_status
+    state: not_home
+  action:
+  - data:
+      message: Motion detected in family room
+    service: notify.pushbullet
+- id: '1545048605883'
+  alias: reboot
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      payload: 'ON'
+      topic: home/status
+    service: mqtt.publish

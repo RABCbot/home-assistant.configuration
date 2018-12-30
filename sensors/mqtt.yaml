@@ -1,25 +1,27 @@
 - platform: mqtt
-  name: "ESP_1668C4_Relay"
-  state_topic: "home/ESP_1668C4/relay"
-
+  name: 'ESP_1668C4_Dist'
+  state_topic: 'home/ESP_1668C4/distanceMedian'
+  expire_after: 60
 - platform: mqtt
-  name: "ESP_1668C4_Temp"
-  state_topic: "home/ESP_1668C4/temperature"
-  unit_of_measurement: "F"
-
+  name: 'ESP_1668C4_Relay'
+  state_topic: 'home/ESP_1668C4/relay'
+  expire_after: 60
+  state_on: '1'
+  state_off: '0'
 - platform: mqtt
-  name: "ESP_1668C4_Humid"
-  state_topic: "home/ESP_1668C4/humidity"
-  unit_of_measurement: "%"
-
+  name: 'ESP_90B322_Relay'
+  state_topic: 'home/ESP_90B322/relay'
+  state_on: 'ON'
+  state_off: 'OFF'
+  expire_after: 60
 - platform: mqtt
-  name: "ESP_1668C4_Dist"
-  state_topic: "home/ESP_1668C4/distanceMedian"
-
+  name: 'ESP_90B322_Relay2'
+  state_topic: 'home/ESP_90B322/relay2'
+  state_on: 'ON'
+  state_off: 'OFF'
+  expire_after: 60
 - platform: mqtt
-  name: "ESP_165A0C_Motion"
-  state_topic: "home/ESP_165A0C/motion"
-
-- platform: mqtt
-  name: "ESP_165A0C_Analog"
-  state_topic: "home/ESP_165A0C/analog"
+  name: 'ESP_90B322_Motion'
+  state_topic: 'home/ESP_90B322/motion'
+  state_on: 'ON'
+  state_off: 'OFF'

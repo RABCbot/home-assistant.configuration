@@ -18,6 +18,11 @@
   longitude: !secret PARK_LONGITUDE
   radius: 480
   icon: mdi:pine-tree
+- name: CHuchi
+  latitude: !secret CHUCHI_LATITUDE
+  longitude: !secret CHUCHI_LONGITUDE
+  radius: 250
+  icon: mdi:home
 - name: Busy
   latitude: 0.0
   longitude: 0.0

@@ -1,7 +1,3 @@
-broker: localhost
-port: 1883
-keepalive: 60
-username: guest
-password: guest
+  broker: core-mosquitto
 
 

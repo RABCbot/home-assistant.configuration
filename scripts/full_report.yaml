@@ -1,0 +1,16 @@
+sequence:
+  - service: notify.pushbullet
+    data_template:
+      message: "Family presence: {{ sensor.esp_90b322_motion }}"
+  - service: notify.pushbullet
+    data_template:
+      message: "Thermostat temp: {{ sensor.trane1_temperature }} {{ sensor.trane2_temperature }} {{ sensor.trane3_temperature }}"
+  - service: notify.pushbullet
+    data_template:
+      message: "Thermostat state: {{ sensor.ac1state }} {{ sensor.ac2state }} {{ sensor.ac3state }}"
+  - service: notify.pushbullet
+    data_template:
+      message: "Thermostat Cool: {{ climate.trane1_cooling_1 }} {{ climate.trane2_cooling_1 }} {{ climate.trane3_cooling_1 }}"
+  - service: notify.pushbullet
+    data_template:
+      message: "Thermostat Heat: {{ climate.trane1_heating_1 }} {{ climate.trane2_heating_1 }} {{ climate.trane3_heating_1 }}"

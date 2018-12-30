@@ -2,10 +2,9 @@
   sensors:
     garage_position:
       value_template: > 
-        {% if states('sensor.esp_1668c4_dist') | float > 20.0 %}
-          Closed
-        {% else %}
-          Open
+        {% if is_state('sensor.esp_1668c4_dist', 'unknown') %} Unknown
+        {% elif states('sensor.esp_1668c4_dist') | float > 20.0 %} Closed
+        {% else %} Open
         {% endif %}
       entity_id:
         sensor.esp_1668c4_dist

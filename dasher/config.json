@@ -1,51 +1,47 @@
-{"buttons":[
-  {
-    "name": "Dash Finish - Family Computer",
-    "address": "44:65:0d:76:f5:70",
-    "url": "http://192.168.101.113:8123/api/services/script/family_computer",
-    "method": "POST",
-    "json": true,
-    "body": {"entity_id": "script.family_computer"}
-  },
-  {
-    "name": "Dash Vita - AC2",
-    "address": "f0:27:2d:cb:d0:fb",
-    "url": "http://192.168.101.113:8123/api/services/script/ac2good",
-    "method": "POST",
-    "json": true,
-    "body": {"entity_id": "script.ac2good"}
-  },
-  {
-    "name": "Dash All",
-    "address": "44:65:0d:3d:d5:fe",
-    "url": "http://192.168.101.113:8123/api/services/script/allgood",
-    "method": "POST",
-    "json": true,
-    "body": {"entity_id":"script.allgood"}
-  },
-  {
-    "name": "Dash Rayovac - Garage Door",
-    "address": "a0:02:dc:f4:91:9e",
-    "url": "http://192.168.101.113:8123/api/services/script/garage_door",
-    "method": "POST",
-    "json": true,
-    "body": {"entity_id":"script.garage_door"}
-  },
-  {
-    "name": "Dash Clorox",
-    "address": "74:c2:46:c1:7f:62",
-    "url": "http://192.168.101.113:8123/api/services/textbox/set_text",
-    "method": "POST",
-    "json": true,
-    "body": {"text":"Clorox"}
-  },
-  {
-    "name": "Dash Dietcoke",
-    "address": "50:f5:da:7b:aa:ad",
-    "url": "http://192.168.101.113:8123/api/services/textbox/set_text",
-    "method": "POST",
-    "json": true,
-    "body": {"text":"Dietcoke"}
-  }
-]}
-
+{
+  "timeout": 20,
+  "buttons": [
+    {
+      "name": "Dash Finish",
+      "address": "44:65:0d:76:f5:70",
+      "url": "http://192.168.101.113:8123/api/services/script/doorbell",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{}"
+    },
+    {
+      "name": "Dash Vita - BROKEN",
+      "address": "f0:27:2d:cb:d0:fb",
+      "url": "http://192.168.101.113:8123/api/services/rest_command/audio_cam120",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{\"wav\": \"r2d2-beep\"}"
+    },
+    {
+      "name": "Dash All",
+      "address": "44:65:0d:3d:d5:fe",
+      "url": "http://192.168.101.113:8123/api/services/script/allgood",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{}"
+    },
+    {
+      "name": "Dash Rayovac - Garage Door",
+      "address": "a0:02:dc:f4:91:9e",
+      "url": "http://192.168.101.113:8123/api/services/script/garage_clicker",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{}"
+    },
+    {
+      "name": "Dash Clorox - Mamma",
+      "address": "74:c2:46:c1:7f:62",
+      "url": "http://192.168.101.113:8123/api/services/script/mamma_comfort",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{}"
+    },
+    {
+      "name": "Dash Dietcoke",
+      "address": "50:f5:da:7b:aa:ad",
+      "url": "http://192.168.101.113:8123/api/services/rest_command/audio_cam120",
+      "headers": "{\"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0ZjdhYjQ2YjU5YmE0MmM0OWExZjU3MDQ5ZTc2NmM3YyIsImlhdCI6MTU0NjAxODk3MywiZXhwIjoxODYxMzc4OTczfQ.n0nKe63zXvyqJjfmxaaNGi5YK11rGV7GFl6bcVUfcCo\", \"content-type\": \"application/json\"}",
+      "body": "{\"wav\": \"r2d2-beep\"}"
+    }
+  ]
+}

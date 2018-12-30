@@ -1,2 +1,2 @@
 sequence:
-  - service: rest_command.reset_kitchencam
+  - service: rest_command.reset_cam120

@@ -1,0 +1,21 @@
+sequence:
+  - service: rest_command.audio_cam120
+    data:
+      wav: r2d2-beep
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 78
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.trane2_heating_1
+      temperature: 64
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: Auto Low
+  - service: climate.set_operation_mode
+    data:
+      entity_id: climate.trane2_cooling_1
+      operation_mode: Auto
+

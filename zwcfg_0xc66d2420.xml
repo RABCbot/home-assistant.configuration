@@ -21,7 +21,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="71" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="67" />
 			</CommandClass>
 			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -46,8 +46,8 @@
 			</CommandClass>
 			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="60" />
-				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="78" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="67" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="76" />
 			</CommandClass>
 			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -374,7 +374,7 @@
 			</CommandClass>
 			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="4" size="1">
 					<Item label="Monday" value="1" />
 					<Item label="Tuesday" value="2" />
 					<Item label="Wednesday" value="3" />
@@ -383,8 +383,8 @@
 					<Item label="Saturday" value="6" />
 					<Item label="Sunday" value="7" />
 				</Value>
-				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="11" />
-				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="9" />
+				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="10" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="36" />
 			</CommandClass>
 			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -402,7 +402,7 @@
 			</CommandClass>
 		</CommandClasses>
 	</Node>
-	<Node id="3" name="geplug1" location="" basic="4" generic="16" specific="1" type="Binary Power Switch" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="CacheLoad">
+	<Node id="3" name="geplug1" location="" basic="4" generic="16" specific="1" type="Binary Power Switch" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="Complete">
 		<Manufacturer id="63" name="GE">
 			<Product type="5250" id="3030" name="45603 Plugin Appliance Module" />
 		</Manufacturer>
@@ -494,7 +494,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="75" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="69" />
 			</CommandClass>
 			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -519,8 +519,8 @@
 			</CommandClass>
 			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="63" />
-				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="77" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="64" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="78" />
 			</CommandClass>
 			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -847,7 +847,7 @@
 			</CommandClass>
 			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="3" size="1">
 					<Item label="Monday" value="1" />
 					<Item label="Tuesday" value="2" />
 					<Item label="Wednesday" value="3" />
@@ -857,7 +857,7 @@
 					<Item label="Sunday" value="7" />
 				</Value>
 				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="21" />
-				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="57" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="28" />
 			</CommandClass>
 			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -885,7 +885,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="74" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="69" />
 			</CommandClass>
 			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -910,8 +910,8 @@
 			</CommandClass>
 			<CommandClass id="67" name="COMMAND_CLASS_THERMOSTAT_SETPOINT" version="1" request_flags="4" innif="true" base="0">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="65" />
-				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="74" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Heating 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="64" />
+				<Value type="decimal" genre="user" instance="1" index="2" label="Cooling 1" units="F" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="70" />
 			</CommandClass>
 			<CommandClass id="68" name="COMMAND_CLASS_THERMOSTAT_FAN_MODE" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -1238,7 +1238,7 @@
 			</CommandClass>
 			<CommandClass id="129" name="COMMAND_CLASS_CLOCK" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="2" size="1">
+				<Value type="list" genre="user" instance="1" index="0" label="Day" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="4" size="1">
 					<Item label="Monday" value="1" />
 					<Item label="Tuesday" value="2" />
 					<Item label="Wednesday" value="3" />
@@ -1247,8 +1247,8 @@
 					<Item label="Saturday" value="6" />
 					<Item label="Sunday" value="7" />
 				</Value>
-				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="6" />
-				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="19" />
+				<Value type="byte" genre="user" instance="1" index="1" label="Hour" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="14" />
+				<Value type="byte" genre="user" instance="1" index="2" label="Minute" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="46" />
 			</CommandClass>
 			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -1290,7 +1290,7 @@
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
 			</CommandClass>
-			<CommandClass id="94" name="COMMAND_CLASS_ZWAVE_PLUS_INFO" version="1" request_flags="4" innif="true">
+			<CommandClass id="94" name="COMMAND_CLASS_ZWAVEPLUS_INFO" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
 				<Value type="byte" genre="system" instance="1" index="0" label="ZWave+ Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
 				<Value type="short" genre="system" instance="1" index="1" label="InstallerIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="1794" />
@@ -1385,7 +1385,7 @@
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
 			</CommandClass>
-			<CommandClass id="94" name="COMMAND_CLASS_ZWAVE_PLUS_INFO" version="1" request_flags="4" innif="true">
+			<CommandClass id="94" name="COMMAND_CLASS_ZWAVEPLUS_INFO" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
 				<Value type="byte" genre="system" instance="1" index="0" label="ZWave+ Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
 				<Value type="short" genre="system" instance="1" index="1" label="InstallerIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="7170" />

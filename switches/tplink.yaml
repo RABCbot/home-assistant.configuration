@@ -1,0 +1,9 @@
+- platform: tplink
+  name: tplink_4c
+  host: 192.168.101.136
+- platform: tplink
+  name: tplink_f7
+  host: 192.168.101.137
+- platform: tplink
+  name: tplink_a1
+  host: 192.168.101.139

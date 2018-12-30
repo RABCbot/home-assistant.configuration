@@ -1,22 +1,23 @@
 audio_files:
   name: Audio File
   options:
-    - stop
     - start
-    - cantdo
+    - stop
     - doh1
+    - ah-ah-ah
+    - hal-just1moment
     - hastalavista
     - hello-there
-    - just1moment
     - luke-dont
     - r2d2-beep
     - r2d2-yeah
+    - big-ben
     - roadrunner
     - vader-yes
-    - yoda-laugh
-    - voice-icantcome 
+    - voice-busy
+    - voice-just1moment
     - voice-leaveit
-    - voice-onemoment
+    - voice-no
     - voice-whoisit
     - none
   initial: none

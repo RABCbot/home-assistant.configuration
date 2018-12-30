@@ -1,9 +1,11 @@
 sequence:
   - service: switch.turn_on
     data:
-      entity_id: switch.rpi_gpio_11
+      entity_id: switch.esp_90b322_relayset
+  - delay:
+      seconds: 1
   - service: switch.turn_off
     data:
-      entity_id: switch.rpi_gpio_11
+      entity_id: switch.esp_90b322_relayset
 
 

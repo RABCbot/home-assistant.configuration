@@ -6,4 +6,11 @@ audio_cam120:
   url: http://192.168.101.120/cgi-bin/alarm?cmd={{ wav }}
 audio_cam121:
   url: http://192.168.101.121/cgi-bin/alarm?cmd={{ wav }}
+motion:
+  url: http://192.168.101.101:8005/jobs
+  method: 'POST'
+  headers:
+    accept: 'application/json'
+  payload: '{"workflow_id":"39db34d1-edfc-4d0b-8701-e490bf79610a", "parameters": {"MediaId": ""}}'
+  content_type: 'application/json'
 
