@@ -69,7 +69,7 @@
   action:
   - alias: ''
     data_template:
-      message: ' {{ trigger.event.data.summary }} {{ trigger.event.data.id }}'
+      message: '{{ trigger.event.data.summary }} {{ trigger.event.data.id }}'
       title: '{{ trigger.event.data.title }}'
     service: persistent_notification.create
 - id: '1542323971038'

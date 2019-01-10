@@ -2,14 +2,12 @@ homeassistant: !include home.yaml
 frontend:
 hassio:
 config:
-#api:
 http: !include http.yaml
 #map:
 history:
 #logbook:
 logger: !include logger.yaml
 recorder:
-#influxdb: !include influxdb.yaml
 sun:
 mqtt: !include mqtt.yaml
 emulated_hue: !include hue.yaml
@@ -25,8 +23,6 @@ automation: !include automations.yaml
 alert: !include alerts.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
-#media_player: !include vlc.yaml
-#tts: !include tts.yaml
 script: !include_dir_named scripts
 shell_command: !include shellcmds.yaml
 ffmpeg: 
@@ -39,5 +35,10 @@ feedreader:
   scan_interval:
    minutes: 30
 panel_iframe: !include panels.yaml
+image_processing:
+  - platform: microsoft_vision
+    name: vision
+    api_key: 1b36f864bb8c42229e74febf891b31fa
+    azure_region: eastus2
 
 

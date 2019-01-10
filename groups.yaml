@@ -35,6 +35,8 @@ system_view:
   view: true
   icon: mdi:settings
   name: System
+  entities:
+  - group.demo
 family_status:
   name: Family
   entities:
@@ -165,3 +167,7 @@ bedrooms:
   - light.hue_white_lamp_2
   - light.hue_white_lamp_3
   - light.hue_white_lamp_4
+demo:
+  entities:
+  - textbox.hola
+  - microsoft_vision.analyze

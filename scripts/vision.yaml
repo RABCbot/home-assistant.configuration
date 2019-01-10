@@ -1,0 +1,11 @@
+sequence:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.cam120
+      filename: /config/camera/front.jpg
+  - service: image_processing.call_api
+    data:
+      entity_id: image_processing.vision
+  - service: notify.notifyme
+    data_template:
+      message: I see "{{ states.image_processing.vision.attributes.description }}"

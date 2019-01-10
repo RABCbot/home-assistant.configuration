@@ -11,5 +11,10 @@ sequence:
       message: Front camera
       data:
         file: /config/camera/front.jpg
-
-
+  - service: image_processing.call_api
+    data:
+      entity_id: image_processing.vision
+  - service: notify.notifyme
+    data_template:
+      message: "{{ states.image_processing.vision.attributes.description }}"
+  - service: script.vision
