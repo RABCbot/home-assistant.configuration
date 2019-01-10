@@ -40,6 +40,7 @@ CONFIG_SCHEMA = vol.Schema({
 
 SCHEMA_CALL_SERVICE = vol.Schema({
     vol.Required(ATTR_ENTITY_ID): cv.string,
+    vol.Required(ATTR_CAMERA_ENTITY): cv.string,
 })
 
 async def async_setup_platform(hass, config, add_devices, discovery_info=None):
@@ -83,16 +84,17 @@ async def async_setup_platform(hass, config, add_devices, discovery_info=None):
 
     async def call_api(service):
         entity_id = service.data.get(ATTR_ENTITY_ID)
+        camera_entity = service.data.get(ATTR_CAMERA_ENTITY)
         devices = hass.data[DATA_VISION]
         for device in devices:
             if entity_id == device.entity_id:
-                #camera = self.hass.components.camera
-                #image = None
-                #try:
-                #    image = await camera.async_get_image(self.camera_entity)
-                device.call_api()
-                #except HomeAssistantError as err:
-                #    _LOGGER.error("Error on receive image from entity: %s", err)
+                camera = hass.components.camera
+                image = None
+                try:
+                    image = await camera.async_get_image(camera_entity)
+                    device.call_api(image.content)
+                except HomeAssistantError as err:
+                    _LOGGER.error("Error on receive image from entity: %s", err)
 
 
     hass.services.async_register(DOMAIN, 'call_api', call_api, schema=SCHEMA_CALL_SERVICE)
@@ -141,9 +143,9 @@ class MicrosoftVisionDevice(Entity):
         }
         return attrs
 
-    def call_api(self):
-        image_path = "/config/camera/front.jpg"
-        image = open(image_path, "rb").read()
+    def call_api(self, image):
+        #image_path = "/config/camera/front.jpg"
+        #image = open(image_path, "rb").read()
 
         try:
             headers = {"Ocp-Apim-Subscription-Key": self._api_key,
@@ -171,7 +173,7 @@ class MicrosoftVisionDevice(Entity):
                         if line["text"] != "888":
                             self._description = line["text"]
 
-            self.schedule_update_ha_state()
+            self.async_schedule_update_ha_state()
 
         except HomeAssistantError as err:
             _LOGGER.error("Failed to call Microsoft API with error: %s", err)
