@@ -1,6 +1,8 @@
+import asyncio
 import logging
 import requests
 import json
+import time
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 
@@ -12,46 +14,103 @@ from homeassistant.exceptions import HomeAssistantError
 
 _LOGGER = logging.getLogger(__name__)
 
-VISION_API_URL = "api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories,Description"
+VISION_URL = "api.cognitive.microsoft.com/vision/v2.0"
+ANALIZE_URL = 'analyze'
+DESCRIBE_URL = 'describe'
+DETECT_URL = 'detect'
+RECOGNIZE_URL = 'recognizeText'
+
+CONF_VISUAL_FEATURES = 'visualFeatures'
+CONF_RECOGNIZETEXT_MODE = 'mode'
+CONF_VISUAL_FEATURES_DEFAULT = 'Description,Faces'
+CONF_RECOGNIZETEXT_MODE_DEFAULT = 'Printed'
 ATTR_DESCRIPTION = 'description'
+ATTR_JSON = 'json'
+
+DATA_VISION = 'microsoft_vision'
 
 CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema({
         vol.Required(CONF_API_KEY): cv.string,
         vol.Optional(CONF_AZURE_REGION, default="eastus2"): cv.string,
+        vol.Optional(CONF_VISUAL_FEATURES, default=CONF_VISUAL_FEATURES_DEFAULT): cv.string,
+        vol.Optional(CONF_RECOGNIZETEXT_MODE, default=CONF_RECOGNIZETEXT_MODE_DEFAULT): cv.string,
     }),
 }, extra=vol.ALLOW_EXTRA)
 
 SCHEMA_CALL_SERVICE = vol.Schema({
-    vol.Required(ATTR_CAMERA_ENTITY): cv.string,
+    vol.Required(ATTR_ENTITY_ID): cv.string,
 })
 
-def setup_platform(hass, config, add_devices, discovery_info=None):
+async def async_setup_platform(hass, config, add_devices, discovery_info=None):
     """Setup the platform."""
+    if DATA_VISION not in hass.data:
+        hass.data[DATA_VISION] = []
+
+    devices = []
+
     device = MicrosoftVisionDevice(
-        config.get(CONF_NAME), 
+        ANALIZE_URL, 
+        config.get(CONF_AZURE_REGION), 
+        config.get(CONF_API_KEY),
+        {CONF_VISUAL_FEATURES:config.get(CONF_VISUAL_FEATURES, CONF_VISUAL_FEATURES_DEFAULT)})
+    devices.append(device)
+    hass.data[DATA_VISION].append(device)
+
+    device = MicrosoftVisionDevice(
+        DESCRIBE_URL, 
         config.get(CONF_AZURE_REGION), 
         config.get(CONF_API_KEY))
-    add_devices([device])
+    devices.append(device)
+    hass.data[DATA_VISION].append(device)
 
-    def call_api(service):
-        device.call_api()
+    device = MicrosoftVisionDevice(
+        DETECT_URL, 
+        config.get(CONF_AZURE_REGION), 
+        config.get(CONF_API_KEY))
+    devices.append(device)
+    hass.data[DATA_VISION].append(device)
 
-    hass.services.register(
-        DOMAIN, 'call_api', call_api)
+    device = MicrosoftVisionDevice(
+        RECOGNIZE_URL, 
+        config.get(CONF_AZURE_REGION), 
+        config.get(CONF_API_KEY),
+        {CONF_RECOGNIZETEXT_MODE:config.get(CONF_RECOGNIZETEXT_MODE, CONF_RECOGNIZETEXT_MODE_DEFAULT)})
+    devices.append(device)
+    hass.data[DATA_VISION].append(device)
+
+    add_devices(devices)
+
+    async def call_api(service):
+        entity_id = service.data.get(ATTR_ENTITY_ID)
+        devices = hass.data[DATA_VISION]
+        for device in devices:
+            if entity_id == device.entity_id:
+                #camera = self.hass.components.camera
+                #image = None
+                #try:
+                #    image = await camera.async_get_image(self.camera_entity)
+                device.call_api()
+                #except HomeAssistantError as err:
+                #    _LOGGER.error("Error on receive image from entity: %s", err)
+
+
+    hass.services.async_register(DOMAIN, 'call_api', call_api, schema=SCHEMA_CALL_SERVICE)
 
     return True
 
 class MicrosoftVisionDevice(Entity):
     """Representation of a platform."""
 
-    def __init__(self, name, server_loc, api_key):
+    def __init__(self, operation, server_loc, api_key, params=None):
         """Initialize the platform."""
         self._state = None
-        self._name = name
-        self._url = "https://{0}.{1}".format(server_loc, VISION_API_URL)
-        self._description = "this is the description"
+        self._name = operation
+        self._url = "https://{0}.{1}/{2}".format(server_loc, VISION_URL, operation)
+        self._params = params
         self._api_key = api_key
+        self._description = None
+        self._json = None
 
     @property
     def name(self):
@@ -64,6 +123,11 @@ class MicrosoftVisionDevice(Entity):
         return self._description
 
     @property
+    def json(self):
+        """Return the JSON of the platform."""
+        return self._json
+
+    @property
     def state(self):
         """Return the state of the platform."""
         return self._state
@@ -73,6 +137,7 @@ class MicrosoftVisionDevice(Entity):
         """Return the state attributes."""
         attrs = {
             ATTR_DESCRIPTION: self._description,
+            ATTR_JSON: self._json,
         }
         return attrs
 
@@ -83,9 +148,31 @@ class MicrosoftVisionDevice(Entity):
         try:
             headers = {"Ocp-Apim-Subscription-Key": self._api_key,
                        "Content-Type": "application/octet-stream"}
-            response = requests.post(self._url, headers=headers, data=image)
-            self._description = response.json()["description"]["captions"][0]["text"]
-            self.schedule_update_ha_state()        
+            response = requests.post(self._url, headers=headers, params=self._params, data=image)
+            response.raise_for_status()
+
+            if self._name == DESCRIBE_URL:
+                self._json = response.json()
+                self._description = self._json["description"]["captions"][0]["text"]
+
+            if self._name == ANALIZE_URL or self._name == DETECT_URL:
+                self._json = response.json()
+
+            if response.status_code == 202:
+                url = response.headers["Operation-Location"]
+                time.sleep(4)
+                response = requests.get(url, headers=headers)
+                response.raise_for_status()
+                self._description = None
+                self._json = response.json()
+
+                if self._json["status"] == "Succeeded":
+                    for line in self._json["recognitionResult"]["lines"]:
+                        if line["text"] != "888":
+                            self._description = line["text"]
+
+            self.schedule_update_ha_state()
+
         except HomeAssistantError as err:
             _LOGGER.error("Failed to call Microsoft API with error: %s", err)
 
