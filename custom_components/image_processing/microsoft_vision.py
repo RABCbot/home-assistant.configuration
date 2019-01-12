@@ -20,6 +20,7 @@ DESCRIBE_URL = 'describe'
 DETECT_URL = 'detect'
 RECOGNIZE_URL = 'recognizeText'
 
+CONF_SERVICES = 'services'
 CONF_VISUAL_FEATURES = 'visualFeatures'
 CONF_RECOGNIZETEXT_MODE = 'mode'
 CONF_VISUAL_FEATURES_DEFAULT = 'Description,Faces'
@@ -32,6 +33,7 @@ DATA_VISION = 'microsoft_vision'
 CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema({
         vol.Required(CONF_API_KEY): cv.string,
+        vol.Required(CONF_SERVICES): vol.All(cv.ensure_list, [cv.string]),
         vol.Optional(CONF_AZURE_REGION, default="eastus2"): cv.string,
         vol.Optional(CONF_VISUAL_FEATURES, default=CONF_VISUAL_FEATURES_DEFAULT): cv.string,
         vol.Optional(CONF_RECOGNIZETEXT_MODE, default=CONF_RECOGNIZETEXT_MODE_DEFAULT): cv.string,
@@ -49,36 +51,17 @@ async def async_setup_platform(hass, config, add_devices, discovery_info=None):
         hass.data[DATA_VISION] = []
 
     devices = []
+    services = config.get(CONF_SERVICES)
 
-    device = MicrosoftVisionDevice(
-        ANALIZE_URL, 
-        config.get(CONF_AZURE_REGION), 
-        config.get(CONF_API_KEY),
-        {CONF_VISUAL_FEATURES:config.get(CONF_VISUAL_FEATURES, CONF_VISUAL_FEATURES_DEFAULT)})
-    devices.append(device)
-    hass.data[DATA_VISION].append(device)
-
-    device = MicrosoftVisionDevice(
-        DESCRIBE_URL, 
-        config.get(CONF_AZURE_REGION), 
-        config.get(CONF_API_KEY))
-    devices.append(device)
-    hass.data[DATA_VISION].append(device)
-
-    device = MicrosoftVisionDevice(
-        DETECT_URL, 
-        config.get(CONF_AZURE_REGION), 
-        config.get(CONF_API_KEY))
-    devices.append(device)
-    hass.data[DATA_VISION].append(device)
-
-    device = MicrosoftVisionDevice(
-        RECOGNIZE_URL, 
-        config.get(CONF_AZURE_REGION), 
-        config.get(CONF_API_KEY),
-        {CONF_RECOGNIZETEXT_MODE:config.get(CONF_RECOGNIZETEXT_MODE, CONF_RECOGNIZETEXT_MODE_DEFAULT)})
-    devices.append(device)
-    hass.data[DATA_VISION].append(device)
+    for service in services:
+        device = MicrosoftVisionDevice(
+            service, 
+            config.get(CONF_AZURE_REGION), 
+            config.get(CONF_API_KEY),
+            {CONF_VISUAL_FEATURES:config.get(CONF_VISUAL_FEATURES, CONF_VISUAL_FEATURES_DEFAULT),
+            CONF_RECOGNIZETEXT_MODE:config.get(CONF_RECOGNIZETEXT_MODE, CONF_RECOGNIZETEXT_MODE_DEFAULT)})
+        devices.append(device)
+        hass.data[DATA_VISION].append(device)
 
     add_devices(devices)
 
@@ -144,14 +127,15 @@ class MicrosoftVisionDevice(Entity):
         return attrs
 
     def call_api(self, image):
-        #image_path = "/config/camera/front.jpg"
-        #image = open(image_path, "rb").read()
-
         try:
             headers = {"Ocp-Apim-Subscription-Key": self._api_key,
                        "Content-Type": "application/octet-stream"}
             response = requests.post(self._url, headers=headers, params=self._params, data=image)
             response.raise_for_status()
+
+            self._json = None
+            self._description = None
+            self.async_schedule_update_ha_state()
 
             if self._name == DESCRIBE_URL:
                 self._json = response.json()
