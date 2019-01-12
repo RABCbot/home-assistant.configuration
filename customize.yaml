@@ -179,10 +179,10 @@ switch.dlink_96:
   friendly_name: Dlink 96
   icon: mdi:power-socket
 switch.tplink_f7:
-  friendly_name: TPLink F7
+  friendly_name: Family socket
   icon: mdi:power-socket
 switch.tplink_4c:
-  friendly_name: TPLink 4C
+  friendly_name: Kitchen Socket
   icon: mdi:power-socket
 switch.inwall_switch_2:
   friendly_name: Bathroom Lights
@@ -230,7 +230,7 @@ group.indoor:
 group.family:
   friendly_name: Family Room
 group.plugs:
-  friendly_name: Electric Plugs
+  friendly_name: Electric Sockets
 group.weather:
   friendly_name: Weather
 group.garage_office:
@@ -295,7 +295,7 @@ device_tracker.ccfd17459ae0:
   friendly_name: Nokia-Mamma
   icon: mdi:cellphone-android
 switch.tplink_a1:
-  friendly_name: TPLink A1
+  friendly_name: Hallway Socket
   icon: mdi:power-socket
 device_tracker.ac5f3e3c999d:
   friendly_name: S7-Chuchi

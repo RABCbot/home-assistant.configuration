@@ -7,18 +7,6 @@
   action:
   - service: script.ac1_normal
   - service: script.ac3_normal
-  - data:
-      entity_id: switch.geplug1_switch
-    service: switch.turn_on
-  - data:
-      entity_id: switch.tplink_f7
-    service: switch.turn_on
-  - data:
-      entity_id: switch.tplink_4c
-    service: switch.turn_on
-  - data:
-      entity_id: switch.tplink_a1
-    service: switch.turn_on
 - id: '2'
   alias: bedtime
   trigger:
@@ -28,18 +16,6 @@
   - data:
       entity_id: script.ac2_normal
     service: script.turn_on
-  - data:
-      entity_id: switch.geplug1_switch
-    service: switch.turn_off
-  - data:
-      entity_id: switch.tplink_f7
-    service: switch.turn_off
-  - data:
-      entity_id: switch.tplink_4c
-    service: switch.turn_off
-  - data:
-      entity_id: switch.tplink_a1
-    service: switch.turn_off
 - id: '1535662484928'
   alias: leave school
   trigger:

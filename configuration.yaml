@@ -37,8 +37,8 @@ feedreader:
 panel_iframe: !include panels.yaml
 image_processing:
   - platform: microsoft_vision
-    name: vision
     api_key: 1b36f864bb8c42229e74febf891b31fa
     azure_region: eastus2
-
+    services:
+    - describe
 

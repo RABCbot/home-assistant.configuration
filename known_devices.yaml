@@ -454,3 +454,19 @@ tile_56616471bbea4830:
   name: 8ccde8f40841
   picture:
   track: true
+
+44650d3dd5fe:
+  hide_if_away: false
+  icon:
+  mac: 44:65:0D:3D:D5:FE
+  name: 44650d3dd5fe
+  picture:
+  track: true
+
+3059b7395c8f:
+  hide_if_away: false
+  icon:
+  mac: 30:59:B7:39:5C:8F
+  name: 3059b7395c8f
+  picture:
+  track: true
