@@ -1,0 +1,24 @@
+butler_distance_threshold:
+  name: distance_threshold
+  initial: 27
+  min: 1
+  max: 100
+  step: 1
+butler_led_red:
+  name: red
+  initial: 0
+  min: 0
+  max: 100
+  step: 1
+butler_led_green:
+  name: green
+  initial: 0
+  min: 0
+  max: 100
+  step: 1
+butler_led_blue:
+  name: blue
+  initial: 0
+  min: 0
+  max: 100
+  step: 1

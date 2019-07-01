@@ -1,0 +1,270 @@
+trane1_comfort:
+  alias: One Comfort
+  sequence:
+  - data:
+      entity_id: climate.trane1_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane1_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane1_cooling_1
+      temperature: 76
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane1_heating_1
+      temperature: 67
+    service: climate.set_temperature
+trane1_normal:
+  alias: One Normal
+  sequence:
+  - data:
+      entity_id: climate.trane1_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane1_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane1_cooling_1
+      temperature: 78
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane1_heating_1
+      temperature: 64
+    service: climate.set_temperature
+trane2_comfort:
+  alias: Two Comfort
+  sequence:
+  - data:
+      entity_id: climate.trane2_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 76
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane2_heating_1
+      temperature: 68
+    service: climate.set_temperature
+trane2_normal:
+  alias: Two Normal
+  sequence:
+  - data:
+      entity_id: climate.trane2_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 78
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane2_heating_1
+      temperature: 64
+    service: climate.set_temperature
+trane2_mamma:
+  alias: Mamma Comfort
+  sequence:
+  - data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 73
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: On Low
+    service: climate.set_fan_mode
+  - delay: '[object Object]'
+  - data:
+      entity_id: climate.trane2_cooling_1
+      temperature: 77
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane2_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+trane3_comfort:
+  alias: Three Comfort
+  sequence:
+  - data:
+      entity_id: climate.trane3_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane3_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane3_cooling_1
+      temperature: 76
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane3_heating_1
+      temperature: 68
+    service: climate.set_temperature
+trane3_normal:
+  alias: Three Normal
+  sequence:
+  - data:
+      entity_id: climate.trane3_cooling_1
+      operation_mode: Auto
+    service: climate.set_operation_mode
+  - data:
+      entity_id: climate.trane3_cooling_1
+      fan_mode: Auto Low
+    service: climate.set_fan_mode
+  - data:
+      entity_id: climate.trane3_cooling_1
+      temperature: 76
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.trane3_heating_1
+      temperature: 64
+    service: climate.set_temperature
+all_good:
+  alias: All Good
+  sequence:
+  - service: script.turn_on
+    data:
+      entity_id: script.trane1_normal
+  - service: script.turn_on
+    data:
+      entity_id: script.trane2_normal
+  - service: script.turn_on
+    data:
+      entity_id: script.trane3_normal
+  - service: switch.turn_off
+    data:
+      entity_id: switch.dlink
+  - service: switch.turn_off
+    data:
+      entity_id: switch.geplug1_switch
+  - service: switch.turn_off
+    data:
+      entity_id: switch.zoos1_switch
+  - service: switch.turn_off
+    data:
+      entity_id: switch.inwall_switch_2
+  - service: switch.turn_off
+    data:
+      entity_id: switch.inwall_switch_3
+  - service: light.turn_off
+    data:
+      entity_id: light.zoos2_level
+  - service: light.turn_off
+    data:
+      entity_id: light.hue_white_lamp_1
+  - service: switch.turn_off
+    data:
+      entity_id: switch.tplink_a1
+  - service: switch.turn_off
+    data:
+      entity_id: switch.tplink_f7
+audio_cam120:
+  alias: Audio CAM120
+  sequence:
+  - service: rest_command.audio_cam120
+    data_template:
+      wav: '{{ states.input_select.audio_files.state }}'
+doorbell:
+  alias: Doorbell
+  sequence:
+  - service: notify.pushbullet
+    data:
+      message: Someone knocking at the door, somebody ringing the bell
+  - service: camera.snapshot
+    data:
+      entity_id: camera.cam120
+      filename: /config/camera/front.jpg
+  - service: notify.pushbullet
+    data:
+      data:
+        file: /config/camera/front.jpg
+      message: Front camera
+  - service: script.vision
+family_computer:
+  alias: Family Computer
+  sequence:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.esp_90b322_relayset
+  - delay:
+      seconds: 1
+  - service: switch.turn_off
+    data:
+      entity_id: switch.esp_90b322_relayset
+garage_clicker:
+  alias: Garage Clicker
+  sequence:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.esp_1668C4_relay1
+  - delay:
+      seconds: 1
+  - service: switch.turn_off
+    data:
+      entity_id: switch.esp_1668C4_relay1
+house_report:
+  sequence:
+  - data_template:
+      message: Temperature, first floor "{{ states.sensor.trane1_temperature.state
+        }}", second floor "{{ states.sensor.trane2_temperature.state }}", third floor
+        "{{ states.sensor.trane3_temperature.state }}"
+    service: notify.pushbullet
+  - data_template:
+      message: Status, first floor "{{ states.sensor.trane1_state.state }}", second
+        floor "{{ states.sensor.trane2_state.state }}", third floor "{{ states.sensor.trane3_state.state
+        }}"
+    service: notify.pushbullet
+  - data_template:
+      message: Cool/Heat, first floor "{{ states.climate.trane1_cooling_1.attributes.temperature
+        }}" "{{ states.climate.trane1_heating_1.attributes.temperature }}", second
+        floor "{{ states.climate.trane2_cooling_1.attributes.temperature }}" "{{ states.climate.trane2_heating_1.attributes.temperature
+        }}", third floor "{{ states.climate.trane3_cooling_1.attributes.temperature
+        }}" "{{ states.climate.trane3_heating_1.attributes.temperature }}"
+    service: notify.pushbullet
+  - data_template:
+      message: Status, garage "{{ states.sensor.garage_door.state }}", family
+        "{{ states.sensor.esp_90b322_motion.state }}"
+    service: notify.pushbullet
+  - data:
+      entity_id: camera.ps3eye
+      filename: /config/camera/family.jpg
+    service: camera.snapshot
+  - data:
+      data:
+        file: /config/camera/family.jpg
+      message: Family camera
+    service: notify.pushbullet
+  - data:
+      entity_id: camera.cam120
+      filename: /config/camera/front.jpg
+    service: camera.snapshot
+  - data:
+      data:
+        file: /config/camera/front.jpg
+      message: Kitchen camera
+    service: notify.pushbullet
+vision:
+  alias: Vision
+  sequence:
+  - service: image_processing.snapshot
+    data:
+      camera_entity: camera.cam120
+  - service: image_processing.describe
+  - service: notify.notifyme
+    data_template:
+      message: With "{{ states.image_processing.microsoft_vision.attributes.confidence
+        }}" percent confidence, I see "{{ states.image_processing.microsoft_vision.attributes.description
+        }}"

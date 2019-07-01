@@ -25,36 +25,15 @@ sensor.trane2_temperature:
   friendly_name: Temperature
 sensor.trane3_temperature:
   friendly_name: Temperature
-sensor.ac1mode:
+sensor.trane1_state:
+  friendly_name: State
   icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.ac2mode:
+sensor.tarne2_state:
   icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.ac3mode:
+  friendly_name: State 2
+sensor.trane3_state:
+  friendly_name: State
   icon: mdi:air-conditioner
-  friendly_name: Current Mode
-sensor.ac1state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-sensor.ac2state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-sensor.ac3state:
-  icon: mdi:air-conditioner
-  friendly_name: Current State
-sensor.ac1cool:
-  icon: mdi:target
-sensor.ac1heat:
-  icon: mdi:target
-sensor.ac2cool:
-  icon: mdi:target
-sensor.ac2heat:
-  icon: mdi:target
-sensor.ac3cool:
-  icon: mdi:target
-sensor.ac3heat:
-  icon: mdi:target
 sensor.garage_position:
   friendly_name: Garage Position
   icon: mdi:garage
@@ -69,66 +48,34 @@ switch.garage_clicker:
   icon: mdi:garage-open
 sensor.market_price:
   friendly_name: Bitcoin
-script.ac1_normal:
+script.trane1_normal:
   icon: mdi:emoticon-neutral
   friendly_name: One Normal
-script.ac2_normal:
+script.trane2_normal:
   icon: mdi:emoticon-neutral
   friendly_name: Two Normal
-script.ac3_normal:
+script.trane3_normal:
   icon: mdi:emoticon-neutral
   friendly_name: Three Normal
-script.ac1_heat:
-  icon: mdi:air-conditioner
-  friendly_name: One Heat
-script.ac2_heat:
-  icon: mdi:air-conditioner
-  friendly_name: Two Heat
-script.ac3_heat:
-  icon: mdi:air-conditioner
-  friendly_name: Three Heat
-script.ac1_cool:
-  icon: mdi:air-conditioner
-  friendly_name: One Cool
-script.ac2_cool:
-  icon: mdi:air-conditioner
-  friendly_name: Two Cool
-script.ac3_cool:
-  icon: mdi:air-conditioner
-  friendly_name: Three Cool
-script.ac1_comfort:
+script.trane1_comfort:
   icon: mdi:emoticon-happy
   friendly_name: One Comfort
   can_cancel: false
-script.ac2_comfort:
+script.trane2_comfort:
   icon: mdi:emoticon-happy
   friendly_name: Two Comfort
   can_cancel: false
-script.ac3_comfort:
+script.trane3_comfort:
   icon: mdi:emoticon-happy
   friendly_name: Three Comfort
   can_cancel: false
-script.mamma_comfort:
+script.trane2_mamma:
   icon: mdi:emoticon-excited
   friendly_name: Comfort Mamma
   can_cancel: false
 script.allgood:
   friendly_name: All Good
   icon: mdi:emoticon-happy
-  can_cancel: false
-script.check_son2:
-  friendly_name: Christian Tellme
-script.ac1_check:
-  friendly_name: One Tellme
-  can_cancel: false
-script.ac2_check:
-  friendly_name: Two Tellme
-  can_cancel: false
-script.ac3_check:
-  friendly_name: Three Tellme
-  can_cancel: false
-script.check_garage:
-  friendly_name: Garage Tellme
   can_cancel: false
 script.family_computer:
   friendly_name: Family Computer
@@ -146,16 +93,8 @@ script.reset_cam120:
   friendly_name: Reset Kitchen Cam
   icon: mdi:restart
   can_cancel: false
-script.reset_cam121:
-  friendly_name: Reset Front Door Cam
-  icon: mdi:restart
-  can_cancel: false
 script.audio_cam120:
   friendly_name: Play Kitchen Cam
-  icon: mdi:play-circle
-  can_cancel: false
-script.audio_cam121:
-  friendly_name: Play Front Door Cam
   icon: mdi:play-circle
   can_cancel: false
 light.zoos2_level:
@@ -179,10 +118,10 @@ switch.dlink_96:
   friendly_name: Dlink 96
   icon: mdi:power-socket
 switch.tplink_f7:
-  friendly_name: Family socket
-  icon: mdi:power-socket
+  friendly_name: XBox
+  icon: mdi:xbox
 switch.tplink_4c:
-  friendly_name: Kitchen Socket
+  friendly_name: Cam120 Power
   icon: mdi:power-socket
 switch.inwall_switch_2:
   friendly_name: Bathroom Lights
@@ -190,8 +129,6 @@ switch.inwall_switch_2:
 switch.inwall_switch_3:
   friendly_name: Vanity Lights
   icon: mdi:lightbulb-outline
-switch.rpi_gpio_11:
-  emulated_hue_hidden: true
 switch.esp_165a0c_relayset:
   emulated_hue_hidden: true
 switch.esp_1668c4_relayset:
@@ -217,50 +154,21 @@ climate.trane3_cooling_1:
   friendly_name: Cool
 climate.trane3_heating_1:
   friendly_name: Heat
-group.ac1:
-  friendly_name: First Floor
-group.ac2:
-  friendly_name: Second Floor
-group.ac3:
-  friendly_name: Third Floor
-group.cameraaudio:
-  friendly_name: Audio
-group.indoor:
-  friendly_name: Indoor
-group.family:
-  friendly_name: Family Room
-group.plugs:
-  friendly_name: Electric Sockets
-group.weather:
-  friendly_name: Weather
-group.garage_office:
-  friendly_name: Office/Garage
-group.family_kitchen:
-  friendly_name: Family/Kitchen
-group.general:
-  friendly_name: General
-group.bedrooms:
-  friendly_name: Bedrooms
-group.camerareset:
-  friendly_name: Cameras
-group.madre:
+person.madre:
   entity_picture: /local/madre.jpg
   friendly_name: Madre
-group.padre:
+person.padre:
   entity_picture: /local/padre.jpg
   friendly_name: Padre
-group.bebe:
+person.bebe:
   entity_picture: /local/hijo2.jpg
   friendly_name: Bebe
-group.chuchi:
+person.chuchi:
   entity_picture: /local/hijo.jpg
   friendly_name: Chuchi
-group.mamma:
+person.mamma:
   entity_picture: /local/mamma.jpg
   friendly_name: Mamma
-device_tracker.b827eb91bf03:
-  friendly_name: RPI2
-  icon: mdi:raspberrypi
 device_tracker.34ce00d7d06e:
   friendly_name: CAM120
   icon: mdi:cctv
@@ -274,7 +182,7 @@ device_tracker.8c4500331fba:
   friendly_name: S9-Madre
   icon: mdi:cellphone-android
 device_tracker.8c4500880bcf:
-  friendly_name: S9-Apex
+  friendly_name: S9-Home
   icon: mdi:cellphone-android
 device_tracker.8c4500919423:
   friendly_name: S9-Bebe
@@ -295,7 +203,7 @@ device_tracker.ccfd17459ae0:
   friendly_name: Nokia-Mamma
   icon: mdi:cellphone-android
 switch.tplink_a1:
-  friendly_name: Hallway Socket
+  friendly_name: Coffee Machine
   icon: mdi:power-socket
 device_tracker.ac5f3e3c999d:
   friendly_name: S7-Chuchi
@@ -306,3 +214,14 @@ device_tracker.3096fbeecdbd:
 device_tracker.tile_56616471bbea4830:
   friendly_name: Honda Odyssey
   icon: mdi:car
+script.coffe_machine:
+  friendly_name: coffee machine
+sensor.trane2_state:
+  friendly_name: State
+input_text.callerid_padre:
+  friendly_name: Padre
+sensor.esp_1668c4_presence:
+  friendly_name: Garage Open
+sensor.garage_door:
+  friendly_name: Garage Door
+  icon: mdi:garage

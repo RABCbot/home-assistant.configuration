@@ -8,22 +8,27 @@ history:
 #logbook:
 logger: !include logger.yaml
 recorder:
+system_health:
 sun:
 mqtt: !include mqtt.yaml
 emulated_hue: !include hue.yaml
 device_tracker: !include device_trackers.yaml
 zone: !include zones.yaml
 input_select: !include select.yaml
+input_number: !include slider.yaml
+input_text: !include input_text.yaml
 sensor: !include_dir_merge_list sensors
 switch: !include_dir_merge_list switches
+tplink: !include tplink.yaml
 light: !include_dir_merge_list lights
 notify: !include notify.yaml
 group: !include groups.yaml
+person:
 automation: !include automations.yaml
+script: !include scripts.yaml
 alert: !include alerts.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
-script: !include_dir_named scripts
 shell_command: !include shellcmds.yaml
 ffmpeg: 
 camera: !include camera.yaml
@@ -35,10 +40,3 @@ feedreader:
   scan_interval:
    minutes: 30
 panel_iframe: !include panels.yaml
-image_processing:
-  - platform: microsoft_vision
-    api_key: 1b36f864bb8c42229e74febf891b31fa
-    azure_region: eastus2
-    services:
-    - describe
-

@@ -1,6 +1,6 @@
 garage_door:
   name: Garage left open
-  entity_id: sensor.garage_position
+  entity_id: sensor.garage_door
   can_acknowledge: True
   state: 'Open'
   repeat:

@@ -1,7 +1,7 @@
 - platform: ffmpeg
   input: -rtsp_transport tcp -i rtsp://192.168.101.120/unicast
   name: cam120
-- platform: ffmpeg
-  input: -rtsp_transport tcp -i rtsp://192.168.101.121/unicast
-  name: cam121
+- platform: mjpeg
+  mjpeg_url: http://192.168.101.112:8081
+  name: ps3eye
 

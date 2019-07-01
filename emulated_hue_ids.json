@@ -1,6 +1,14 @@
 {
     "1": "script.comfort_mamma",
     "10": "script.cool_ac3",
+    "100": "script.trane2_comfort",
+    "101": "script.trane2_normal",
+    "102": "script.trane3_comfort",
+    "103": "script.trane3_normal",
+    "104": "script.trane2_mamma",
+    "105": "script.house_report",
+    "106": "script.1561762629548",
+    "107": "switch.esp_1668c4_relay1",
     "11": "script.comfort_ac3",
     "12": "script.ac2up",
     "13": "script.audio_cam120",
@@ -87,5 +95,15 @@
     "87": "switch.esp_90b322_relay2set",
     "88": "switch.tplink_a1",
     "89": "script.vision",
-    "9": "script.ac3up"
+    "9": "script.ac3up",
+    "90": "script.coffe_machine",
+    "91": "script.all_good",
+    "92": "script.make_coffee",
+    "93": "script.mamma_confort",
+    "94": "script.visio",
+    "95": "script.coffee_machine",
+    "96": "switch.butler_publish_distance",
+    "97": "switch.butler_led_show",
+    "98": "script.trane1_comfort",
+    "99": "script.trane1_normal"
 }

@@ -50,13 +50,9 @@
     service: persistent_notification.create
 - id: '1542323971038'
   alias: sunrise
-  trigger:
-  - event: sunrise
-    offset: -00:45:00
-    platform: sun
+  trigger: []
   condition: []
-  action:
-  - service: script.ac1_comfort
+  action: []
 - id: '1544902602441'
   alias: burglar
   trigger:
@@ -65,11 +61,20 @@
     to: 'ON'
   condition:
   - condition: state
-    entity_id: group.home_status
+    entity_id: group.house
     state: not_home
   action:
   - data:
       message: Motion detected in family room
+    service: notify.pushbullet
+  - data:
+      entity_id: camera.ps3eye
+      filename: /config/camera/family.jpg
+    service: camera.snapshot
+  - data:
+      data:
+        file: /config/camera/family.jpg
+      message: Family camera
     service: notify.pushbullet
 - id: '1545048605883'
   alias: reboot
@@ -79,6 +84,6 @@
   condition: []
   action:
   - data:
-      payload: 'ON'
+      payload: 'on'
       topic: home/status
     service: mqtt.publish

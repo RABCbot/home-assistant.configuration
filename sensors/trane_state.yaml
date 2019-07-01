@@ -1,0 +1,17 @@
+- platform: template
+  sensors:
+    trane1_state:
+      friendly_name: State 1
+      value_template: '{{ states.climate.trane1_cooling_1.attributes.operating_state }}'
+      entity_id:
+        climate.trane1_cooling_1
+    trane2_state:
+      friendly_name: State 2
+      value_template: '{{ states.climate.trane2_cooling_1.attributes.operating_state }}'
+      entity_id:
+        climate.trane2_cooling_1
+    trane3_state:
+      friendly_name: State 3
+      value_template: '{{ states.climate.trane3_cooling_1.attributes.operating_state }}'
+      entity_id:
+        climate.trane3_cooling_1

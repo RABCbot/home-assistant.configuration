@@ -1,0 +1,11 @@
+- platform: template
+  sensors:
+    garage_door:
+      value_template: > 
+        {% if is_state('sensor.esp_1668c4_distance', 'unknown') %} Unknown
+        {% elif states('sensor.esp_1668c4_distance') | float > 19.0 %} Closed
+        {% else %} Open
+        {% endif %}
+      entity_id:
+        sensor.esp_1668c4_distance
+

@@ -1,0 +1,18 @@
+esphome:
+  name: esp_family
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "Ezequiel2"
+  password: "2putipus"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: '2putipus'
+
+ota:
+  password: '2putipus'

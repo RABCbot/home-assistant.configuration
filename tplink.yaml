@@ -1,0 +1,5 @@
+discovery: false
+switch:
+  - host: 192.168.101.136
+  - host: 192.168.101.137
+  - host: 192.168.101.139

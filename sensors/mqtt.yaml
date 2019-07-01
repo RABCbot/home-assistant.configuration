@@ -1,27 +1,19 @@
 - platform: mqtt
-  name: 'ESP_1668C4_Dist'
-  state_topic: 'home/ESP_1668C4/distanceMedian'
+  name: 'esp_1668C4_distance'
+  state_topic: 'home/ESP_1668C4/distance'
   expire_after: 60
 - platform: mqtt
-  name: 'ESP_1668C4_Relay'
-  state_topic: 'home/ESP_1668C4/relay'
+  name: 'esp_1668C4_relay'
+  state_topic: 'home/ESP_1668C4/relay1'
   expire_after: 60
-  state_on: '1'
-  state_off: '0'
 - platform: mqtt
-  name: 'ESP_90B322_Relay'
+  name: 'esp_90B322_relay'
   state_topic: 'home/ESP_90B322/relay'
-  state_on: 'ON'
-  state_off: 'OFF'
   expire_after: 60
 - platform: mqtt
-  name: 'ESP_90B322_Relay2'
+  name: 'esp_90B322_relay2'
   state_topic: 'home/ESP_90B322/relay2'
-  state_on: 'ON'
-  state_off: 'OFF'
   expire_after: 60
 - platform: mqtt
-  name: 'ESP_90B322_Motion'
+  name: 'esp_90B322_motion'
   state_topic: 'home/ESP_90B322/motion'
-  state_on: 'ON'
-  state_off: 'OFF'

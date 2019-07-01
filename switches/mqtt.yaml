@@ -1,8 +1,8 @@
 - platform: mqtt
-  name: 'esp_1668c4_relayset'
-  command_topic: 'home/ESP_1668C4/relay/set'
-  payload_on: '1'
-  payload_off: '0'
+  name: 'esp_1668c4_relay1'
+  command_topic: 'home/ESP_1668C4/set/relay1'
+  payload_on: 'on'
+  payload_off: 'off'
 - platform: mqtt
   name: 'esp_90b322_relayset'
   command_topic: 'home/ESP_90B322/relay/set'

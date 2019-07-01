@@ -5,6 +5,7 @@
   username: !secret GENERIC_USER
   password: !secret GENERIC_PASS
 - platform: nmap_tracker
-  hosts: 192.168.101.100-150
+  hosts: 192.168.101.125-129
   home_interval: 10
+  consider_home: 800
   scan_options: -F --host-timeout 5s -Pn
