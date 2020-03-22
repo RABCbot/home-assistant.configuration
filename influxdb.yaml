@@ -1,7 +1,0 @@
-host: localhost
-port: 8086
-database: homeassistant
-username: homeassistant
-password: homeassistant
-max_retries: 3
-default_measurement: state
