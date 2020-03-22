@@ -2,41 +2,34 @@ homeassistant: !include home.yaml
 frontend:
 hassio:
 config:
-http: !include http.yaml
-#map:
 history:
-#logbook:
 logger: !include logger.yaml
-recorder:
+recorder: !include mysql.yaml
 system_health:
 sun:
-mqtt: !include mqtt.yaml
+ios:
+panel_iframe: !include panels.yaml
 emulated_hue: !include hue.yaml
+mqtt: !include mqtt.yaml
 device_tracker: !include device_trackers.yaml
 zone: !include zones.yaml
 input_select: !include select.yaml
-input_number: !include slider.yaml
 input_text: !include input_text.yaml
+input_boolean: !include input_boolean.yaml
 sensor: !include_dir_merge_list sensors
+binary_sensor: !include_dir_merge_list sensors_binary
 switch: !include_dir_merge_list switches
 tplink: !include tplink.yaml
 light: !include_dir_merge_list lights
 notify: !include notify.yaml
-group: !include groups.yaml
 person:
 automation: !include automations.yaml
 script: !include scripts.yaml
 alert: !include alerts.yaml
 zwave: !include zwave.yaml
 climate: !include climate.yaml
-shell_command: !include shellcmds.yaml
 ffmpeg: 
 camera: !include camera.yaml
 rest_command: !include restcmd.yaml
-feedreader:
-  urls:
-    - https://alerts.weather.gov/cap/wwaatmget.php?x=NCZ041&y=0
-    - https://alerts.weather.gov/cap/wwaatmget.php?x=MIC125&y=0
-  scan_interval:
-   minutes: 30
-panel_iframe: !include panels.yaml
+feedreader: !include weather_feed.yaml
+google: !include calendar.yaml

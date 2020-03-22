@@ -5,36 +5,22 @@
     offset: -00:40:00
     platform: sun
   action:
-  - service: script.ac1_normal
-  - service: script.ac3_normal
+  - service: script.trane1_normal
+  - service: script.trane3_normal
+  - data:
+      entity_id: switch.geplug1_switch
+    service: switch.turn_on
 - id: '2'
   alias: bedtime
   trigger:
   - at: '22:30:00'
     platform: time
   action:
+  - data: {}
+    service: script.trane2_normal
   - data:
-      entity_id: script.ac2_normal
-    service: script.turn_on
-- id: '1535662484928'
-  alias: leave school
-  trigger:
-  - entity_id: device_tracker.google_maps_106902433004181486563
-    event: leave
-    platform: zone
-    zone: zone.school
-  condition:
-  - before: sunset
-    condition: sun
-  action:
-  - alias: ''
-    data:
-      message: Christian left school
-    service: notify.pushbullet
-  - alias: ''
-    data:
-      message: Christian left school
-    service: notify.notifyme
+      entity_id: switch.geplug1_switch
+    service: switch.turn_off
 - id: '1535975204294'
   alias: weather
   trigger:
@@ -61,14 +47,14 @@
     to: 'ON'
   condition:
   - condition: state
-    entity_id: group.house
-    state: not_home
+    entity_id: input_boolean.guard_away
+    state: 'on'
   action:
   - data:
       message: Motion detected in family room
     service: notify.pushbullet
   - data:
-      entity_id: camera.ps3eye
+      entity_id: camera.cam121
       filename: /config/camera/family.jpg
     service: camera.snapshot
   - data:
@@ -87,3 +73,37 @@
       payload: 'on'
       topic: home/status
     service: mqtt.publish
+- id: '1575200189786'
+  alias: noon
+  description: ''
+  trigger:
+  - at: '12:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_boolean.guard_away
+    state: 'on'
+  action:
+  - service: script.house_report
+- id: '1575593360940'
+  alias: curfew
+  description: ''
+  trigger:
+  - at: '2:30'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id,: switch.geplug1_switch
+    service: switch.turn_off
+- id: '1582205147315'
+  alias: guard_away
+  description: ''
+  trigger:
+  - entity_id: input_boolean.guard_away
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - service: script.all_good

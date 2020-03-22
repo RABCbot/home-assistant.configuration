@@ -4,8 +4,8 @@ garage_door:
   can_acknowledge: True
   state: 'Open'
   repeat:
-    - 20
-    - 40
+    - 15
+    - 45
   skip_first: True
   notifiers:
     - pushbullet
@@ -20,13 +20,13 @@ garage_lights:
   skip_first: True
   notifiers:
     - notifyme
-ac2fan:
+ac2_left_on:
   name: AC Two left on
-  entity_id: switch.ac2fan
+  entity_id: binary_sensor.ac2_left_on
   can_acknowledge: True
   state: 'on'
   repeat:
-    - 40
+    - 45
   skip_first: True
   notifiers:
     - notifyme

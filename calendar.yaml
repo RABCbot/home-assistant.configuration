@@ -1,0 +1,2 @@
+client_id: !secret GOOGLE_CALENDAR_ID
+client_secret: !secret GOOGLE_CALENDAR_SECRET

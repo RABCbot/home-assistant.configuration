@@ -17,8 +17,6 @@ sensor.dark_sky_precip_probability:
   icon: mdi:umbrella
 sensor.dark_sky_pressure:
   friendly_name: Current Pressure
-sensor.cpu_use:
-  icon: mdi:chip
 sensor.trane1_temperature:
   friendly_name: Temperature
 sensor.trane2_temperature:
@@ -28,9 +26,9 @@ sensor.trane3_temperature:
 sensor.trane1_state:
   friendly_name: State
   icon: mdi:air-conditioner
-sensor.tarne2_state:
+sensor.trane2_state:
   icon: mdi:air-conditioner
-  friendly_name: State 2
+  friendly_name: State
 sensor.trane3_state:
   friendly_name: State
   icon: mdi:air-conditioner
@@ -46,8 +44,6 @@ sensor.esp_90b322_motion:
 switch.garage_clicker:
   friendly_name: Garage Clicker
   icon: mdi:garage-open
-sensor.market_price:
-  friendly_name: Bitcoin
 script.trane1_normal:
   icon: mdi:emoticon-neutral
   friendly_name: One Normal
@@ -70,9 +66,8 @@ script.trane3_comfort:
   friendly_name: Three Comfort
   can_cancel: false
 script.trane2_mamma:
+  friendly_name: Mamma Comfort
   icon: mdi:emoticon-excited
-  friendly_name: Comfort Mamma
-  can_cancel: false
 script.allgood:
   friendly_name: All Good
   icon: mdi:emoticon-happy
@@ -105,9 +100,9 @@ light.hue_white_lamp_1:
 light.hue_white_lamp_2:
   friendly_name: Hallway Lights
 light.hue_white_lamp_3:
-  friendly_name: Donde se pone 1?
+  friendly_name: Bedroom Lights
 light.hue_white_lamp_4:
-  friendly_name: Donde se pone 2?
+  friendly_name: Office Loo Lights
 switch.zoos1_switch:
   friendly_name: Garage Lights
   icon: mdi:lightbulb-outline
@@ -133,27 +128,6 @@ switch.esp_165a0c_relayset:
   emulated_hue_hidden: true
 switch.esp_1668c4_relayset:
   emulated_hue_hidden: true
-switch.ac1fan:
-  friendly_name: Fan
-  icon: mdi:fan
-switch.ac2fan:
-  friendly_name: Fan
-  icon: mdi:fan
-switch.ac3fan:
-  friendly_name: Fan
-  icon: mdi:fan
-climate.trane1_cooling_1:
-  friendly_name: Cool
-climate.trane1_heating_1:
-  friendly_name: Heat
-climate.trane2_cooling_1:
-  friendly_name: Cool
-climate.trane2_heating_1:
-  friendly_name: Heat
-climate.trane3_cooling_1:
-  friendly_name: Cool
-climate.trane3_heating_1:
-  friendly_name: Heat
 person.madre:
   entity_picture: /local/madre.jpg
   friendly_name: Madre
@@ -169,55 +143,123 @@ person.chuchi:
 person.mamma:
   entity_picture: /local/mamma.jpg
   friendly_name: Mamma
-device_tracker.34ce00d7d06e:
-  friendly_name: CAM120
-  icon: mdi:cctv
-device_tracker.34ce00d7e7fc:
-  friendly_name: CAM121
-  icon: mdi:cctv
-device_tracker.6001941668c4:
-  friendly_name: ESP Garage
-  icon: mdi:chip
-device_tracker.8c4500331fba:
-  friendly_name: S9-Madre
-  icon: mdi:cellphone-android
-device_tracker.8c4500880bcf:
-  friendly_name: S9-Home
-  icon: mdi:cellphone-android
-device_tracker.8c4500919423:
-  friendly_name: S9-Bebe
-  icon: mdi:cellphone-android
-device_tracker.8c4500967f29:
-  friendly_name: S9-Padre
-  icon: mdi:cellphone-android
 device_tracker.google_maps_116743827287372589765:
-  friendly_name: S9-GPS-Padre
+  friendly_name: Padre-GPS-S9
   icon: mdi:map-marker
 device_tracker.google_maps_106902433004181486563:
-  friendly_name: S9-GPS-Bebe
+  friendly_name: Bebe-GPS-S9
   icon: mdi:map-marker
-device_tracker.94bf2db526ec:
-  friendly_name: iPad-Bebe
-  icon: mdi:tablet-ipad
-device_tracker.ccfd17459ae0:
-  friendly_name: Nokia-Mamma
-  icon: mdi:cellphone-android
-switch.tplink_a1:
-  friendly_name: Coffee Machine
-  icon: mdi:power-socket
-device_tracker.ac5f3e3c999d:
-  friendly_name: S7-Chuchi
-  icon: mdi:cellphone-android
-device_tracker.3096fbeecdbd:
-  friendly_name: J3-Chuchi
-  icon: mdi:cellphone-android
 device_tracker.tile_56616471bbea4830:
   friendly_name: Honda Odyssey
   icon: mdi:car
-script.coffe_machine:
-  friendly_name: coffee machine
-sensor.trane2_state:
-  friendly_name: State
+device_tracker.cc_fd_17_45_9a_e0:
+  friendly_name: Mamma Nokia (Alcatel)
+  icon: mdi:cellphone-android
+device_tracker.b4_bf_f6_52_00_e1:
+  friendly_name: android-c840c9c21caa11ab
+  icon: mdi:cellphone-android
+device_tracker.5c_0a_5b_e0_d8_7f:
+  friendly_name: android-e3c9de7c0db6eed6
+  icon: mdi:cellphone-android
+device_tracker.00_08_22_71_46_bd:
+  friendly_name: Android-MOBILE
+  icon: mdi:cellphone-android
+device_tracker.64_89_f1_d5_c3_c1:
+  friendly_name: Bebe-J7
+  icon: mdi:cellphone-android
+device_tracker.d8_cb_8a_66_72_7f:
+  friendly_name: Bebe-PC
+  icon: mdi:desktop-classic
+device_tracker.8c_45_00_91_94_23:
+  friendly_name: Bebe-S9
+  icon: mdi:cellphone-android
+device_tracker.34_ce_00_d7_d0_6e:
+  friendly_name: CAM120
+  icon: mdi:cctv
+device_tracker.34_ce_00_d7_e7_fc:
+  friendly_name: CAM121
+  icon: mdi:cctv
+device_tracker.60_01_94_16_68_c4:
+  friendly_name: ESP Garage
+  icon: mdi:chip
+device_tracker.98_fc_11_3d_81_f8:
+  friendly_name: DD-WRT
+  icon: mdi:router
+device_tracker.00_21_b7_50_08_80:
+  friendly_name: E460dn LexmarkX204n
+  icon: mdi:printer
+device_tracker.34_d2_70_b3_a2_be:
+  friendly_name: Echo-Kitchen
+  icon: mdi:amazon-alexa
+device_tracker.3c_5c_c4_87_38_f0:
+  friendly_name: Echo-Office
+  icon: mdi:amazon-alexa
+device_tracker.68_37_e9_e4_66_46:
+  friendly_name: Echo-Upstairs
+  icon: mdi:amazon-alexa
+device_tracker.5c_cf_7f_90_b3_22:
+  friendly_name: ESP_90B322
+  icon: mdi:chip
+device_tracker.ac_5f_3e_3c_99_9d:
+  friendly_name: Chuchi-S7
+  icon: mdi:cellphone-android
+device_tracker.30_96_fb_ee_cd_bd:
+  friendly_name: Chuchi-S3
+  icon: mdi:cellphone-android
+device_tracker.8c_45_00_88_0b_cf:
+  friendly_name: Home-S9
+  icon: mdi:cellphone-android
+device_tracker.ac_84_c6_5d_ea_4c:
+  friendly_name: HS105
+  icon: mdi:power-socket
+device_tracker.ac_84_c6_77_ac_f7:
+  friendly_name: HS105
+  icon: mdi:power-socket
+device_tracker.ac_84_c6_d7_50_a1:
+  friendly_name: HS105
+  icon: mdi:power-socket
+device_tracker.8c_84_01_2b_79_51:
+  friendly_name: iPad
+  icon: mdi:tablet-android
+device_tracker.7c_61_66_a2_48_bd:
+  friendly_name: Madre-FireTablet
+  icon: mdi:tablet-android
+device_tracker.fc_1d_43_73_5e_cb:
+  friendly_name: Madre-iPad
+  icon: mdi:tablet-android
+device_tracker.58_e2_8f_51_a7_97:
+  friendly_name: Madre-iPhone
+  icon: mdi:cellphone-android
+device_tracker.fc_c2_de_80_2c_95:
+  friendly_name: Madre-S5
+  icon: mdi:cellphone-android
+device_tracker.ac_5f_3e_4a_7c_7a:
+  friendly_name: Madre-S7
+  icon: mdi:cellphone-android
+device_tracker.8c_45_00_33_1f_ba:
+  friendly_name: Madre-S9
+  icon: mdi:cellphone-android
+device_tracker.00_10_75_28_ec_3d:
+  friendly_name: NAS-Cronicas
+  icon: mdi:nas
+device_tracker.b8_27_eb_15_ab_34:
+  friendly_name: NAS-Reyes
+  icon: mdi:nas
+device_tracker.98_b6_e9_05_53_32:
+  friendly_name: Nintendo
+  icon: mdi:nintendo-switch
+device_tracker.00_23_24_b9_cb_ff:
+  friendly_name: Padre-PC
+  icon: mdi:desktop-classic
+device_tracker.8c_45_00_96_7f_29:
+  friendly_name: Padre-S9
+  icon: mdi:cellphone-android
+device_tracker.00_17_88_65_bc_4a:
+  friendly_name: Philips hue bridge
+  icon: mdi:cellphone-android
+device_tracker.d0_4d_2c_9e_38_4b:
+  friendly_name: Principal room
+  icon: mdi:cellphone-android
 input_text.callerid_padre:
   friendly_name: Padre
 sensor.esp_1668c4_presence:
@@ -225,3 +267,22 @@ sensor.esp_1668c4_presence:
 sensor.garage_door:
   friendly_name: Garage Door
   icon: mdi:garage
+input_text.ac_note:
+  friendly_name: Note
+input_boolean.guard_away:
+  icon: mdi:shield-home
+climate.trane1_mode:
+  friendly_name: Climate
+climate.trane2_mode:
+  friendly_name: Climate
+climate.trane3_mode:
+  friendly_name: Climate
+switch.geswitch1:
+  friendly_name: Master Lights
+  icon: mdi:lightbulb-outline
+switch.geswitch2:
+  friendly_name: Laundry Lights
+  icon: mdi:lightbulb-outline
+sensor.garbage:
+  friendly_name: Garbage
+  icon: mdi:calendar
