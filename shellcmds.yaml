@@ -1,3 +1,0 @@
-restart_ha: sudo systemctl restart home-assistant@homeassistant.service &
-start_dasher: sudo /etc/init.d/dasher start &
-
