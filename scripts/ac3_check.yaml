@@ -1,5 +1,0 @@
-sequence:
-  - service: notify.notifyme
-    data_template:
-      message: "Floor three current temperature is {{ states.sensor.trane3_temperature.state }}"
-#, in {{ states.climate.trane2_cooling1.attributes.operating_state }} state and the fan {{ states.climate.trane2_cooling1.attributes.fan_state }}"
