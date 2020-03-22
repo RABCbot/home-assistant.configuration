@@ -1,4 +1,0 @@
-sequence:
-  - service: notify.notifyme
-    data_template:
-      message: "Son is {{ states.device_tracker.christian_s5.state }}"
