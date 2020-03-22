@@ -1,8 +1,0 @@
-sequence:
-  - service: tts.google_say
-    data:
-      language: es
-      message: Ajustando la temperatura en el tercer piso, para sentirse bien      
-  - service: script.turn_on
-    data:
-      entity_id: script.ac3down
