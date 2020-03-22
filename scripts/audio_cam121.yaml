@@ -1,6 +1,0 @@
-sequence:
-  - service: rest_command.audio_cam121
-    data_template:
-      wav: "{{ states.input_select.audio_files.state }}"
-
-
