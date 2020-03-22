@@ -1,8 +1,0 @@
-sequence:
-  - service: image_processing.call_api
-    data:
-      entity_id: image_processing.describe
-      camera_entity: camera.cam120
-  - service: notify.notifyme
-    data_template:
-      message: I see "{{ states.image_processing.describe.attributes.description }}"
