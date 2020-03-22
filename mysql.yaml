@@ -1,0 +1,11 @@
+db_url: mysql://homeassistant:homeassistant@192.168.101.103/hass?charset=utf8
+purge_keep_days: 365
+exclude:
+  domains:
+    - automation
+    - camera
+    - media_player
+    - script
+    - calendar
+  entities:
+    - sensor.garbage

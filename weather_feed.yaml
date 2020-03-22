@@ -1,0 +1,8 @@
+urls:
+  - https://alerts.weather.gov/cap/wwaatmget.php?x=NCZ041&y=0
+  - https://alerts.weather.gov/cap/wwaatmget.php?x=MIC125&y=0
+scan_interval:
+  minutes: 30
+
+  
+

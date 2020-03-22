@@ -1,7 +1,6 @@
 house:
   control: hidden
   entities:
-  - device_tracker.8c4500331fba
   - device_tracker.8c4500967f29
   - device_tracker.8c4500919423  
-  - device_tracker.ccfd17459ae0
+  - device_tracker.8c4500880bcf

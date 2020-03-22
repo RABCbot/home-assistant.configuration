@@ -1,6 +1,4 @@
 callerid_padre:
   name: Caller Id Padre
-  initial: (123) 456-7890
-callerid_home:
-  name: Caller Id Home
-  initial: (123) 456-7890
+ac_note:
+  name: AC note

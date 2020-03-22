@@ -2,175 +2,169 @@ trane1_comfort:
   alias: One Comfort
   sequence:
   - data:
-      entity_id: climate.trane1_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane1_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane1_cooling_1
+      entity_id: climate.trane1_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane1_cooling_1
-      temperature: 76
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane1_heating_1
-      temperature: 67
+      entity_id: climate.trane1_mode
+      target_temp_high: 76
+      target_temp_low: 68
     service: climate.set_temperature
 trane1_normal:
   alias: One Normal
   sequence:
   - data:
-      entity_id: climate.trane1_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane1_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane1_cooling_1
+      entity_id: climate.trane1_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane1_cooling_1
-      temperature: 78
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane1_heating_1
-      temperature: 64
+      entity_id: climate.trane1_mode
+      target_temp_high: 78
+      target_temp_low: 64
     service: climate.set_temperature
 trane2_comfort:
   alias: Two Comfort
   sequence:
   - data:
-      entity_id: climate.trane2_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane2_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane2_cooling_1
+      entity_id: climate.trane2_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane2_cooling_1
-      temperature: 76
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane2_heating_1
-      temperature: 68
+      entity_id: climate.trane2_mode
+      target_temp_high: 76
+      target_temp_low: 68
     service: climate.set_temperature
 trane2_normal:
   alias: Two Normal
   sequence:
   - data:
-      entity_id: climate.trane2_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane2_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane2_cooling_1
+      entity_id: climate.trane2_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane2_cooling_1
-      temperature: 78
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane2_heating_1
-      temperature: 64
+      entity_id: climate.trane2_mode
+      target_temp_high: 78
+      target_temp_low: 64
     service: climate.set_temperature
 trane2_mamma:
   alias: Mamma Comfort
   sequence:
   - data:
-      entity_id: climate.trane2_cooling_1
-      temperature: 73
+      entity_id: climate.trane2_mode
+      target_temp_high: 73
+      target_temp_low: 64
     service: climate.set_temperature
   - data:
-      entity_id: climate.trane2_cooling_1
+      entity_id: climate.trane2_mode
       fan_mode: On Low
     service: climate.set_fan_mode
-  - delay: '[object Object]'
+  - delay:
+      minutes: 45
   - data:
-      entity_id: climate.trane2_cooling_1
-      temperature: 77
+      entity_id: climate.trane2_mode
+      target_temp_high: 77
+      target_temp_low: 64
     service: climate.set_temperature
   - data:
-      entity_id: climate.trane2_cooling_1
+      entity_id: climate.trane2_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
 trane3_comfort:
   alias: Three Comfort
   sequence:
   - data:
-      entity_id: climate.trane3_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane3_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane3_cooling_1
+      entity_id: climate.trane3_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane3_cooling_1
-      temperature: 76
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane3_heating_1
-      temperature: 68
+      entity_id: climate.trane3_mode
+      target_temp_high: 76
+      target_temp_low: 68
     service: climate.set_temperature
 trane3_normal:
   alias: Three Normal
   sequence:
   - data:
-      entity_id: climate.trane3_cooling_1
-      operation_mode: Auto
-    service: climate.set_operation_mode
+      entity_id: climate.trane3_mode
+      hvac_mode: heat_cool
+    service: climate.set_hvac_mode
   - data:
-      entity_id: climate.trane3_cooling_1
+      entity_id: climate.trane3_mode
       fan_mode: Auto Low
     service: climate.set_fan_mode
   - data:
-      entity_id: climate.trane3_cooling_1
-      temperature: 76
-    service: climate.set_temperature
-  - data:
-      entity_id: climate.trane3_heating_1
-      temperature: 64
+      entity_id: climate.trane3_mode
+      target_temp_high: 76
+      target_temp_low: 64
     service: climate.set_temperature
 all_good:
   alias: All Good
   sequence:
-  - service: script.turn_on
-    data:
+  - data:
       entity_id: script.trane1_normal
-  - service: script.turn_on
-    data:
+    service: script.turn_on
+  - data:
       entity_id: script.trane2_normal
-  - service: script.turn_on
-    data:
+    service: script.turn_on
+  - data:
       entity_id: script.trane3_normal
-  - service: switch.turn_off
-    data:
+    service: script.turn_on
+  - data:
       entity_id: switch.dlink
-  - service: switch.turn_off
-    data:
+    service: switch.turn_off
+  - data:
       entity_id: switch.geplug1_switch
-  - service: switch.turn_off
-    data:
+    service: switch.turn_off
+  - data:
       entity_id: switch.zoos1_switch
-  - service: switch.turn_off
-    data:
+    service: switch.turn_off
+  - data:
       entity_id: switch.inwall_switch_2
-  - service: switch.turn_off
-    data:
+    service: switch.turn_off
+  - data:
       entity_id: switch.inwall_switch_3
-  - service: light.turn_off
-    data:
+    service: switch.turn_off
+  - data:
       entity_id: light.zoos2_level
-  - service: light.turn_off
-    data:
+    service: light.turn_off
+  - data:
       entity_id: light.hue_white_lamp_1
-  - service: switch.turn_off
-    data:
-      entity_id: switch.tplink_a1
-  - service: switch.turn_off
-    data:
-      entity_id: switch.tplink_f7
+    service: light.turn_off
+  - data:
+      entity_id: light.hue_white_lamp_2
+    service: light.turn_off
+  - data:
+      entity_id: light.hue_white_lamp_3
+    service: light.turn_off
+  - data:
+      entity_id: light.hue_white_lamp_4
+    service: light.turn_off
+  - data:
+      entity_id: switch.geswitch1
+    service: switch.turn_off
+  - data:
+      entity_id: switch.geswitch2
+    service: switch.turn_off
 audio_cam120:
   alias: Audio CAM120
   sequence:
@@ -223,23 +217,28 @@ house_report:
         "{{ states.sensor.trane3_temperature.state }}"
     service: notify.pushbullet
   - data_template:
-      message: Status, first floor "{{ states.sensor.trane1_state.state }}", second
-        floor "{{ states.sensor.trane2_state.state }}", third floor "{{ states.sensor.trane3_state.state
-        }}"
+      message: Status, first floor "{{ states.climate.trane1_mode.attributes.hvac_action
+        }}", second floor "{{ states.climate.trane2_mode.attributes.hvac_action }}",
+        third floor "{{ states.climate.trane3_mode.attributes.hvac_action }}"
     service: notify.pushbullet
   - data_template:
-      message: Cool/Heat, first floor "{{ states.climate.trane1_cooling_1.attributes.temperature
-        }}" "{{ states.climate.trane1_heating_1.attributes.temperature }}", second
-        floor "{{ states.climate.trane2_cooling_1.attributes.temperature }}" "{{ states.climate.trane2_heating_1.attributes.temperature
-        }}", third floor "{{ states.climate.trane3_cooling_1.attributes.temperature
-        }}" "{{ states.climate.trane3_heating_1.attributes.temperature }}"
+      message: Fan, first floor "{{ states.climate.trane1_mode.attributes.fan_mode
+        }}", second floor "{{ states.climate.trane2_mode.attributes.fan_mode }}",
+        third floor "{{ states.climate.trane3_mode.attributes.fan_mode }}"
     service: notify.pushbullet
   - data_template:
-      message: Status, garage "{{ states.sensor.garage_door.state }}", family
-        "{{ states.sensor.esp_90b322_motion.state }}"
+      message: Cool/Heat, first floor "{{ states.climate.trane1_mode.attributes.target_temp_high
+        }}" "{{ states.climate.trane1_mode.attributes.target_temp_low }}", second
+        floor "{{ states.climate.trane2_mode.attributes.target_temp_high }}" "{{ states.climate.trane2_mode.attributes.target_temp_low
+        }}", third floor "{{ states.climate.trane3_mode.attributes.target_temp_high
+        }}" "{{ states.climate.trane3_mode.attributes.target_temp_low }}"
+    service: notify.pushbullet
+  - data_template:
+      message: Status, garage "{{ states.sensor.garage_door.state }}", family "{{
+        states.sensor.esp_90b322_motion.state }}"
     service: notify.pushbullet
   - data:
-      entity_id: camera.ps3eye
+      entity_id: camera.cam121
       filename: /config/camera/family.jpg
     service: camera.snapshot
   - data:
@@ -268,3 +267,9 @@ vision:
       message: With "{{ states.image_processing.microsoft_vision.attributes.confidence
         }}" percent confidence, I see "{{ states.image_processing.microsoft_vision.attributes.description
         }}"
+'1578588854458':
+  alias: Office Computer
+  sequence:
+  - data:
+      mac: 00:23:24:B9:CB:FF
+    service: wake_on_lan.send_magic_packet
