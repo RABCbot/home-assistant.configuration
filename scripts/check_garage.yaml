@@ -1,4 +1,0 @@
-sequence:
-  - service: notify.notifyme
-    data_template:
-      message: "Garage state is {{ states.sensor.garage_position.state }}"
