@@ -1,5 +1,0 @@
-- platform: dlink
-  host: 192.168.101.138
-  name: dlink_96
-  username: Admin
-  password: !secret DLINK_KEY
